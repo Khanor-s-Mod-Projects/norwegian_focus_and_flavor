@@ -1,6 +1,6 @@
 state={
-	id=807
-	name="STATE_807"
+	id=836
+	name="STATE_836"
 	manpower = 135922
 	
 	resources={
@@ -12,7 +12,7 @@ state={
 	history = {
 		owner = SWE
 		buildings = {
-			infrastructure = 4
+			infrastructure = 2
 		}
 		add_core_of = SWE
 		victory_points = {
@@ -23,5 +23,6 @@ state={
 	provinces={
 		46 113 168 202 3039 3108 3111 3162 3191 6010 6123 6126 6129 6185 6207 9066 9068 9148 9154 9171 9229 11049 11052 11053 11116 11148 11187 13117 
 	}
-	buildings_max_level_factor=1.000
+	
+	local_supplies=0.0
 }

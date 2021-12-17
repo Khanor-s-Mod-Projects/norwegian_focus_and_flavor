@@ -9,6 +9,61 @@ if = {
 	}
 }
 
+### Country Leaders (Political Leaders/Party Leaders)
+recruit_character = NOR_johan_nygaardsvold
+recruit_character = NOR_vidkun_quisling
+recruit_character = NOR_johan_ludwig_mowinckel
+recruit_character = NOR_adam_egede-nissen
+recruit_character = NOR_nils_traedal					### Does not start as a country leader, must be added and promoted through focus/event/decision later!
+recruit_character = NOR_ivar_lykke						### Does not start as a country leader, must be added and promoted through focus/event/decision later!
+recruit_character = NOR_carl_joachim_hambro				### Does not start as a country leader, must be added and promoted through focus/event/decision later!
+recruit_character = NOR_haakon_vii						### Does not start as a country leader, must be added and promoted through focus/event/decision later!
+recruit_character = NOR_monarchist_coalition			### Does not start as a country leader, must be added and promoted through focus/event/decision later!
+
+### Field Marshals (Possible Regional Commanders as of game start, e.g. commanders that could be given command over all forces in large regions such as Southern Norway or Northern Norway [at their larger definitions.])
+recruit_character = NOR_otto_ruge
+recruit_character = NOR_kristian_laake
+
+### Corps Commanders (Officers of mid-high to high ranks, Norway didn't have that many commanders at general rank or close to it.)
+recruit_character = NOR_carl_gustav_fleischer
+recruit_character = NOR_william_steffens
+recruit_character = NOR_jacob_hvinden_haug
+recruit_character = NOR_wilhelm_von_tangen_hansteen		### Not unlocked as field commander at the start, must be unlocked through focus later.
+recruit_character = NOR_birger_eriksen
+recruit_character = NOR_erling_munthe-dahl				### Not unlocked as field commander at the start, must be unlocked through focus later.
+recruit_character = NOR_hans_reidar_holtermann
+recruit_character = NOR_rasmus_larsen_hatledal
+recruit_character = NOR_carl_johan_erichsen
+recruit_character = NOR_oswald_nordlie					### Not unlocked as field commander at the start, must be unlocked through focus later.
+recruit_character = NOR_birger_ljungberg				### Not unlocked as field commander at the start, must be unlocked through focus later.
+recruit_character = NOR_trygve_frivold_graff-wang
+recruit_character = NOR_jacob_ager_laurantzon
+recruit_character = NOR_halvor_hansson
+
+### Naval Commanders (Generally highly ranked naval commanders, such as Admirals and Rear-Admirals of the Royal Norwegian Navy.)
+recruit_character = NOR_elias_corneliussen
+recruit_character = NOR_carsten_tank-nielsen
+recruit_character = NOR_edgar_otto
+recruit_character = NOR_henry_diesen
+
+### Advisors (Advisors, civilian and military, without any additional jobs in any of the above four categories.)
+recruit_character = NOR_edvard_christian_danielsen
+recruit_character = NOR_skule_storheill
+recruit_character = NOR_ole_reistad
+recruit_character = NOR_tryggve_gran
+recruit_character = NOR_alfred_roscher-lund
+recruit_character = NOR_konrad_sundlo
+recruit_character = NOR_jacob_von_der_lippe
+recruit_character = NOR_hjalmar_riiser_larsen
+recruit_character = NOR_bjarne_oen
+recruit_character = NOR_adolf_indrebo
+recruit_character = NOR_halvdan_koht
+recruit_character = NOR_trygve_halvdan_lie
+recruit_character = NOR_josef_terboven
+recruit_character = NOR_henry_oliver_rinnan
+recruit_character = NOR_gunnar_soensteby
+recruit_character = NOR_fredrik_wedel_jarlsberg
+
 set_research_slots = 3
 
 add_ideas = {
@@ -31,6 +86,7 @@ set_technology = {
 	early_fighter = 1
 	early_bomber = 1
 	tech_recon = 1
+	basic_train = 1
 }
 if = {
 	limit = { not = { has_dlc = "Man the Guns" } }
@@ -61,14 +117,15 @@ if = {
 1939.1.1 = {
 
 	add_political_power = 1198
+	add_command_power = 100
 	
 	#NaW focuses
 	complete_national_focus = NOR_army
 	complete_national_focus = NOR_navy
-	complete_national_focus = NOR_bases
-	complete_national_focus = NOR_hydro
-	complete_national_focus = NOR_hydro_plants
-	complete_national_focus = NOR_expand_alu
+	complete_national_focus = NOR_air_bases
+	complete_national_focus = NOR_norsk_hydro_focus
+	complete_national_focus = NOR_hydroelectric_power_generation
+	complete_national_focus = NOR_expanded_aluminium_production
 	complete_national_focus = NOR_lumber_industries
 	complete_national_focus = NOR_invest_in_district_industries
 	complete_national_focus = NOR_de_norske_statsbaner
@@ -157,262 +214,6 @@ set_popularities = {
 		communism = 2
 		neutrality = 12
 	}
-}
-
-create_country_leader = {
-	name = "Johan Nygaardsvold"
-	desc = "POLITICS_JOHAN_NYGAARDSVOLD_DESC"
-	picture = "Portrait_Norway_Johan_Nygaardsvold.dds"
-	expire = "1965.1.1"
-	ideology = socialism
-	traits = { naw_welfare_proponent } ### The Nygaardsvold Government sought to alleviate the effects of the Great Depression through welfare programs, and it did indeed help.
-}
-
-create_country_leader = {
-	name = "Vidkun Quisling"
-	desc = "POLITICS_VIDKUN_QUISLING_DESC"
-	picture = "Portrait_Norway_Vidkun_Quisling.dds"
-	expire = "1965.1.1"
-	ideology = nazism
-	traits = { naw_militia_proponent } ### Admired the effective militias of the Soviet Union. Had a lot of military experience.
-}
-
-create_country_leader = {
-	name = "Johan Ludwig Mowinckel"
-	desc = "POLITICS_JOHAN_LUDWIG_MOWINCKEL_DESC"
-	picture = "Portrait_Norway_Johan_Ludwig_Mowinckel.dds"
-	expire = "1965.1.1"
-	ideology = centrism
-	traits = { captain_of_industry naw_business_owner } ### Ran his own shipping company from he bought his first boat in 1898, and onwards. Joint stock company from 1912.
-}
-
-create_country_leader = {
-	name = "Adam Egede-Nissen"
-	desc = "POLITICS_ADAM_EGEDE_NISSEN_DESC"
-	picture = "Portrait_Norway_Adam_Egede-Nissen.dds"
-	expire = "1965.1.1"
-	ideology = marxism
-	traits = { naw_propagandist } ### Smuggled and spread revolutionary literature in his younger years. Also ran a postal office.
-}
-
-create_field_marshal = {
-	name = "Otto Ruge"
-	picture = "Portrait_Norway_Otto_Ruge.dds"
-	traits = { inflexible_strategist infantry_officer organizer inspirational_leader } ### 1.6.0/1.6.1 MtG update: REDACTED trait error compensation. (Before 1.6.0 MtG: Now starts with +1 defense and +1 logistics from inflexible_strategist trait. Redact changes if PDX fixes starting skills from these traits.)
-	skill = 3
-	attack_skill = 2
-	defense_skill = 3
-	planning_skill = 2
-	logistics_skill = 3
-}
-
-create_field_marshal = {
-	name = "Kristian Laake"
-	picture = "Portrait_Norway_Kristian_Laake.dds"
-	traits = { inflexible_strategist politically_connected defensive_doctrine } ### 1.6.0/1.6.1 MtG update: REDACTED trait error compensation. (Before 1.6.0 MtG: Now starts with +1 defense and +1 logistics from inflexible_strategist trait. Redact changes if PDX fixes starting skills from these traits.)
-	skill = 2
-	attack_skill = 1
-	defense_skill = 2
-	planning_skill = 2
-	logistics_skill = 2
-}
-
-create_corps_commander = {
-	name = "Carl Gustav Fleischer"
-	picture = "Portrait_Norway_Carl_Gustav_Fleischer.dds"
-	traits = { brilliant_strategist infantry_officer trickster winter_specialist } ### 1.6.0/1.6.1 MtG update: REDACTED trait error compensation. (Before 1.6.0 MtG: Now starts with +1 attack and +1 planning from brilliant_strategist trait. Redact changes if PDX fixes starting skills from these traits.)
-	skill = 4
-	attack_skill = 3
-	defense_skill = 4
-	planning_skill = 2
-	logistics_skill = 4
-}
-
-create_corps_commander = {
-	name = "William Steffens"
-	picture = "Portrait_Norway_William_Steffens.dds"
-	traits = { infantry_officer commando ranger }
-	skill = 3
-	attack_skill = 2
-	defense_skill = 3
-	planning_skill = 2
-	logistics_skill = 3
-}
-
-create_corps_commander = {
-	name = "Jacob Hvinden Haug"
-	picture = "Portrait_Norway_Jacob_Hvinden_Haug.dds"
-	traits = { cavalry_officer trait_engineer ranger }
-	skill = 3
-	attack_skill = 3
-	defense_skill = 2
-	planning_skill = 2
-	logistics_skill = 3
-}
-
-create_corps_commander = {
-	name = "Wilhelm von Tangen Hansteen"
-	picture = "Portrait_Norway_Wilhelm_von_Tangen_Hansteen.dds"
-	traits = { career_officer infantry_officer }
-	skill = 3
-	attack_skill = 2
-	defense_skill = 2
-	planning_skill = 3
-	logistics_skill = 3
-}
-
-create_corps_commander = {
-	name = "Birger Eriksen"
-	picture = "Portrait_Norway_Birger_Eriksen.dds"
-	traits = { trickster }
-	skill = 2
-	attack_skill = 3
-	defense_skill = 2
-	planning_skill = 1
-	logistics_skill = 1
-}
-
-create_corps_commander = {
-	name = "Erling Munthe-Dahl"
-	portrait_path = "gfx/leaders/Europe/Portrait_Europe_Generic_land_4.dds"
-	traits = { trait_engineer }
-	skill = 2
-	attack_skill = 1
-	defense_skill = 2
-	planning_skill = 2
-	logistics_skill = 2
-}
-
-create_corps_commander = {
-	name = "Hans Reidar Holtermann"
-	picture = "Portrait_Norway_Hans_Reidar_Holtermann.dds"
-	traits = { hill_fighter }
-	skill = 2
-	attack_skill = 2
-	defense_skill = 2
-	planning_skill = 1
-	logistics_skill = 2
-}
-
-create_corps_commander = {
-	name = "Rasmus Larsen Hatledal"
-	portrait_path = "gfx/leaders/Europe/Portrait_Europe_Generic_land_1.dds"
-	traits = { hill_fighter }
-	skill = 2
-	attack_skill = 2
-	defense_skill = 3
-	planning_skill = 1
-	logistics_skill = 1
-}
-
-create_corps_commander = {
-	name = "Carl Johan Erichsen"
-	picture = "Portrait_Norway_Carl_Johan_Erichsen.dds"
-	traits = { infantry_officer }
-	skill = 2
-	attack_skill = 1
-	defense_skill = 2
-	planning_skill = 2
-	logistics_skill = 2
-}
-
-create_corps_commander = {
-	name = "Oswald Nordlie"
-	picture = "Portrait_Norway_Oswald_Nordlie.dds"
-	traits = { infantry_officer }
-	skill = 2
-	attack_skill = 2
-	defense_skill = 2
-	planning_skill = 1
-	logistics_skill = 2
-}
-
-create_corps_commander = {
-	name = "Birger Ljungberg"
-	picture = "Portrait_Norway_Birger_Ljungberg.dds"
-	traits = { career_officer media_personality }
-	skill = 2
-	attack_skill = 2
-	defense_skill = 2
-	planning_skill = 2
-	logistics_skill = 1
-}
-
-create_corps_commander = {
-	name = "Trygve Frivold Graff-Wang"
-	picture = "Portrait_Norway_Trygve_Frivold_Graff-Wang.dds"
-	traits = { infantry_officer trait_cautious } ### Chose not to fire on advancing German troops, being uncertain if Norway was at war.
-	skill = 2
-	attack_skill = 1
-	defense_skill = 2
-	planning_skill = 2
-	logistics_skill = 2
-}
-
-create_corps_commander = {
-	name = "Jacob Ager Laurantzon"
-	picture = "Portrait_Norway_Jacob_Ager_Laurantzon.dds"
-	traits = { old_guard }
-	skill = 1
-	attack_skill = 1
-	defense_skill = 1
-	planning_skill = 1
-	logistics_skill = 1
-}
-
-create_corps_commander = {
-	name = "Halvor Hansson"
-	portrait_path = "gfx/leaders/Europe/Portrait_Europe_Generic_land_3.dds"
-	traits = {}
-	skill = 1
-	attack_skill = 1
-	defense_skill = 1
-	planning_skill = 1
-	logistics_skill = 1
-}
-
-create_navy_leader = {
-	name = "Elias Corneliussen"
-	portrait_path = "gfx/leaders/Europe/Portrait_Europe_Generic_navy_2.dds"
-	traits = { navy_career_officer blockade_runner inshore_fighter spotter } ### Commanded ships doing the dangerous crossing between Norway and Britain during WW2. Blockade runner seemed the most appropriate representation.
-	skill = 3
-	attack_skill = 2
-	defense_skill = 4
-	maneuvering_skill = 3
-	coordination_skill = 1
-}
-
-create_navy_leader = {
-	name = "Carsten Tank-Nielsen"
-	picture = "Portrait_Norway_Carsten_Tank-Nielsen.dds"
-	traits = { bold aviation_enthusiast navy_career_officer blockade_runner superior_tactician } ### Literally speaking a blockade runner during the Russo-Japanese war. Also Norway's earliest flight passenger as a byproduct of his early adoption of what was to be Norway's first military plane.
-	skill = 3
-	attack_skill = 1
-	defense_skill = 3
-	maneuvering_skill = 4
-	coordination_skill = 2
-}
-
-create_navy_leader = {
-	name = "Henry Diesen"
-	picture = "Portrait_Norway_Henry_Diesen.dds" ### Probably the least "career officer-y" of the gang of starting admirals here. Naturally, he's the one who doesn't start with the personality trait.
-	traits = { gentlemanly spotter } ### Noted for having a nice personality, but did not do do anything very out of the ordinary in his time leading the Norwegian Navy.
-	skill = 2
-	attack_skill = 2
-	defense_skill = 2
-	maneuvering_skill = 2
-	coordination_skill = 1
-}
-
-create_navy_leader = {
-	name = "Edgar Otto"
-	picture = "Portrait_Norway_Edgar_Otto.dds"
-	traits = { naval_lineage navy_career_officer ironside } ### Commanded an armored ship, and wrote several pieces on Naval Warfare. The capital ship personality trait, superior tactician and/or naval old guard could potentially be justified. Let's play it safe for now.
-	skill = 2
-	attack_skill = 1
-	defense_skill = 3
-	maneuvering_skill = 1
-	coordination_skill = 2
 }
 
 ### VARIANTS ###

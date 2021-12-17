@@ -51,6 +51,7 @@ if = {
 1939.1.1 = {
 
 	add_political_power = 1198
+	add_command_power = 100
 	
 	#generic focuses
 	complete_national_focus = army_effort
@@ -111,51 +112,4 @@ set_popularities = {
 	fascism = 1
 	communism = 1
 	neutrality = 28
-}
-
-create_country_leader = {
-	name = "Andrew Dewar Gibb"
-	desc = "POLITICS_ANDREW_DEWAR_GIBB_DESC"
-	picture = "gfx/leaders/Europe/Portrait_Europe_Generic_5.dds"
-	expire = "1965.1.1"
-	ideology = socialism
-	traits = { dealbroker }
-}
-
-create_country_leader = {
-	name = "Andrew Dewar Gibb"
-	desc = "POLITICS_ANDREW_DEWAR_GIBB_DESC"
-	picture = "gfx/leaders/Europe/Portrait_Europe_Generic_5.dds"
-	expire = "1965.1.1"
-	ideology = fascism_ideology
-	traits = { dealbroker }
-}
-
-create_country_leader = {
-	name = "Alexander Malcolm MacEwen"
-	desc = "POLITICS_ALEXANDER_MALCOLM_MACEWEN_DESC"
-	picture = "gfx/leaders/Europe/Portrait_Europe_Generic_4.dds"
-	expire = "1965.1.1"
-	ideology = centrism
-	traits = { naw_leader_of_the_highlanders }
-}
-
-create_country_leader = {
-	name = "Mary Docherty"
-	desc = "POLITICS_MARY_DOCHERTY_DESC"
-	picture = "GFX_Portrait_Argentina_Fanny_Jabcovsky"
-	expire = "1965.1.1"
-	ideology = marxism
-	traits = { naw_thrifty }
-}
-
-create_corps_commander = {
-	name = "Douglas Neil Wimberley"
-	portrait_path = "gfx/leaders/Europe/Portrait_Europe_Generic_land_5.dds"
-	traits = { infantry_officer hill_fighter }
-	skill = 3
-	attack_skill = 2
-	defense_skill = 3
-	planning_skill = 2
-	logistics_skill = 3
 }

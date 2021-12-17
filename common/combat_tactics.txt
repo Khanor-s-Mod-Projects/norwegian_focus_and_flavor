@@ -66,7 +66,7 @@ tactic_counterattack = { # counters basic attack, assault
 }
 
 
-tactic_assault = {
+tactic_assault = { 
 	is_attacker = yes
 	trigger = {
 		is_attacker = yes
@@ -75,17 +75,20 @@ tactic_assault = {
 	
 	active = yes
 	
-	base = {
+	base =  {
 		factor = 2
 		modifier = {
 			add = 2
+
 			has_trait = aggressive_assaulter
 		}
 
 		modifier = {
 			factor = 0.2
+
 			NOT = { is_fighting_in_terrain = urban }
 		}
+
 	} #Revisit ideally this should be more common in urban terrain
 	
 	picture = assault
@@ -269,7 +272,9 @@ tactic_tactical_withdrawal = { #counters encirclement
 	
 	active = no
 	
-	base =  { factor = 4 }
+	base =  {
+		factor = 4
+	}
 	picture = withdraw
 	
 	phase = tactical_withdrawal
@@ -415,6 +420,7 @@ tactic_blitz = {
 			has_trait = panzer_leader
 			skill_advantage > 1
 		}
+		OWNER = { NOT = { has_tech = masterful_blitz } } #Soviet improved version of blitz will replace this
 	}
 	
 	active = no
@@ -452,7 +458,9 @@ tactic_elastic_defense = { #counters blitz
 	
 	active = no
 	
-	base =  { factor = 4 }
+	base =  {
+		factor = 4
+	}
 	picture = elastic_defence
 	
 	attacker_movement_speed = -0.25
@@ -499,7 +507,9 @@ tactic_seize_bridge = {
 		}
 	}
 	
-	base =  { factor = 2 }
+	base =  {
+		factor = 2
+	}
 	picture = seize_bridge
 	
 	phase = seize_bridge
@@ -711,7 +721,9 @@ tactic_guerrilla_tactics = { #People's army defender tactic. also for German vol
 	
 	active = no
 	
-	base =  { factor = 4 }
+	base =  {
+		factor = 4
+	}
 	picture = tactic_guerrilla_tactics
 	
 	combat_width = -0.5
@@ -730,7 +742,9 @@ tactic_human_wave_tactics = { #People's army attacker tactic
 	
 	active = no
 	
-	base =  { factor = 4 }
+	base =  {
+		factor = 4
+	}
 	picture = tactic_human_wave_tactics
 	
 	combat_width = 0.5
@@ -758,45 +772,6 @@ tactic_banzai_charge = { #Special Japan attacker tactic
 	defender = 0.1
 }
 
-tactic_NOR_disruptive_crossfire = { ### Unique Norwegian tactic representing flanking harassment by accurate small arms (rifle or machine gun) fire from range and/or concealed positions. Functions as an improved delay tactic, but is countered by preemptive scouting and planning (e.g. Well-Planned Attack).
-	is_attacker = no
-	trigger = {
-		OR = {
-			tag = NOR
-			tag = ICE
-		}
-		is_attacker = no
-		phase = no
-	}
-	
-	active = no
-	
-	base =  { 
-		factor = 2
-		modifier = {
-			add = 2
-			OR = {
-				has_trait = infantry_leader
-				has_trait = adaptable
-			}
-		}
-		modifier = {
-			add = 4
-			OR = {
-				has_trait = trickster
-				has_trait = unyielding_defender
-			}
-		}
-	}
-	
-	picture = NOR_disruptive_crossfire
-	countered_by = tactic_planned_attack
-	
-	attacker_movement_speed = -0.25
-	attacker = -0.25
-	defender = -0.05
-}
-
 tactic_infantry_charge = { #GBP -> Infantry attacker tactic
 	is_attacker = yes
 	trigger = {
@@ -806,7 +781,9 @@ tactic_infantry_charge = { #GBP -> Infantry attacker tactic
 	
 	active = no
 	
-	base =  { factor = 4 }
+	base =  {
+		factor = 4
+	}
 	picture = tactic_infantry_charge
 	
 	attacker = 0.1 
@@ -822,7 +799,9 @@ tactic_planned_attack = { #GBP -> Armor attacker tactic
 	
 	active = no
 	
-	base =  { factor = 4 }
+	base =  {
+		factor = 4
+	}
 	picture = tactic_planned_attack
 	
 	attacker = 0.15 
@@ -837,7 +816,9 @@ tactic_relentless_assault = { #Deep battle attacker tactic
 	
 	active = no
 	
-	base =  { factor = 4 }
+	base =  {
+		factor = 4
+	}
 	picture = tactic_relentless_assault
 	
 	attacker_movement_speed = 0.15
@@ -854,7 +835,9 @@ tactic_unexpected_thrust = { #Mobile warfare attacker tactic
 	
 	active = no
 	
-	base =  { factor = 4 }
+	base =  {
+		factor = 4
+	}
 	picture = tactic_unexpected_thrust
 	
 	attacker_movement_speed = 0.15
@@ -870,7 +853,9 @@ tactic_overwhelming_fire = { # Counters Banzai charge
 	
 	active = no
 	
-	base =  { factor = 2 }
+	base =  {
+		factor = 2
+	}
 	picture = tactic_overwhelming_fire
 	
 	attacker = -0.1
@@ -886,9 +871,86 @@ tactic_barrage = { #Superior firepower attacker tactic
 	
 	active = no
 	
-	base =  { factor = 4 }
+	base =  {
+		factor = 4
+	}
 	picture = tactic_barrage
 	
 	attacker = 0.1
 	defender = -0.2	
+}
+
+tactic_NOR_disruptive_crossfire = { ### Unique Norwegian tactic representing flanking harassment by accurate small arms (rifle or machine gun) fire from range and/or concealed positions.
+	only_show_for = NOR
+	
+	is_attacker = no
+	trigger = {
+		is_attacker = no
+		phase = no
+	}
+	
+	active = no
+	
+	base = {
+		factor = 2
+		modifier = {
+			add = 2
+			OR = {
+				has_trait = infantry_leader
+				has_trait = cavalry_leader
+				has_trait = adaptable
+			}
+		}
+		modifier = {
+			add = 4
+			OR = {
+				has_trait = trickster
+				has_trait = unyielding_defender
+			}
+		}
+	}
+	
+	picture = NOR_disruptive_crossfire
+	countered_by = tactic_encirclement ### Functions as an improved delay tactic, and can only be countered through overwhelming force (a full front, which enables the counter, the encirclement tactic).
+	
+	attacker_movement_speed = -0.25
+	attacker = -0.35
+	defender = -0.05
+}
+
+tactic_masterful_blitz = { #Improved version of Blitz for Soviets
+	only_show_for = SOV
+	
+	is_attacker = yes
+	trigger = {
+		is_attacker = yes
+		hardness > 0.5
+		phase = no
+		OR = {
+			skill > 2
+			has_trait = panzer_leader
+			skill_advantage > 1
+		}
+	}
+	
+	active = no
+	
+	base =  { 
+		factor = 4
+		modifier = {
+			add = 4
+			OR = {
+				has_trait = panzer_expert
+				has_trait = combined_arms_expert
+			}
+		}
+	}
+	
+	picture = SOV_tank_desant_blitz
+	countered_by = tactic_elastic_defense
+	
+	attacker_movement_speed = 0.5
+	combat_width = 0.1
+	attacker = 0.2
+	defender = -0.2
 }

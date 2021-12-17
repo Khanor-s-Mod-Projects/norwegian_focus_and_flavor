@@ -1,449 +1,4 @@
 ideas = {
-
-	political_advisor = {
-
-		NOR_halvdan_koht = {
-
-			picture = generic_political_advisor_europe_1
-
-			allowed = {
-				original_tag = NOR
-			}
-			
-			traits = { smooth_talking_charmer }
-		}
-
-		NOR_adolf_indrebo = {
-
-			picture = generic_political_advisor_europe_2
-				
-			allowed = {
-				original_tag = NOR
-			}
-			
-			traits = { captain_of_industry }
-		}
-
-		NOR_trygve_halvdan_lie = {
-
-			picture = generic_political_advisor_europe_3
-			
-			allowed = {
-				original_tag = NOR
-			}
-			
-			traits = { popular_figurehead }
-		}
-		
-		NOR_terboven = {
-			
-			allowed = {
-				original_tag = NOR
-			}
-			
-			picture = generic_political_advisor_europe_1
-			
-			available = {
-				if = {
-					has_completed_focus = NOR_invite_terboven
-				}
-				is_in_faction_with = GER
-			}
-			
-			cost = 50
-			
-			traits = { fortification_engineer }
-			
-			ai_will_do = {
-				factor = 3
-			}
-		}
-		
-		NOR_rinnan = {
-			allowed = {
-				original_tag = NOR
-			}
-			
-			picture = generic_political_advisor_europe_2
-			
-			available = {
-				if = {
-					has_completed_focus = NOR_rinnanbanden
-				}
-				has_government = fascism
-			}
-			
-			cost = 50
-			
-			traits = { prince_of_terror }
-			
-			ai_will_do = {
-				factor = 3
-			}
-		}
-		
-		NOR_soensteby = {
-			allowed = {
-				original_tag = NOR
-			}
-			
-			picture = generic_political_advisor_europe_3
-			
-			available = {
-				if = {
-					has_completed_focus = NOR_gutta_paa_skauen
-				}
-				has_government = democratic
-			}
-			
-			cost = 50
-			
-			traits = { naw_partisan_leader }
-			
-			ai_will_do = {
-				factor = 3
-			}
-		}
-		
-		NOR_fredrik_wedel_jarlsberg = {
-			allowed = {
-				original_tag = NOR
-			}
-			
-			picture = generic_political_advisor_europe_1
-
-			available = {
-				has_completed_focus = NOR_traditions_and_monarchy
-			}
-			
-			cost = 50
-			
-			traits = { staunch_monarchist }
-			
-			ai_will_do = {
-				factor = 25
-				modifier = {
-					factor = 0.1
-					has_civil_war = yes
-				}
-				modifier = {
-					factor = 0
-					NOT = {
-						tag = NOR
-						has_government = neutrality
-					}
-				}
-			}
-		}
-	}
-
-	army_chief = {
-		
-		NOR_otto_ruge = {
-			
-			picture = generic_army_europe_4
-			
-			allowed = {
-				original_tag = NOR
-			}
-			
-
-			
-			traits = { army_chief_offensive_2 }
-			
-			ai_will_do = {
-				factor = 1
-			}
-		}
-
-		NOR_willhelm_von_tangen_hansteen = {
-			
-			picture = generic_army_europe_5
-			
-			allowed = {
-				original_tag = NOR
-			}
-			
-
-			
-			traits = { army_chief_organizational_2 }
-			
-			ai_will_do = {
-				factor = 1
-			}
-		}
-
-		NOR_kristian_laake = {
-			
-			picture = generic_army_europe_1
-			
-			allowed = {
-				original_tag = NOR
-			}
-			
-
-			
-			traits = { army_chief_defensive_2 }
-			
-			ai_will_do = {
-				factor = 1
-			}
-		}
-	}
-
-	air_chief = {
-
-		NOR_bjarne_oen = {
-			
-			picture = generic_air_europe_1
-			
-			allowed = {
-				original_tag = NOR
-			}
-			
-
-			
-			traits = { air_chief_safety_2 }
-			
-			ai_will_do = {
-				factor = 1
-			}
-		}
-
-		NOR_ole_reistad = {
-			
-			picture = generic_air_europe_3
-			
-			allowed = {
-				original_tag = NOR
-			}
-			
-
-			
-			traits = { air_chief_reform_2 }
-			
-			ai_will_do = {
-				factor = 1
-			}
-		}
-
-		NOR_hjalmar_riiser_larsen = {
-			
-			picture = generic_air_europe_3
-			
-			allowed = {
-				original_tag = NOR
-			}
-			
-
-			
-			traits = { air_chief_all_weather_2 }
-			
-			ai_will_do = {
-				factor = 1
-			}
-		}
-	}
-
-	navy_chief = {
-
-		NOR_edgar_otto = {
-			
-			picture = generic_navy_europe_1
-			
-			allowed = {
-				original_tag = NOR
-			}
-			
-			
-			
-			traits = { navy_chief_decisive_battle_3 }
-			
-			ai_will_do = {
-				factor = 3
-			}
-		}
-
-		NOR_henry_diesen = {
-			
-			picture = generic_navy_europe_2
-			
-			allowed = {
-				original_tag = NOR
-			}
-			
-			
-			
-			traits = { navy_chief_naval_aviation_2 }
-			
-			ai_will_do = {
-				factor = 0.5
-			}
-		}
-	}
-
-
-	theorist = {
-		NOR_konrad_sundlo = {
-			ledger = army
-			
-			picture = generic_army_europe_2
-
-			allowed = {
-				original_tag = NOR
-			}
-			
-			research_bonus = {
-				land_doctrine = 0.10
-			}
-			
-			traits = { military_theorist }
-		}
-		
-		NOR_tryggve_gran = {
-			ledger = air
-			
-			picture = generic_air_europe_1
-			
-			allowed = {
-				original_tag = NOR
-			}
-			
-			research_bonus = {
-				air_doctrine = 0.10
-			}
-			
-			traits = { air_warfare_theorist }
-		}
-
-		NOR_skule_storheill = {
-			ledger = navy
-
-			picture = generic_navy_europe_1
-			
-			allowed = {
-				original_tag = NOR
-			}
-			
-			research_bonus = {
-				naval_doctrine = 0.10
-			}
-			
-			traits = { naval_theorist }
-		}
-		
-		NOR_carl_gustav_fleischer = {
-			ledger = army
-			
-			picture = generic_army_europe_3
-			
-			allowed = {
-				original_tag = NOR
-			}
-			
-			research_bonus = {
-				cat_superior_firepower = 0.15
-			}
-			
-			available = {
-				if = {
-					has_completed_focus = NOR_fund_the_rearmament
-				}
-			}
-		
-			traits = { superior_firepower_expert }		
-		}
-		
-		NOR_kristian_k_laake = {
-			ledger = army
-			
-			picture = generic_army_europe_1
-			allowed = {
-				original_tag = NOR
-			}
-			
-			research_bonus = {
-				cat_grand_battle_plan = 0.15
-			}
-			
-			available = {
-				if = {
-					has_completed_focus = NOR_fund_the_rearmament
-				}
-			}
-			
-			traits = { grand_battle_plan_expert }
-		}
-	}
-
-
-	high_command = {
-
-		NOR_alfred_roscher-lund = {
-			ledger = army
-
-			picture = generic_army_europe_2
-			
-			allowed = {
-				original_tag = NOR
-			}
-			
-			traits = { army_concealment_3 }
-			
-			ai_will_do = {
-				factor = 1
-			}
-		}
-		
-		NOR_jacob_von_der_lippe = {
-			ledger = navy
-
-			picture = generic_navy_europe_2
-			
-			allowed = {
-				original_tag = NOR
-			}
-			
-			traits = { navy_chief_naval_aviation_3 }
-			
-			ai_will_do = {
-				factor = 0.5
-			}
-		}
-
-		NOR_birger_ljungberg = {
-			ledger = army
-
-			picture = generic_army_europe_1
-			
-			allowed = {
-				original_tag = NOR
-			}
-			
-			traits = { army_commando_2 }
-			
-			ai_will_do = {
-				factor = 1
-			}
-		}
-
-		NOR_wilhelm_von_tangen-hansteen = {
-			ledger = army
-
-			picture = generic_army_europe_3
-			
-			allowed = {
-				original_tag = NOR
-			}
-			
-			traits = { army_infantry_2 }
-			
-			ai_will_do = {
-				factor = 3
-			}
-		}
-	}
-	
 	tank_manufacturer = {
 		
 		designer = yes
@@ -455,13 +10,13 @@ ideas = {
 			}
 			
 			research_bonus = {
-				armor = 0.10
+				armor = 0.15
 			}
 			
-			traits = { tank_manufacturer }
+			traits = { tank_manufacturer } ### Khanor's notes: Producer of locomotives, turbines, etc. In game can be repurposed for tank production.
 			
 			modifier = {
-				# Khanor's notes: Producer of locomotives, turbines, etc.
+				
 			}
 		}
 	}
@@ -477,7 +32,7 @@ ideas = {
 			}
 			
 			research_bonus = {
-				air_equipment = 0.10
+				air_equipment = 0.15
 			}
 			
 			traits = { medium_aircraft_manufacturer }
@@ -497,7 +52,7 @@ ideas = {
 			}
 			
 			research_bonus = {
-				air_equipment = 0.10
+				air_equipment = 0.15
 			}
 			
 			traits = { light_aircraft_manufacturer }
@@ -521,7 +76,7 @@ ideas = {
 			}
 			
 			research_bonus = {
-				air_equipment = 0.10
+				air_equipment = 0.15
 			}
 			
 			traits = { naval_aircraft_manufacturer }
@@ -533,6 +88,34 @@ ideas = {
 				factor = 1
 			}
 		}
+		
+		#NOR_as_norsk_aeroplanfabrik = {
+		#	
+		#	picture = generic_air_manufacturer_3
+		#	
+		#	allowed = {
+		#		original_tag = NOR
+		#	}
+		#	
+		#	available = {
+		#		has_completed_focus = NOR_resurrect_norsk_aeroplanfabrik
+		#	}
+		#	
+		#	cost = 75	
+		#	
+		#	research_bonus = {
+		#		air_equipment = 0.15
+		#	}
+		#	
+		#	traits = { flying_ship_manufacturer } ### R56 manufacturer only!
+		#	
+		#	equipment_bonus = {
+		#	}
+		#	
+		#	ai_will_do = {
+		#		factor = 1
+		#	}
+		#}
 	}
 	
 	naval_manufacturer = {
@@ -544,10 +127,8 @@ ideas = {
 			picture = generic_naval_manufacturer_1
 			
 			available = {
-				if = {
-					NOT = {
-						has_completed_focus = NOR_capital_ships
-					}
+				NOT = {
+					has_completed_focus = NOR_capital_ships
 				}
 			}
 			
@@ -576,9 +157,7 @@ ideas = {
 		NOR_marinens_hovedverft = {
 			
 			available = {
-				if = {
-					has_completed_focus = NOR_capital_ships
-				}
+				has_completed_focus = NOR_capital_ships
 			}
 			
 			allowed = {
@@ -712,7 +291,7 @@ ideas = {
 			}
 			
 			research_bonus = {
-				electronics = 0.1
+				electronics = 0.15
 			}
 			
 			traits = { electronics_concern }
@@ -730,7 +309,7 @@ ideas = {
 			
 			research_bonus = {
 				industry = 0.05
-				synth_resources = 0.1
+				synth_resources = 0.15
 			}
 			
 			traits = { refinery_concern }
@@ -747,7 +326,7 @@ ideas = {
 			}
 			
 			research_bonus = {
-				industry = 0.1
+				industry = 0.15
 			}
 			
 			traits = { industrial_concern }
@@ -935,10 +514,45 @@ ideas = {
 			removal_cost = -1		
 			
 			picture = generic_coastal_defense_ships2
+			name = NOR_specialized_naval_industry
 			
 			modifier = {
 				consumer_goods_factor = -0.02
 				industrial_capacity_dockyard = 0.25
+			}
+			
+			equipment_bonus = {
+				convoy = {
+					build_cost_ic = -0.25 instant = yes
+				}
+				capital_ship = {
+					anti_air_attack = 0.05 instant = yes
+					naval_speed = 0.05 instant = yes
+					surface_visibility = -0.05 instant = yes
+				}
+				screen_ship = {
+					anti_air_attack = 0.05 instant = yes
+					naval_speed = 0.05 instant = yes
+					surface_visibility = -0.05 instant = yes
+				}
+			}
+		}
+		
+		NOR_specialized_naval_industry_2 = {
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			removal_cost = -1		
+			
+			picture = generic_coastal_defense_ships2
+			name = NOR_specialized_naval_industry
+			
+			modifier = {
+				consumer_goods_factor = -0.02
+				industrial_capacity_dockyard = 0.25
+				navy_leader_start_maneuvering_level = 1
 			}
 			
 			equipment_bonus = {
@@ -1025,7 +639,7 @@ ideas = {
 			
 			removal_cost = -1
 			
-			picture = FRA_army_of_aggression_focus
+			picture = tur_arctic_wolves
 			
 			modifier = {
 				winter_attrition_factor = -0.50
@@ -1044,9 +658,10 @@ ideas = {
 			picture = HUN_secret_rearmament
 			
 			modifier = {
+				conscription = 0.015
+				surrender_limit = 0.05
 				army_core_attack_factor = 0.05
 				army_core_defence_factor = 0.05
-				conscription = 0.015
 			}
 		}
 		
@@ -1061,13 +676,14 @@ ideas = {
 			picture = generic_manpower_bonus
 			
 			modifier = {
-				max_command_power = 10
+				conscription = 0.03
+				surrender_limit = 0.10
 				army_core_attack_factor = 0.10
 				army_core_defence_factor = 0.10
 				planning_speed = 0.10
+				mobilization_speed = 0.10
 				winter_attrition_factor = -0.50
 				acclimatization_cold_climate_gain_factor = 0.30
-				conscription = 0.03
 			}
 		}
 		
@@ -1079,7 +695,7 @@ ideas = {
 			
 			removal_cost = -1
 			
-			picture = generic_agrarian_society
+			picture = LIT_invested_in_farms
 			
 			modifier = {
 				monthly_population = 0.05
@@ -1096,10 +712,10 @@ ideas = {
 			
 			removal_cost = -1
 			
-			picture = jap_supremacy_of_technology ### Or use generic_research_bonus
+			picture = jap_supremacy_of_technology ### Or use generic_research_bonus.
 			
 			modifier = {
-				research_speed_factor = 0.02
+				research_speed_factor = 0.03
 				production_speed_nuclear_reactor_factor = 0.05
 			}
 		}
@@ -1115,6 +731,8 @@ ideas = {
 			}
 			
 			removal_cost = -1
+			
+			#picture = NOR_haakon ### Set to match the idea in the interface-file.
 			
 			modifier = {
 			}
@@ -1137,8 +755,8 @@ ideas = {
 			picture = generic_infantry_bonus
 			
 			modifier = {
-				army_defence_factor = 0.03
 				army_morale_factor = 0.10
+				army_defence_factor = 0.03
 			}
 		}
 		
@@ -1181,6 +799,33 @@ ideas = {
 				industry_repair_factor = 0.05
 				send_volunteers_tension = -0.50
 				send_volunteer_divisions_required = -0.50
+			}
+			
+			rule = { can_send_volunteers = yes }
+		}
+		
+		NOR_preserving_the_kingdom = {
+			
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				NOT = { has_government = communism }
+			}
+			
+			removal_cost = -1
+			
+			picture = chi_wargaming_division
+			
+			modifier = {
+				conscription_factor = 0.10
+				army_core_defence_factor = 0.10
+				dig_in_speed_factor = 0.10
+				recon_factor_while_entrenched = 0.10
+				ai_focus_defense_factor = 0.10
+				industry_repair_factor = 0.10
+				send_volunteers_tension = -0.50
 			}
 			
 			rule = { can_send_volunteers = yes }
@@ -1282,25 +927,28 @@ ideas = {
 		}
 		
 		NOR_german_advisors = {
-		
+			
 			allowed = {
 				always = no
 			}
-
+			
 			allowed_civil_war = {
 				NOT = {
 					has_government = communism
 				}
 			}
-
+			
 			removal_cost = -1
 			
 			picture = german_advisors
 			
 			research_bonus = {
-				land_doctrine = 0.05
 				armor = 0.05
 				encryption_tech = 0.05
+			}
+			
+			modifier = {
+				land_doctrine_cost_factor = -0.05
 			}
 		}
 		
@@ -1339,8 +987,29 @@ ideas = {
 			picture = generic_manpower_bonus
 			
 			modifier = {
-				army_attack_factor = 0.05
 				conscription = 0.015
+				army_attack_factor = 0.05
+			}
+		}
+		
+		NOR_hirden's_air_corps = {
+			
+			allowed_civil_war = {
+				has_government = fascism
+			}
+			
+			allowed = {
+				always = no
+			}
+			
+			removal_cost = -1
+			
+			picture = generic_fascist_army
+			
+			modifier = {
+				naval_strike_attack_factor = 0.05
+				air_interception_attack_factor = 0.05
+				air_air_superiority_attack_factor = 0.05
 			}
 		}
 		
@@ -1356,6 +1025,7 @@ ideas = {
 			
 			modifier = {
 				encryption_factor = 0.10
+				root_out_resistance_effectiveness_factor = 0.10
 			}
 		}
 		
@@ -1378,8 +1048,8 @@ ideas = {
 			picture = generic_manpower_bonus
 			
 			modifier = {
-				army_morale_factor = 0.10
 				conscription = 0.03
+				army_morale_factor = 0.10
 			}
 		}
 		
@@ -1445,7 +1115,7 @@ ideas = {
 			
 			modifier = {
 				compliance_growth_on_our_occupied_states = -0.25
-				resistance_growth_on_our_occupied_states  = 0.05
+				resistance_growth_on_our_occupied_states = 0.10
 				send_volunteer_divisions_required = -0.75
 			}
 		}

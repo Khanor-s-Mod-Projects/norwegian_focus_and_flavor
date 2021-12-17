@@ -1,5 +1,0 @@
-
-NOR_KINGDOM = {
-	color = rgb { 205 36 37 }
-	color_ui = rgb { 228 71 74 }
-}
