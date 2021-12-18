@@ -1,5 +1,21 @@
 spriteTypes = {
 	
+	#####--Icelandic focuses/goals--#####
+	SpriteType = {
+		name = "GFX_goal_ICE_air_patrol"
+		texturefile = "gfx/interface/goals/ice/r56_goal_ICE_air_patrol.dds"
+	}
+	
+	SpriteType = {
+		name = "GFX_goal_ICE_coast_guard"
+		texturefile = "gfx/interface/goals/ice/r56_goal_ICE_coast_guard.dds"
+	}
+	
+	SpriteType = {
+		name = "GFX_goal_ICE_security_force"
+		texturefile = "gfx/interface/goals/ice/r56_goal_ICE_security_force.dds"
+	}
+	
 	#####--Norwegian focuses/goals--#####
 	SpriteType = {
 		name = "GFX_focus_NOR_hydroelectric_power"
@@ -27,57 +43,72 @@ spriteTypes = {
 	}
 	
 	SpriteType = {
-		name = "GFX_goal_NOR_nordic_alliance"
-		texturefile = "gfx/interface/goals/nor/goal_NOR_nordic_alliance.dds"
+		name = "GFX_goal_NOR_nordic_alliance_crossed_flags"
+		texturefile = "gfx/interface/goals/nor/goal_NOR_nordic_alliance_crossed_flags.dds"
 	}
 	
 	SpriteType = {
-		name = "GFX_r56_goal_NOR_coa_air_force"
+		name = "GFX_goal_NOR_coa_air_force"
 		texturefile = "gfx/interface/goals/nor/r56_goal_NOR_coa_air_force.dds"
 	}
 	
 	SpriteType = {
-		name = "GFX_r56_goal_NOR_coa_army"
+		name = "GFX_goal_NOR_coa_air_force_old"
+		texturefile = "gfx/interface/goals/nor/r56_goal_NOR_coa_air_force_old.dds"
+	}
+	
+	SpriteType = {
+		name = "GFX_goal_NOR_coa_army"
 		texturefile = "gfx/interface/goals/nor/r56_goal_NOR_coa_army.dds"
 	}
 	
 	SpriteType = {
-		name = "GFX_r56_goal_NOR_coa_navy"
+		name = "GFX_goal_NOR_coa_army_old"
+		texturefile = "gfx/interface/goals/nor/r56_goal_NOR_coa_army_old.dds"
+	}
+	
+	SpriteType = {
+		name = "GFX_goal_NOR_coa_navy"
 		texturefile = "gfx/interface/goals/nor/r56_goal_NOR_coa_navy.dds"
 	}
 	
 	SpriteType = {
-		name = "GFX_r56_goal_NOR_coat_of_arms"
-		texturefile = "gfx/interface/goals/nor/r56_goal_NOR_coat_of_arms.dds"
+		name = "GFX_goal_NOR_coa_navy_old"
+		texturefile = "gfx/interface/goals/nor/r56_goal_NOR_coa_navy_old.dds"
 	}
 	
 	SpriteType = {
-		name = "GFX_r56_goal_NOR_fascist_flags"
+		name = "GFX_goal_NOR_coat_of_arms_detailed"
+		texturefile = "gfx/interface/goals/nor/r56_goal_NOR_coat_of_arms_detailed.dds"
+	}
+	
+	SpriteType = {
+		name = "GFX_goal_NOR_fascist_flags"
 		texturefile = "gfx/interface/goals/nor/r56_goal_NOR_fascist_flags.dds"
 	}
 	
 	SpriteType = {
-		name = "GFX_r56_goal_NOR_fascist_work"
+		name = "GFX_goal_NOR_fascist_work"
 		texturefile = "gfx/interface/goals/nor/r56_goal_NOR_fascist_work.dds"
 	}
 	
 	SpriteType = {
-		name = "GFX_r56_goal_NOR_fish"
+		name = "GFX_goal_NOR_fish"
 		texturefile = "gfx/interface/goals/nor/r56_goal_NOR_fish.dds"
 	}
 	
 	SpriteType = {
-		name = "GFX_r56_goal_NOR_flag"
+		name = "GFX_goal_NOR_flag"
 		texturefile = "gfx/interface/goals/nor/r56_goal_NOR_flag.dds"
 	}
 	
 	SpriteType = {
-		name = "GFX_r56_goal_NOR_nordic_alliance"
+		name = "GFX_goal_NOR_nordic_alliance"
 		texturefile = "gfx/interface/goals/nor/r56_goal_NOR_nordic_alliance.dds"
 	}
 	
 	SpriteType = {
-		name = "GFX_r56_goal_NOR_NS_swords"
+		name = "GFX_goal_NOR_NS_swords"
 		texturefile = "gfx/interface/goals/nor/r56_goal_NOR_NS_swords.dds"
 	}
 	
@@ -89,42 +120,42 @@ spriteTypes = {
 	
 	#####--Norwegian ideas--#####
 	SpriteType = {
-		name = "GFX_r56_idea_NOR_carsten_tank-nielsen"
+		name = "GFX_idea_NOR_carsten_tank-nielsen"
 		texturefile = "gfx/interface/ideas/nor/advisors/r56_idea_NOR_carsten_tank-nielsen.dds"
 	}
 	
 	SpriteType = {
-		name = "GFX_r56_idea_NOR_edgar_otto"
+		name = "GFX_idea_NOR_edgar_otto"
 		texturefile = "gfx/interface/ideas/nor/advisors/r56_idea_NOR_edgar_otto.dds"
 	}
 	
 	SpriteType = {
-		name = "GFX_r56_idea_NOR_henry_diesen"
+		name = "GFX_idea_NOR_henry_diesen"
 		texturefile = "gfx/interface/ideas/nor/advisors/r56_idea_NOR_henry_diesen.dds"
 	}
 	
 	SpriteType = {
-		name = "GFX_r56_idea_NOR_haakon_advisor"
+		name = "GFX_idea_NOR_haakon_advisor"
 		texturefile = "gfx/interface/ideas/nor/advisors/r56_idea_NOR_haakon_advisor.dds"
 	}
 	
 	SpriteType = {
-		name = "GFX_r56_idea_NOR_josef_terboven"
+		name = "GFX_idea_NOR_josef_terboven"
 		texturefile = "gfx/interface/ideas/nor/advisors/r56_idea_NOR_josef_terboven.dds"
 	}
 	
 	SpriteType = {
-		name = "GFX_r56_idea_NOR_kristian_laake"
+		name = "GFX_idea_NOR_kristian_laake"
 		texturefile = "gfx/interface/ideas/nor/advisors/r56_idea_NOR_kristian_laake.dds"
 	}
 	
 	SpriteType = {
-		name = "GFX_r56_idea_NOR_otto_ruge"
+		name = "GFX_idea_NOR_otto_ruge"
 		texturefile = "gfx/interface/ideas/nor/advisors/r56_idea_NOR_otto_ruge.dds"
 	}
 	
 	SpriteType = {
-		name = "GFX_r56_idea_NOR_wilhelm_von_tangen_hansteen"
+		name = "GFX_idea_NOR_wilhelm_von_tangen_hansteen"
 		texturefile = "gfx/interface/ideas/nor/advisors/r56_idea_NOR_wilhelm_von_tangen_hansteen.dds"
 	}
 	
@@ -190,16 +221,6 @@ spriteTypes = {
 	
 	#####--Norwegian events--#####
 	spriteType = {
-		name = "GFX_report_event_medieval_norwegian_flag"
-		texturefile = "gfx/event_pictures/report_event_medieval_norwegian_flag.dds"
-	}
-	
-	spriteType = {
-		name = "GFX_report_event_haakon_in_minerva_car"
-		texturefile = "gfx/event_pictures/report_event_haakon_in_minerva_car.dds"
-	}
-	
-	spriteType = {
 		name = "GFX_news_event_haakon_in_minerva_car"
 		texturefile = "gfx/event_pictures/news_event_haakon_in_minerva_car.dds"
 	}
@@ -207,5 +228,15 @@ spriteTypes = {
 	spriteType = {
 		name = "GFX_news_event_troenderbataljonen_at_skafferhullet_1940"
 		texturefile = "gfx/event_pictures/news_event_troenderbataljonen_at_skafferhullet_1940.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_report_event_medieval_norwegian_flag"
+		texturefile = "gfx/event_pictures/report_event_medieval_norwegian_flag.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_report_event_haakon_in_minerva_car"
+		texturefile = "gfx/event_pictures/report_event_haakon_in_minerva_car.dds"
 	}
 }

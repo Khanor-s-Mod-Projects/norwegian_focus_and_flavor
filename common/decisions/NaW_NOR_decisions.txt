@@ -2073,7 +2073,7 @@ political_actions = {
 			}
 		}
 		
-		complete_effect = {
+		remove_effect = {
 			country_event = {
 				hours = 6
 				id = naw_norway.199

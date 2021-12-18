@@ -1243,6 +1243,7 @@
  NOR_torpedo_equipment_bonus:0 "Torpedo Equipment bonus"
  NOR_naval_gunnery_equipment_bonus:0 "Naval Gunnery Equipment bonus"
  NOR_naval_technology_bonus:0 "Naval Technology bonus"
+ NOR_bomber_plane_bonus:0 "Bomber Plane bonus"
  NOR_dispersed_industry_bonus:0 "Dispersed Industry bonus"
  NOR_electronics_bonus:0 "Electronics bonus"
  NOR_computing_bonus:0 "Computing Technology bonus"
@@ -1582,6 +1583,12 @@
  FIN_develop_petsamo_nickel_deposits:0 "Develop Petsamo Nickel Deposits"
  
  ####--R56 Additions--####
+ ##additional ideas
+ NOR_as_norsk_aeroplanfabrik:0 "A/S Norsk Aeroplanfabrik"
+ ##additional/new bookmark variants
+ #NOR_GATHERING_STORM_DESC:0 "Stable politically since its independence, Norway has been hit by the great depression and worries as clouds gather over Europe. Nevertheless the pacifict policies are still in place despite the warnings of the military. In the meantime the economic crisis has made the lower classes more militant, pushed by the small communist party while small groups of nationalists are willing to radically transform society.\n\n"
+ ##additional unique traits
+ liberal_grandee:0 "Liberal Grandee"
  ##additional decisions
  NOR_allied_research:0 "Allied Research Invitations"
  NOR_invite_country_into_allied_research:0 "Invite [From.GetName] into the [ENG.GetAdjective] Research Group"
@@ -1589,7 +1596,3 @@
  NOR_invite_country_into_german_research:0 "Invite [From.GetName] into the [GER.GetAdjective] Research Group"
  NOR_soviet_research:0 "Soviet Research Invitations"
  NOR_invite_country_into_soviet_research:0 "Invite [From.GetName] into the [SOV.GetAdjective] Research Group"
- ##additional country ideas/national spirits
- NOR_as_norsk_aeroplanfabrik:0 "A/S Norsk Aeroplanfabrik"
- ##additional/new bookmark variants
- #NOR_GATHERING_STORM_DESC:0 "Stable politically since its independence, Norway has been hit by the great depression and worries as clouds gather over Europe. Nevertheless the pacifict policies are still in place despite the warnings of the military. In the meantime the economic crisis has made the lower classes more militant, pushed by the small communist party while small groups of nationalists are willing to radically transform society.\n\n"

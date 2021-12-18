@@ -123,7 +123,11 @@ characters={
 			}
 			army = {
 				large = "gfx/leaders/NOR/Portrait_Norway_Haakon_VII_military.dds"
-				small = "GFX_r56_idea_NOR_haakon_advisor"
+				small = "GFX_idea_NOR_haakon_advisor"
+			}
+			navy = {
+				large = "gfx/leaders/NOR/r56_Portrait_NOR_Haakon_VII.dds"
+				small = "GFX_idea_NOR_haakon_advisor"
 			}
 		}
 		advisor={
@@ -134,7 +138,11 @@ characters={
 				original_tag = NOR
 			}
 			available = {
-				has_government = neutrality
+				OR = {
+					has_government = democratic
+					has_government = neutrality
+				}
+				has_completed_focus = NOR_traditions_and_monarchy
 				has_character_flag = NOR_monarch_has_advisor_role
 			}
 			traits = {
@@ -192,7 +200,7 @@ characters={
 		portraits={
 			army={
 				large="gfx/leaders/NOR/r56_Portrait_NOR_Otto_Ruge.dds"
-				small="GFX_r56_idea_NOR_otto_ruge"
+				small="GFX_idea_NOR_otto_ruge"
 			}
 		}
 		field_marshal = {
@@ -225,7 +233,7 @@ characters={
 		portraits={
 			army={
 				large="gfx/leaders/NOR/Portrait_Norway_Kristian_Laake.dds"
-				small="GFX_r56_idea_NOR_kristian_laake"
+				small="GFX_idea_NOR_kristian_laake"
 			}
 		}
 		field_marshal = {
@@ -355,7 +363,7 @@ characters={
 		portraits={
 			army={
 				large="gfx/leaders/NOR/Portrait_Norway_Wilhelm_von_Tangen_Hansteen.dds"
-				small="GFX_r56_idea_NOR_wilhelm_von_tangen_hansteen"
+				small="GFX_idea_NOR_wilhelm_von_tangen_hansteen"
 			}
 		}
 		#corps_commander = {
@@ -627,7 +635,7 @@ characters={
 		portraits={
 			army={
 				large="gfx/leaders/NOR/Portrait_Norway_Carsten_Tank-Nielsen.dds"
-				small="GFX_r56_idea_NOR_carsten_tank-nielsen"
+				small="GFX_idea_NOR_carsten_tank-nielsen"
 			}
 		}
 		navy_leader = {
@@ -670,7 +678,7 @@ characters={
 		portraits={
 			army={
 				large="gfx/leaders/NOR/Portrait_Norway_Edgar_Otto.dds"
-				small="GFX_r56_idea_NOR_edgar_otto"
+				small="GFX_idea_NOR_edgar_otto"
 			}
 		}
 		navy_leader = {
@@ -708,7 +716,7 @@ characters={
 		portraits={
 			army={
 				large="gfx/leaders/NOR/Portrait_Norway_Henry_Diesen.dds"
-				small="GFX_r56_idea_NOR_henry_diesen"
+				small="GFX_idea_NOR_henry_diesen"
 			}
 		}
 		navy_leader = { ### Probably the least "career officer-y" of the gang of starting admirals here. Naturally, he's the one who doesn't start with the personality trait.
@@ -844,15 +852,6 @@ characters={
 		}
 	}
 	
-	#NOR_henry_diesen={
-	#	name="Henry Diesen"
-	#	portraits={
-	#		army={
-	#			small="GFX_idea_generic_navy_europe_2"
-	#		}
-	#	}
-	#}
-	
 	#NOR_wilhelm_von_tangen-hansteen={ ### What are you playing at Paradox?
 	#	name="Wilhelm von Tangen-Hansteen"
 	#	portraits={
@@ -871,10 +870,10 @@ characters={
 	#	}
 	#}
 	
-	NOR_alfred_roscher-lund={
+	NOR_alfred_roscher_lund={
 		advisor={
 			slot = high_command
-			idea_token = NOR_alfred_roscher-lund
+			idea_token = NOR_alfred_roscher_lund
 			ledger = army
 				allowed = {
 					original_tag = NOR
@@ -888,10 +887,10 @@ characters={
 				}
 		}
 		# TODO[ PORTRAIT LARGE ]: Missing large portrait please check!
-		name="Alfred Roscher-Lund"
+		name="Alfred Roscher Lund" ### No dash in this name. Full name: Ragnvald Alfred Roscher Lund.
 		portraits={
 			army={
-				small="GFX_idea_generic_army_europe_2"
+				small="GFX_idea_generic_army_europe_6" ### Khanor's notes: Very hard to find pictures of this guy (which I guess is fitting since he was in the intelligence services), but idea_generic_army_europe_6 is probably the best generic match from the one I've seen.
 			}
 		}
 	}
@@ -1062,10 +1061,9 @@ characters={
 			}
 			army={
 				large="gfx/leaders/NOR/r56_Portrait_NOR_Josef_Terboven.dds"
-				small="GFX_r56_idea_NOR_josef_terboven"
+				small="GFX_idea_NOR_josef_terboven"
 			}
 		}
-			
 		advisor = {
 			slot = political_advisor
 			idea_token = NOR_josef_terboven
@@ -1087,7 +1085,7 @@ characters={
 			}
 		}
 	}
-		
+	
 	NOR_henry_oliver_rinnan = {
 		name = "Henry Oliver Rinnan"
 		portraits={
@@ -1117,7 +1115,7 @@ characters={
 			}
 		}
 	}
-		
+	
 	NOR_gunnar_soensteby = {
 		name = "Gunnar F. T. Sønsteby"
 		portraits={
@@ -1151,7 +1149,7 @@ characters={
 			}
 		}
 	}
-		
+	
 	NOR_fredrik_wedel_jarlsberg = {
 		name = "Fredrik Wedel Jarlsberg"
 		portraits={
