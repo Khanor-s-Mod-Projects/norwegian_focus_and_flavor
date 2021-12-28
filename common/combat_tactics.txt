@@ -911,7 +911,7 @@ tactic_NOR_disruptive_crossfire = { ### Unique Norwegian tactic representing fla
 	}
 	
 	picture = NOR_disruptive_crossfire
-	countered_by = tactic_encirclement ### Functions as an improved delay tactic, and can only be countered through overwhelming force (a full front, which enables the counter, the encirclement tactic).
+	countered_by = tactic_encirclement ### Functions as an improved delay tactic, and can only be countered through overwhelming force (a full front, which enables the counter, the encirclement tactic.)
 	
 	attacker_movement_speed = -0.25
 	attacker = -0.35

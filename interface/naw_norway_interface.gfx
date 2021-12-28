@@ -170,12 +170,12 @@ spriteTypes = {
 	}
 	
 	SpriteType = {
-		name = "GFX_idea_kongsberg"
+		name = "GFX_idea_NOR_kongsberg"
 		texturefile = "gfx/interface/ideas/nor/companies/idea_NOR_kongsberg.dds"
 	}
 	
 	SpriteType = {
-		name = "GFX_idea_raufoss_ammunisjonsfabrikker"
+		name = "GFX_idea_NOR_raufoss_ammunisjonsfabrikker"
 		texturefile = "gfx/interface/ideas/nor/companies/idea_NOR_raufoss_ammunisjonsfabrikker.dds"
 	}
 	
@@ -185,7 +185,7 @@ spriteTypes = {
 	}
 	
 	SpriteType = {
-		name = "GFX_idea_kjeller_flyfabrikk"
+		name = "GFX_idea_NOR_kjeller_flyfabrikk"
 		texturefile = "gfx/interface/ideas/nor/companies/idea_NOR_kjeller_flyfabrikk.dds"
 	}
 	

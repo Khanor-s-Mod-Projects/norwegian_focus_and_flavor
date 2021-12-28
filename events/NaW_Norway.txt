@@ -3089,7 +3089,6 @@ country_event = {
 		
 		set_party_name = { ideology = neutrality long_name = "Venstres Monarkistkoalisjon" name = Monarkistkoalisjonen }
 		NOR_johan_ludwig_mowinckel = {
-			promote_character = yes
 			promote_character = centrism
 		}
 		
@@ -3775,7 +3774,7 @@ country_event = {
 		name = naw_norway.83.b
 		ai_chance = { base = 75 }
 		836 = { set_state_name = "Jamtland" }
-		set_province_name = { id = 46 name = "Frøysøy-Østersund" }
+		set_province_name = { id = 46 name = "Frøysøy-Austersund" }
 		836 = {
 			if = {
 				limit = {
@@ -3918,7 +3917,7 @@ country_event = {
 		name = naw_norway.86.a
 		ai_chance = { base = 25 }
 		839 = { set_state_name = "Orknøyene" }
-		set_province_name = { id = 13237 name = "Kirkevika" }
+		set_province_name = { id = 11064 name = "Kirkevika" }
 		839 = {
 			if = {
 				limit = {
@@ -3934,7 +3933,7 @@ country_event = {
 		name = naw_norway.86.b
 		ai_chance = { base = 75 }
 		839 = { set_state_name = "Orknøyane" }
-		set_province_name = { id = 13237 name = "Kyrkjevågen" }
+		set_province_name = { id = 11064 name = "Kyrkjevågen" }
 		839 = {
 			if = {
 				limit = {
@@ -3950,7 +3949,7 @@ country_event = {
 		name = naw_norway.86.c
 		ai_chance = { base = 0 }
 		839 = { set_state_name = "Orkneyjar" }
-		set_province_name = { id = 13237 name = "Kirkjuvágr" }
+		set_province_name = { id = 11064 name = "Kirkjuvágr" }
 		839 = {
 			if = {
 				limit = {
@@ -4332,6 +4331,7 @@ news_event = {
 		ai_chance = {
 			base = 100
 		}
+		add_political_power = 75
 		add_war_support = 0.05
 	}
 	
@@ -4344,6 +4344,7 @@ news_event = {
 		ai_chance = {
 			base = 100
 		}
+		add_political_power = 75
 		add_war_support = 0.05
 	}
 	
