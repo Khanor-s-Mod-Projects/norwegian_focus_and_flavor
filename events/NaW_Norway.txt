@@ -98,7 +98,7 @@ country_event = {
 	id = naw_norway.4
 	title = naw_norway.4.t
 	desc = naw_norway.4.d
-	picture = GFX_report_event_election_vote
+	picture = GFX_report_event_stortinget_1930-1935
 	
 	fire_only_once = yes
 	
@@ -268,7 +268,7 @@ country_event = {
 	id = naw_norway.5
 	title = naw_norway.5.t
 	desc = naw_norway.5.d
-	picture = GFX_report_event_finnish_letter
+	picture = GFX_report_event_stortinget_1930-1935
 	
 	is_triggered_only = yes
 	
@@ -301,7 +301,7 @@ country_event = {
 	is_triggered_only = yes
 	
 	option = {
-		name = naw_norway.6.a	#Serves only a flavor and information purpose when former Three Brothers members are added to the BoN alliance. Different flavor version of event 2
+		name = naw_norway.6.a ### Serves only a flavor and information purpose when former Three Brothers members are added to the BoN alliance. Different flavor version of event 2.
 		effect_tooltip = {
 			add_to_faction = FROM
 		}
@@ -339,7 +339,7 @@ country_event = {
 			uses = 1
 			category = naval_equipment
 		}
-		NOR = {
+		FROM = {
 			add_tech_bonus = {
 				name = industrial_bonus
 				bonus = 1.0
@@ -369,31 +369,29 @@ country_event = {
 		add_political_power = -10
 		if = {
 			limit = {
-				NOR = {
-					OR = {
-						is_in_faction_with = DEN
-						is_in_faction_with = SWE
-					}
-					num_tech_sharing_groups < 1
+				FROM = {
+					NOT = { is_in_tech_sharing_group = NOR_nordic_research }
 				}
 			}
-			NOR = { add_to_tech_sharing_group = NOR_nordic_research }
+			FROM = { add_to_tech_sharing_group = NOR_nordic_research }
+			every_other_country = {
+				limit = {
+					is_subject_of = FROM
+					NOT = { is_in_tech_sharing_group = NOR_nordic_research }
+				}
+				add_to_tech_sharing_group = NOR_nordic_research
+			}
 		}
 		if = {
 			limit = {
-				tag = DEN
-				is_in_faction_with = NOR
+				OR = {
+					is_subject_of = FROM
+					is_in_faction_with = FROM
+				}
 			}
-			DEN = { add_to_tech_sharing_group = NOR_nordic_research }
+			add_to_tech_sharing_group = NOR_nordic_research
 		}
-		if = {
-			limit = {
-				tag = SWE
-				is_in_faction_with = NOR
-			}
-			SWE = { add_to_tech_sharing_group = NOR_nordic_research }
-		}
-		NOR = {
+		FROM = {
 			country_event = { days = 1 id = naw_norway.8 }
 		}
 	}
@@ -405,12 +403,12 @@ country_event = {
 			modifier = {
 				factor = 0
 				has_opinion = {
-					target = NOR
+					target = FROM
 					value > 90
 				}
 			}
 		}
-		NOR = {
+		FROM = {
 			country_event = { days = 1 id = naw_norway.9 }
 		}
 	}
@@ -426,6 +424,7 @@ country_event = {
 	
 	option = {
 		name = naw_norway.8.a
+		ai_chance = { base = 100 }
 	}
 }
 
@@ -439,6 +438,7 @@ country_event = {
 	
 	option = {
 		name = naw_norway.9.a
+		ai_chance = { base = 100 }
 	}
 }
 
@@ -497,21 +497,30 @@ country_event = {
 		add_political_power = -10
 		if = {
 			limit = {
-				NOR = {
-					is_in_faction_with = FIN
-					num_tech_sharing_groups < 1
+				FROM = {
+					NOT = { is_in_tech_sharing_group = NOR_nordic_research }
 				}
 			}
-			NOR = { add_to_tech_sharing_group = NOR_nordic_research }
+			FROM = { add_to_tech_sharing_group = NOR_nordic_research }
 		}
 		if = {
 			limit = {
-				tag = FIN
-				is_in_faction_with = NOR
+				OR = {
+					is_subject_of = FROM
+					is_in_faction_with = FROM
+				}
 			}
-			FIN = { add_to_tech_sharing_group = NOR_nordic_research }
+			add_to_tech_sharing_group = NOR_nordic_research
 		}
-		NOR = {
+		every_other_country = {
+			limit = {
+				is_subject_of = ROOT
+				NOT = { has_war_with = FROM }
+				NOT = { is_in_tech_sharing_group = NOR_nordic_research }
+			}
+			add_to_tech_sharing_group = NOR_nordic_research
+		}
+		FROM = {
 			country_event = { days = 1 id = naw_norway.11 }
 		}
 		hidden_effect = {
@@ -519,9 +528,10 @@ country_event = {
 				limit = {
 					tag = ICE
 					OR = {
-						is_in_faction_with = NOR
-						is_subject_of = NOR
+						is_subject_of = FROM
+						is_in_faction_with = FROM
 					}
+					NOT = { is_in_tech_sharing_group = NOR_nordic_research }
 				}
 				ICE = { add_to_tech_sharing_group = NOR_nordic_research }
 			}
@@ -529,9 +539,10 @@ country_event = {
 				limit = {
 					tag = EST
 					OR = {
-						is_in_faction_with = NOR
-						is_subject_of = NOR
+						is_subject_of = FROM
+						is_in_faction_with = FROM
 					}
+					NOT = { is_in_tech_sharing_group = NOR_nordic_research }
 				}
 				EST = { add_to_tech_sharing_group = NOR_nordic_research }
 			}
@@ -545,12 +556,12 @@ country_event = {
 			modifier = {
 				factor = 0
 				has_opinion = {
-					target = NOR
+					target = FROM
 					value > 90
 				}
 			}
 		}
-		NOR = {
+		FROM = {
 			country_event = { days = 1 id = naw_norway.12 }
 		}
 	}
@@ -566,6 +577,7 @@ country_event = {
 	
 	option = {
 		name = naw_norway.11.a
+		ai_chance = { base = 100 }
 	}
 }
 
@@ -579,11 +591,12 @@ country_event = {
 	
 	option = {
 		name = naw_norway.12.a
+		ai_chance = { base = 100 }
 	}
 }
 
 ####################################
-# Allies technology sharing events #
+# Allied technology sharing events #
 ####################################
 country_event = {
 	id = naw_norway.13
@@ -636,31 +649,50 @@ country_event = {
 		add_political_power = -10
 		if = {
 			limit = {
-				original_tag = ENG
-				is_in_faction_with = FROM
-			}
-			ROOT = { add_to_tech_sharing_group = NOR_allied_research }
-		}
-		if = {
-			limit = {
 				FROM = {
-					is_in_faction_with = ROOT
-					num_tech_sharing_groups < 3
+					NOT = { is_in_tech_sharing_group = NOR_allied_research }
 				}
 			}
 			FROM = { add_to_tech_sharing_group = NOR_allied_research }
-			every_country = {
-				limit = { is_subject_of = FROM }
+			every_other_country = {
+				limit = {
+					is_subject_of = FROM
+					NOT = { is_in_tech_sharing_group = NOR_allied_research }
+				}
 				add_to_tech_sharing_group = NOR_allied_research
 			}
 		}
 		if = {
 			limit = {
-				original_tag = CAN
-				is_in_faction_with = FROM
-				is_in_faction_with = ENG
+				original_tag = ENG
+				OR = {
+					is_subject_of = FROM
+					is_in_faction_with = FROM
+				}
 			}
-			ROOT = { add_to_tech_sharing_group = NOR_allied_research }
+			add_to_tech_sharing_group = NOR_allied_research
+		}
+		if = {
+			limit = {
+				original_tag = CAN
+				OR = {
+					is_subject_of = FROM
+					is_in_faction_with = FROM
+				}
+				OR = {
+					is_subject_of = ENG
+					is_in_faction_with = ENG
+				}
+			}
+			add_to_tech_sharing_group = NOR_allied_research
+		}
+		every_other_country = {
+			limit = {
+				is_subject_of = ROOT
+				NOT = { has_war_with = FROM }
+				NOT = { is_in_tech_sharing_group = NOR_allied_research }
+			}
+			add_to_tech_sharing_group = NOR_allied_research
 		}
 		FROM = {
 			country_event = { days = 1 id = naw_norway.14 }
@@ -695,6 +727,7 @@ country_event = {
 	
 	option = {
 		name = naw_norway.14.a
+		ai_chance = { base = 100 }
 	}
 }
 
@@ -708,12 +741,13 @@ country_event = {
 	
 	option = {
 		name = naw_norway.15.a
+		ai_chance = { base = 100 }
 	}
 }
 
-##################################
-# Axis technology sharing events #
-##################################
+####################################
+# German technology sharing events #
+####################################
 country_event = {
 	id = naw_norway.16
 	title = naw_norway.16.t
@@ -759,27 +793,34 @@ country_event = {
 		add_political_power = -10
 		if = {
 			limit = {
-				original_tag = GER
-				is_in_faction_with = FROM
-			}
-			ROOT = { add_to_tech_sharing_group = NOR_german_research }
-		}
-		if = {
-			limit = {
 				FROM = {
-					is_in_faction_with = ROOT
-					num_tech_sharing_groups < 3
+					NOT = { is_in_tech_sharing_group = NOR_german_research }
 				}
 			}
 			FROM = { add_to_tech_sharing_group = NOR_german_research }
-		}
-		every_country = {
-			limit = {
-				OR = {
-					is_subject_of = ROOT
+			every_other_country = {
+				limit = {
 					is_subject_of = FROM
+					NOT = { is_in_tech_sharing_group = NOR_german_research }
 				}
-				NOT = { has_war_with = ROOT }
+				add_to_tech_sharing_group = NOR_german_research
+			}
+		}
+		if = {
+			limit = {
+				original_tag = GER
+				OR = {
+					is_subject_of = FROM
+					is_in_faction_with = FROM
+				}
+			}
+			add_to_tech_sharing_group = NOR_german_research
+		}
+		every_other_country = {
+			limit = {
+				is_subject_of = ROOT
+				NOT = { has_war_with = FROM }
+				NOT = { is_in_tech_sharing_group = NOR_german_research }
 			}
 			add_to_tech_sharing_group = NOR_german_research
 		}
@@ -816,6 +857,7 @@ country_event = {
 	
 	option = {
 		name = naw_norway.17.a
+		ai_chance = { base = 100 }
 	}
 }
 
@@ -829,12 +871,13 @@ country_event = {
 	
 	option = {
 		name = naw_norway.18.a
+		ai_chance = { base = 100 }
 	}
 }
 
-#######################################
-# Comintern technology sharing events #
-#######################################
+####################################
+# Soviet technology sharing events #
+####################################
 country_event = {
 	id = naw_norway.19
 	title = naw_norway.19.t
@@ -887,27 +930,34 @@ country_event = {
 		add_political_power = -10
 		if = {
 			limit = {
-				original_tag = SOV
-				is_in_faction_with = FROM
-			}
-			SOV = { add_to_tech_sharing_group = NOR_soviet_research }
-		}
-		if = {
-			limit = {
 				FROM = {
-					is_in_faction_with = ROOT
-					num_tech_sharing_groups < 3
+					NOT = { is_in_tech_sharing_group = NOR_soviet_research }
 				}
 			}
 			FROM = { add_to_tech_sharing_group = NOR_soviet_research }
-		}
-		every_country = {
-			limit = {
-				OR = {
-					is_subject_of = ROOT
+			every_other_country = {
+				limit = {
 					is_subject_of = FROM
+					NOT = { is_in_tech_sharing_group = NOR_soviet_research }
 				}
-				NOT = { has_war_with = ROOT }
+				add_to_tech_sharing_group = NOR_soviet_research
+			}
+		}
+		if = {
+			limit = {
+				original_tag = SOV
+				OR = {
+					is_subject_of = FROM
+					is_in_faction_with = FROM
+				}
+			}
+			add_to_tech_sharing_group = NOR_soviet_research
+		}
+		every_other_country = {
+			limit = {
+				is_subject_of = ROOT
+				NOT = { has_war_with = FROM }
+				NOT = { is_in_tech_sharing_group = NOR_soviet_research }
 			}
 			add_to_tech_sharing_group = NOR_soviet_research
 		}
@@ -944,6 +994,7 @@ country_event = {
 	
 	option = {
 		name = naw_norway.20.a
+		ai_chance = { base = 100 }
 	}
 }
 
@@ -957,6 +1008,7 @@ country_event = {
 	
 	option = {
 		name = naw_norway.21.a
+		ai_chance = { base = 100 }
 	}
 }
 
@@ -1674,7 +1726,7 @@ country_event = {
 	is_triggered_only = yes
 	
 	option = {
-		name = naw_norway.32.a	#Denmark complains to Norway about taking Germany's side and not getting Slesvig
+		name = naw_norway.32.a ### Denmark complains to Norway about taking Germany's side and not getting Slesvig.
 		ai_chance = {
 			base = 20
 			modifier = {
@@ -1689,7 +1741,7 @@ country_event = {
 	}
 	
 	option = {
-		name = naw_norway.32.b	#Denmark does not issue complaints to Norway's choices. Low base chance as focuses which lets you avoid dangerous two front wars should normally not come cheap
+		name = naw_norway.32.b ### Denmark does not issue complaints to Norway's choices. Low base chance as focuses which lets you avoid dangerous two front wars should normally not come cheap.
 		ai_chance = {
 			base = 1
 			modifier = {
@@ -1714,7 +1766,7 @@ country_event = {
 	is_triggered_only = yes
 	
 	option = {
-		name = naw_norway.33.a	#Norway is informed of Denmark's acceptance of resting the questions of Slesvig and the threat posed by Germany
+		name = naw_norway.33.a ### Norway is informed of Denmark's acceptance of resting the questions of Slesvig and the threat posed by Germany.
 		add_political_power = 10
 	}
 }
@@ -1728,7 +1780,7 @@ country_event = {
 	is_triggered_only = yes
 	
 	option = {
-		name = naw_norway.34.a	#Agree with Danish complaints, relinquish Greenland as collateral for the time being, AND compensate with money (adds building slots and factories across Denmark, while Norway spends more consumer goods temporarily)
+		name = naw_norway.34.a ### Agree with Danish complaints, relinquish Greenland as collateral for the time being, AND compensate with money (adds building slots and factories across Denmark, while Norway spends more consumer goods temporarily.)
 		ai_chance = {
 			base = 30
 			modifier = {
@@ -1751,7 +1803,7 @@ country_event = {
 	}
 	
 	option = {
-		name = naw_norway.34.b	#Agree with Danish complaints and relinquish Greenland as collateral for the time being
+		name = naw_norway.34.b ### Agree with Danish complaints and relinquish Greenland as collateral for the time being.
 		ai_chance = {
 			base = 10
 			modifier = {
@@ -1771,7 +1823,7 @@ country_event = {
 	}
 	
 	option = {
-		name = naw_norway.34.c	#Reject Danish complaints, and uphold that Realpolitik is necessary
+		name = naw_norway.34.c ### Reject Danish complaints, and uphold that Realpolitik is necessary.
 		ai_chance = {
 			base = 10
 			modifier = {
@@ -1796,7 +1848,7 @@ country_event = {
 	is_triggered_only = yes
 	
 	option = {
-		name = naw_norway.36.a	#Denmark is informed of Norway's handover of Greenland combined with monetary compensation (the maximum compensation, recommended for multiplayer Nordic co-op)
+		name = naw_norway.36.a ### Denmark is informed of Norway's handover of Greenland combined with monetary compensation (the maximum compensation, recommended for multiplayer Nordic co-op.)
 		37 = {
 			add_extra_state_shared_building_slots = 1
 			if = {
@@ -1835,7 +1887,7 @@ country_event = {
 	is_triggered_only = yes
 	
 	option = {
-		name = naw_norway.36.a	#Denmark is informed of Norway's handover of Greenland
+		name = naw_norway.36.a ### Denmark is informed of Norway's handover of Greenland.
 	}
 }
 
@@ -1848,7 +1900,7 @@ country_event = {
 	is_triggered_only = yes
 	
 	option = {
-		name = naw_norway.37.a	#Denmark is informed of Norway's refusal to take responsibility for the Slesvig question and the long term threat posed by Germany
+		name = naw_norway.37.a ###Denmark is informed of Norway's refusal to take responsibility for the Slesvig question and the long term threat posed by Germany.
 	}
 }
 
@@ -1898,7 +1950,7 @@ country_event = {
 	is_triggered_only = yes
 	
 	option = {
-		name = naw_norway.39.a	#Norway is informed of Denmark giving back Greenland, which was previously a collateral for Slesvig
+		name = naw_norway.39.a ### Norway is informed of Denmark giving back Greenland, which was previously a collateral for Slesvig.
 	}
 }
 
@@ -1912,7 +1964,7 @@ country_event = {
 	is_triggered_only = yes
 	
 	option = {
-		name = naw_norway.40.a	#Finland complains to Norway about taking the Soviets' side
+		name = naw_norway.40.a ### Finland complains to Norway about taking the Soviets' side.
 		ai_chance = {
 			base = 20
 			modifier = {
@@ -1927,7 +1979,7 @@ country_event = {
 	}
 	
 	option = {
-		name = naw_norway.40.b	#Finland does not issue complaints to Norway's choices. Low base chance as focuses which lets you avoid dangerous two front wars should normally not come cheap
+		name = naw_norway.40.b ### Finland does not issue complaints to Norway's choices. Low base chance as focuses which lets you avoid dangerous two front wars should normally not come cheap.
 		ai_chance = {
 			base = 1
 			modifier = {
@@ -1952,7 +2004,7 @@ country_event = {
 	is_triggered_only = yes
 	
 	option = {
-		name = naw_norway.41.a	#Norway is informed of Finland's acceptance of resting the questions of the threat posed by the Soviet Union
+		name = naw_norway.41.a ### Norway is informed of Finland's acceptance of resting the questions of the threat posed by the Soviet Union.
 		add_political_power = 10
 	}
 }
@@ -1966,7 +2018,7 @@ country_event = {
 	is_triggered_only = yes
 	
 	option = {
-		name = naw_norway.42.a	#Agree with Finnish complaints and compensate with money (adds building slots and factories in Western Finland, while Norway spends more consumer goods temporarily)
+		name = naw_norway.42.a ### Agree with Finnish complaints and compensate with money (adds building slots and factories in Western Finland, while Norway spends more consumer goods temporarily.)
 		ai_chance = {
 			base = 10
 			modifier = {
@@ -1985,7 +2037,7 @@ country_event = {
 	}
 	
 	option = {
-		name = naw_norway.42.b	#Reject Finnish complaints, and uphold that Realpolitik is necessary
+		name = naw_norway.42.b ### Reject Finnish complaints, and uphold that Realpolitik is necessary.
 		ai_chance = {
 			base = 10
 			modifier = {
@@ -2010,7 +2062,7 @@ country_event = {
 	is_triggered_only = yes
 	
 	option = {
-		name = naw_norway.43.a	#Finland is informed of Norway's monetary compensation
+		name = naw_norway.43.a ### Finland is informed of Norway's monetary compensation.
 		149 = {
 			add_extra_state_shared_building_slots = 2
 			if = {
@@ -2041,7 +2093,7 @@ country_event = {
 	is_triggered_only = yes
 	
 	option = {
-		name = naw_norway.44.a	#Finland is informed of Norway's refusal to take responsibility for the Karelian question and the long term threat posed by the Soviet Union (for localisation: Finns as opposed to Danes more concerned with keeping their land rather than getting new land, as they did not give up as much in the FS-deal as the Danes did in the DN-deal)
+		name = naw_norway.44.a ### Finland is informed of Norway's refusal to take responsibility for the Karelian question and the long term threat posed by the Soviet Union (for localisation: Finns as opposed to Danes more concerned with keeping their land rather than getting new land, as they did not give up as much in the FS-deal as the Danes did in the DN-deal.)
 	}
 }
 
@@ -2105,7 +2157,7 @@ country_event = {
 # The Dano-Norwegian Deal (does Denmark accept, do lands defect to Norway, does Denmark go to war over this?) #
 ###############################################################################################################
 country_event = {
-	id = naw_norway.50	### Note: There's no equivalent choice event for the Fennoscandian Deal as it's between a decent to good deal for everyone. It does, however, have an informing pop-up for all three nations involved (and the Soviets).
+	id = naw_norway.50	### Note: There's no equivalent choice event for the Fennoscandian Deal as it's between a decent to good deal for everyone. It does, however, have an informing pop-up for all three nations involved (and the Soviets.)
 	title = naw_norway.50.t
 	desc = naw_norway.50.d
 	picture = GFX_report_event_finnish_letter
@@ -2279,7 +2331,7 @@ country_event = {
 }
 
 country_event = {
-	id = naw_norway.52	### Norway is informed of Denmark partially accepting the DN-deal and the Faroe Islands are transferred to Norwegian control.
+	id = naw_norway.52 ### Norway is informed of Denmark partially accepting the DN-deal and the Faroe Islands are transferred to Norwegian control.
 	title = naw_norway.52.t
 	desc = naw_norway.52.d
 	picture = GFX_report_event_generic_sign_treaty2
@@ -2287,7 +2339,7 @@ country_event = {
 	is_triggered_only = yes
 	
 	option = {
-		name = naw_norway.52.a	### Norway takes control of the Faroes, but not Iceland which the Danes decided to keep. Denmark still gets a core on Slesvig-Holsten.
+		name = naw_norway.52.a ### Norway takes control of the Faroes, but not Iceland which the Danes decided to keep. Denmark still gets a core on Slesvig-Holsten.
 		ai_chance = { base = 100 }
 		
 		if = {
@@ -2429,7 +2481,7 @@ country_event = {
 }
 
 country_event = {
-	id = naw_norway.55 ### Norway is informed of the Danish folding and handing over Greenland as well
+	id = naw_norway.55 ### Norway is informed of the Danish folding and handing over Greenland as well.
 	title = naw_norway.55.t
 	desc = naw_norway.55.d
 	picture = GFX_report_event_generic_sign_treaty1
@@ -2556,7 +2608,7 @@ country_event = {
 # The Fennoscandian Deal (mostly for information purposes) #
 ############################################################
 country_event = {
-	id = naw_norway.59 ### Note: The Fennoscandian Deal is between a decent to good deal for everyone, thus choice was not deemed necessary here (as Sweden and Finland had already decided to go with Norway). Thus this event is an information event for the participants and relevant outsiders only.
+	id = naw_norway.59 ### Note: The Fennoscandian Deal is between a decent to good deal for everyone, thus choice was not deemed necessary here (as Sweden and Finland had already decided to go with Norway.) Thus this event is an information event for the participants and relevant outsiders only.
 	title = naw_norway.59.t
 	desc = naw_norway.59.d
 	picture = GFX_report_event_generic_sign_treaty1
@@ -2996,7 +3048,7 @@ country_event = {
 	id = naw_norway.71
 	title = naw_norway.71.t
 	desc = naw_norway.71.d
-	picture = GFX_report_event_medieval_norwegian_flag
+	picture = GFX_report_event_stortinget_1930-1935
 	
 	is_triggered_only = yes
 
@@ -3079,8 +3131,7 @@ country_event = {
 	id = naw_norway.73
 	title = naw_norway.73.t
 	desc = naw_norway.73.d
-	picture = GFX_report_event_haakon_in_minerva_car
-	
+	picture = GFX_report_event_stortinget_1930-1935
 	is_triggered_only = yes
 
 	option = {
@@ -3144,7 +3195,7 @@ country_event = {
 	is_triggered_only = yes
 
 	option = {
-		name = naw_norway.74.a ### A more traditional variant of the current Constitutional Monarchy. The only option here which shows the Prime Minister's picture in the country view instead of the King (the country leader portrait should show the person with real power, or at least that's what I'm going for here).
+		name = naw_norway.74.a ### A more traditional variant of the current Constitutional Monarchy. The only option here which shows the Prime Minister's picture in the country view instead of the King (the country leader portrait should show the person with real power, or at least that's what I'm going for here.)
 		ai_chance = { base = 5 }
 		
 		hidden_effect = { set_country_flag = NOR_slightly_empowered_constitutional_monarchy }
@@ -3169,7 +3220,7 @@ country_event = {
 	}
 	
 	option = {
-		name = naw_norway.74.c ### The Prime Minister answers to the King, but there will still be elections (think German Empire at the turn of the 20th century). Constitutional Monarchy with extensive powers to the Monarch. (Would not recommend with a Wilhelm II or similar personality as King/Emperor though, that's how you lose everything...)
+		name = naw_norway.74.c ### The Prime Minister answers to the King, but there will still be elections (think German Empire at the turn of the 20th century.) Constitutional Monarchy with extensive powers to the Monarch. (Would not recommend with a Wilhelm II or similar personality as King/Emperor though, that's how you lose everything...)
 		ai_chance = { base = 50 }
 		
 		add_country_leader_role = {
@@ -3818,6 +3869,7 @@ country_event = {
 		name = naw_norway.84.a
 		ai_chance = { base = 25 }
 		837 = { set_state_name = "Båhuslen" }
+		set_province_name = { id = 6310 name = "Oddevald" }
 		837 = {
 			if = {
 				limit = {
@@ -3833,6 +3885,7 @@ country_event = {
 		name = naw_norway.84.b
 		ai_chance = { base = 75 }
 		837 = { set_state_name = "Bagahus" }
+		set_province_name = { id = 6310 name = "Oddevald" }
 		837 = {
 			if = {
 				limit = {
@@ -3848,6 +3901,7 @@ country_event = {
 		name = naw_norway.84.c
 		ai_chance = { base = 0 }
 		837 = { set_state_name = "Bagaholm" }
+		set_province_name = { id = 6310 name = "Oddevald" }
 		837 = {
 			if = {
 				limit = {
@@ -4307,7 +4361,7 @@ news_event = {
 
 #####################################################################################
 #####################################################################################
-### Events 140-169, News events and International relations for Monarchist Norway ###
+### Events 140-169, News events and international relations for Monarchist Norway ###
 #####################################################################################
 #####################################################################################
 #####################################################################################################################
@@ -4546,6 +4600,93 @@ news_event = {
 	}
 }
 
+#################################################################################################
+# NEWS EVENT - The Kingdom of Norway leaves administration of Greenland to the Duchy of Iceland #
+#################################################################################################
+news_event = {
+	id = naw_norway.146
+	title = naw_norway.146.t
+	desc = naw_norway.146.d
+	picture = GFX_news_event_stortinget_1930-1935
+	
+	major = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = naw_norway.146.a	### Icelandic response.
+		trigger = {
+			original_tag = ICE
+		}
+		ai_chance = {
+			base = 100
+		}
+		effect_tooltip = {
+			FROM = {
+				add_opinion_modifier = { target = ICE modifier = NOR_trusted_countrymen }
+			}
+			ICE = {
+				add_state_core = 101
+				transfer_state = 101
+				add_political_power = 100
+				add_stability = -0.05
+				add_opinion_modifier = { target = FROM modifier = NOR_trusted_countrymen }
+			}
+			101 = { add_extra_state_shared_building_slots = 2 }
+		}
+	}
+	
+	option = {
+		name = naw_norway.146.b	### Norwegian response.
+		trigger = {
+			original_tag = NOR
+		}
+		ai_chance = {
+			base = 100
+		}
+		effect_tooltip = {
+			FROM = {
+				add_opinion_modifier = { target = ICE modifier = NOR_trusted_countrymen }
+			}
+			ICE = {
+				add_state_core = 101
+				transfer_state = 101
+				add_political_power = 100
+				add_stability = -0.05
+				add_opinion_modifier = { target = FROM modifier = NOR_trusted_countrymen }
+			}
+			101 = { add_extra_state_shared_building_slots = 2 }
+		}
+	}
+	
+	option = {
+		name = naw_norway.146.c	### Anyone else.
+		trigger = {
+			NOT = {
+				OR = {
+					original_tag = ICE
+					original_tag = NOR
+				}
+			}
+		}
+		ai_chance = {
+			base = 100
+		}
+		effect_tooltip = {
+			FROM = {
+				add_opinion_modifier = { target = ICE modifier = NOR_trusted_countrymen }
+			}
+			ICE = {
+				add_state_core = 101
+				transfer_state = 101
+				add_political_power = 100
+				add_stability = -0.05
+				add_opinion_modifier = { target = FROM modifier = NOR_trusted_countrymen }
+			}
+			101 = { add_extra_state_shared_building_slots = 2 }
+		}
+	}
+}
+
 ##############################################################################
 # Monarchist Norway creates a monarchist faction. The name can now be chosen #
 ##############################################################################
@@ -4744,6 +4885,113 @@ country_event = {
 		custom_effect_tooltip = NOR_not_making_faction_warning_tt
 		set_rule = { can_create_factions = yes }
 		add_political_power = -5
+	}
+}
+
+#####################################################
+# Royal Norwegian Society technology sharing events #
+#####################################################
+country_event = {
+	id = naw_norway.153
+	title = naw_norway.153.t
+	desc = naw_norway.153.d
+	picture = GFX_report_event_physics_lab_01
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = naw_norway.153.a ### Sounds good.
+		trigger = { has_dlc = "Together for Victory" }
+		ai_chance = { base = 90 }
+		
+		add_political_power = -10
+		ROOT = { add_to_tech_sharing_group = NOR_royal_norwegian_society }
+		FROM = { country_event = { days = 1 id = naw_norway.154 } }
+	}
+	
+	option = {
+		name = naw_norway.153.b ### Subjects at Dominion-level autonomy can say no like independent countries, but at some stability cost, so joining is strongly encouraged.
+		trigger = {
+			AND = {
+				has_dlc = "Together for Victory"
+				is_subject_of = FROM
+				has_autonomy_state = autonomy_dominion
+			}
+		}
+		ai_chance = {
+			base = 10
+			modifier = {
+				factor = 0.1
+				has_opinion = {
+					target = NOR
+					value > 0
+				}
+			}
+			modifier = {
+				factor = 0
+				has_opinion = {
+					target = NOR
+					value > 90
+				}
+			}
+		}
+		
+		add_stability = -0.05
+		FROM = { country_event = { days = 1 id = naw_norway.155 } }
+	}
+	
+	option = {
+		name = naw_norway.153.c ### No way.
+		trigger = {
+			OR = {
+				NOT = { has_dlc = "Together for Victory" }
+				NOT = { is_subject_of = FROM }
+			}
+		}
+		ai_chance = {
+			base = 10
+			modifier = {
+				factor = 0
+				has_opinion = {
+					target = NOR
+					value > 90
+				}
+			}
+		}
+		
+		FROM = { country_event = { days = 1 id = naw_norway.155 } }
+	}
+}
+
+country_event = {
+	id = naw_norway.154
+	title = naw_norway.154.t
+	desc = naw_norway.154.d
+	picture = GFX_report_event_physics_lab_01
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = naw_norway.154.a ### The invited country accepts joining the expanded Royal Norwegian Society.
+		ai_chance = { base = 100 }
+		
+		effect_tooltip = {
+			FROM = { add_to_tech_sharing_group = NOR_royal_norwegian_society }
+		}
+	}
+}
+
+country_event = {
+	id = naw_norway.155
+	title = naw_norway.155.t
+	desc = naw_norway.155.d
+	picture = GFX_report_event_finnish_letter
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = naw_norway.155.a ### The invited country rejects joining the expanded Royal Norwegian Society.
+		ai_chance = { base = 100 }
 	}
 }
 

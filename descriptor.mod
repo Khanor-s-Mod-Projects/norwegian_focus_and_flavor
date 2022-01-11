@@ -6,6 +6,6 @@ tags={
 	"Historical"
 }
 picture="NaW_display_picture.jpg"
-version="1.4.0"
+version="1.4.1"
 supported_version="1.11.*"
 remote_file_id="1148110160"

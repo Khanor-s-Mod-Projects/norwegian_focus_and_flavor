@@ -169,29 +169,26 @@ focus_tree = {
 			base = 10
 		}
 		available = {
-			142 = {
-				is_controlled_by = ROOT
+			OR = {
+				110 = { is_controlled_by = ROOT }
+				142 = { is_controlled_by = ROOT }
+				has_capitulated = no
+				has_legitimacy > 20
 			}
 		}
-		cancel_if_invalid = yes
-		continue_if_invalid = no
+		available_if_capitulated = yes
+		cancel_if_invalid = no
+		continue_if_invalid = yes
 		
 		completion_reward = {
-			remove_ideas = {
-				NOR_fishing
-				NOR_dockyard_investments
-			}
-			add_ideas = NOR_grand_naval_expansion
-			142 = {
-				add_extra_state_shared_building_slots = 2
-				add_building_construction = {
-					type = dockyard
-					level = 2
-					instant_build = yes
-				}
+			remove_ideas = { NOR_fishing }
+			swap_ideas = {
+				remove_idea = NOR_dockyard_investments
+				add_idea = NOR_grand_naval_expansion
 			}
 			
-			custom_effect_tooltip = NOR_nortraship_production_incentives_tt
+			custom_effect_tooltip = available_designer
+			show_ideas_tooltip = NOR_nortraship_dock_limited
 		}
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 	}
@@ -208,15 +205,21 @@ focus_tree = {
 			base = 20
 		}
 		available = {
-			OR = {
-				110 = { is_controlled_by = ROOT }
-				142 = { is_controlled_by = ROOT }
-			}
+			142 = { is_controlled_by = ROOT }
 		}
-		cancel_if_invalid = no
-		continue_if_invalid = yes
+		available_if_capitulated = no
+		cancel_if_invalid = yes
+		continue_if_invalid = no
 		
 		completion_reward = {
+			142 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = dockyard
+					level = 2
+					instant_build = yes
+				}
+			}
 			swap_ideas = {
 				remove_idea = NOR_grand_naval_expansion
 				add_idea = NOR_specialized_naval_industry
@@ -244,7 +247,7 @@ focus_tree = {
 		}
 		available = {
 			OR = {
-				ROOT = { has_capitulated = no }
+				has_capitulated = no
 				has_legitimacy > 50
 			}
 			OR = {
@@ -306,7 +309,7 @@ focus_tree = {
 				navy_experience = 10
 			}
 		}
-		search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_NAVY_XP FOCUS_FILTER_NAW_UNIQUE_TACTICS }
+		search_filters = { FOCUS_FILTER_NAVY_XP FOCUS_FILTER_NAW_UNIQUE_TACTICS }
 	}
 	
 	focus = {
@@ -1008,7 +1011,7 @@ focus_tree = {
 		relative_position_id = NOR_air_bases
 		cost = 10
 		ai_will_do = {
-			factor = 1
+			base = 1
 		}
 		
 		available_if_capitulated = yes
@@ -1177,7 +1180,7 @@ focus_tree = {
 	}
 	
 	focus = {
-		id = NOR_winter_tactics
+		id = NOR_ski_infantry
 		icon = GFX_focus_generic_manpower
 		prerequisite = { focus = NOR_army }
 		x = -1
@@ -1190,7 +1193,7 @@ focus_tree = {
 		completion_reward = {
 			add_ideas = NOR_winter_training
 			
-			custom_effect_tooltip = NOR_winter_tactics_tt
+			custom_effect_tooltip = NOR_ski_infantry_tt
 			hidden_effect = { set_technology = { NOR_mountain_tactics = 1 } }
 		}
 		search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_NAW_UNIQUE_TACTICS }
@@ -1199,7 +1202,7 @@ focus_tree = {
 	focus = {
 		id = NOR_mountaineers
 		icon = GFX_goal_generic_special_forces
-		prerequisite = { focus = NOR_winter_tactics }
+		prerequisite = { focus = NOR_ski_infantry }
 		x = -2
 		y = 2
 		relative_position_id = NOR_army
@@ -1465,13 +1468,13 @@ focus_tree = {
 	focus = {
 		id = NOR_urban_defenses
 		icon = GFX_goal_generic_fortify_city
-		prerequisite = { focus = NOR_winter_tactics }
+		prerequisite = { focus = NOR_ski_infantry }
 		prerequisite = { focus = NOR_equipment_effort }
 		x = 0
 		y = 2
 		relative_position_id = NOR_army
 		cost = 10
-
+		
 		cancel_if_invalid = no
 		continue_if_invalid = yes
 		available_if_capitulated = yes
@@ -1638,10 +1641,10 @@ focus_tree = {
 		x = 2
 		y = 2
 		relative_position_id = NOR_army
-		cost = 10
-
+		cost = 5
+		
 		available_if_capitulated = yes
-
+		
 		completion_reward = {
 			add_ideas = NOR_recreational_shooting
 			add_tech_bonus = {
@@ -1658,22 +1661,25 @@ focus_tree = {
 	}
 	
 	focus = {
-		id = NOR_heimevernet
+		id = NOR_establish_heimevernet
 		icon = GFX_focus_generic_military_academy
 		prerequisite = { focus = NOR_encourage_recreational_shooting }
 		prerequisite = { focus = NOR_urban_defenses }
 		x = 1
 		y = 3
 		relative_position_id = NOR_army
+		ai_will_do = {
+			base = 20
+		}
 		cost = 15
-
+		
 		available_if_capitulated = yes
-
+		
 		completion_reward = {
 			remove_ideas = NOR_winter_training
 			swap_ideas = {
 				remove_idea = NOR_recreational_shooting
-				add_idea = NOR_heimevernet_idea
+				add_idea = NOR_heimevernet
 			}
 			
 			army_experience = 20
@@ -1689,7 +1695,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = NOR_army
 		ai_will_do = {
-			factor = 90
+			base = 90
 			modifier = {
 				OR = {
 					has_war = yes
@@ -1792,7 +1798,7 @@ focus_tree = {
 				}
 				add_corps_commander_role = {
 					character = NOR_erling_munthe-dahl
-					traits = { trait_engineer }
+					traits = { engineer_officer trait_engineer }
 					skill = 2
 					attack_skill = 1
 					defense_skill = 2
@@ -1997,7 +2003,7 @@ focus_tree = {
 		icon = GFX_goal_generic_construct_infrastructure
 		x = 22
 		y = 0
-		cost = 10
+		cost = 5
 		ai_will_do = {
 			base = 20
 			modifier = {
@@ -2027,47 +2033,14 @@ focus_tree = {
 		continue_if_invalid = no
 		
 		completion_reward = {
-			build_railway = {
-				level = 1
-				build_only_on_allied = yes
-				controller_priority = {
-					base = 1
-					
-					modifier = {
-						tag = ROOT
-						add = 2
-					}
+			if = {
+				limit = {
+					NOT = { has_variable = NOR.railroad_development }
 				}
-				fallback = yes
-				path = { 122 6145 9170 3059 11037 27 9157 }
-			}
-			build_railway = {
-				level = 2
-				build_only_on_allied = yes
-				controller_priority = {
-					base = 1
-					
-					modifier = {
-						tag = ROOT
-						add = 2
-					}
+				set_variable = {
+					var = NOR.railroad_development
+					value = 0
 				}
-				fallback = yes
-				path = { 9227 6114 3093 }
-			}
-			build_railway = {
-				level = 1
-				build_only_on_allied = yes
-				controller_priority = {
-					base = 1
-					
-					modifier = {
-						tag = ROOT
-						add = 2
-					}
-				}
-				fallback = yes
-				path = { 6115 11078 9157 11028 9227 11206 9139 3022 }
 			}
 			build_railway = {
 				level = 2
@@ -2083,21 +2056,9 @@ focus_tree = {
 				fallback = yes
 				path = { 6115 11184 3007 6160 3021 11028 }
 			}
-			build_railway = {
-				level = 2
-				build_only_on_allied = yes
-				controller_priority = {
-					base = 1
-					
-					modifier = {
-						tag = ROOT
-						add = 2
-					}
-				}
-				fallback = yes
-				path = { 6115 9103 9204 3094 9036 6151 9096 11176 9296 3049 6176 53 }
-			}
 			add_equipment_to_stockpile = { type = train_equipment_1 amount = 4 producer = NOR }
+			
+			unlock_decision_category_tooltip = NOR_railroad_development
 		}
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 	}
@@ -2116,6 +2077,10 @@ focus_tree = {
 				factor = 0.2
 				is_historical_focus_on = yes
 				date < 1950.1.1
+			}
+			modifier = {
+				add = 2
+				num_of_civilian_factories > 9
 			}
 			modifier = {
 				factor = 10
@@ -2159,6 +2124,33 @@ focus_tree = {
 				path = { 3022 6038 9132 6173 9069 9208 3126 3088 3048 173 6214 9126 }
 			}
 			add_equipment_to_stockpile = { type = train_equipment_1 amount = 4 producer = NOR }
+			
+			add_to_variable = { var = NOR.railroad_development value = 2 }
+			custom_effect_tooltip = NOR_railroad_development_add_2_tt
+			hidden_effect = {
+				if = {
+					limit = {
+						check_variable = {
+							var = NOR.railroad_development
+							value = 6
+							compare = greater_than_or_equals
+						}
+						NOT = { has_country_flag = NOR_tier_2_railroad_developments_available }
+					}
+					set_country_flag = NOR_tier_2_railroad_developments_available
+				}
+				if = {
+					limit = {
+						check_variable = {
+							var = NOR.railroad_development
+							value = 12
+							compare = greater_than_or_equals
+						}
+						NOT = { has_country_flag = NOR_tier_3_railroad_developments_available }
+					}
+					set_country_flag = NOR_tier_3_railroad_developments_available
+				}
+			}
 		}
 		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_POLITICAL }
 	}
@@ -2687,12 +2679,12 @@ focus_tree = {
 			base = 10
 			
 			modifier = {
-				factor = 1.5
-				date > 1938.1.1
-			}
-			modifier = {
 				factor = 2
 				date > 1939.1.1
+			}
+			modifier = {
+				factor = 1.5
+				date > 1938.1.1
 			}
 		}
 		
@@ -2723,6 +2715,17 @@ focus_tree = {
 
 		ai_will_do = {
 			base = 30
+			
+			modifier = {
+				factor = 2
+				is_historical_focus_on = yes
+				date > 1939.1.1
+			}
+			modifier = {
+				factor = 1.5
+				is_historical_focus_on = yes
+				date > 1938.1.1
+			}
 		}
 
 		available = {
@@ -2780,11 +2783,17 @@ focus_tree = {
 		y = 2
 		relative_position_id = NOR_til_dovre_faller
 		cost = 10
-
+		
 		ai_will_do = {
 			base = 25
+			
+			modifier = {
+				factor = 3
+				is_historical_focus_on = yes
+				date > 1939.1.1
+			}
 		}
-
+		
 		available = {
 			has_civil_war = no
 		}
@@ -3004,18 +3013,18 @@ focus_tree = {
 		y = 1
 		relative_position_id = NOR_seek_a_british_alliance
 		cost = 5
-
+		
 		ai_will_do = {
-			factor = 25
+			base = 25
 		}
-
+		
 		available = {
 			is_in_faction_with = ENG
 		}
 		available_if_capitulated = yes
-
+		
 		completion_reward = {
-			custom_effect_tooltip = NOR_allied_technology_sharing
+			custom_effect_tooltip = NOR_allied_technology_sharing_tt
 			if = {
 				limit = { ENG = { is_in_faction_with = ROOT } }
 				ENG = { country_event = naw_norway.13 }
@@ -3038,7 +3047,7 @@ focus_tree = {
 		cost = 10
 
 		ai_will_do = {
-			factor = 25
+			base = 25
 		}
 
 		available = {
@@ -3047,11 +3056,11 @@ focus_tree = {
 				limit = {
 					has_dlc = "Together for Victory"
 				}
-				is_in_tech_sharing_group = commonwealth_research
+				is_in_tech_sharing_group = NOR_allied_research
 			}
 		}
 		available_if_capitulated = yes
-
+		
 		completion_reward = {
 			if = {
 				limit = {
@@ -3059,7 +3068,7 @@ focus_tree = {
 				}
 				ROOT = {
 					modify_tech_sharing_bonus = {
-						id = commonwealth_research
+						id = NOR_allied_research
 						bonus = 0.05
 					}
 				}
@@ -3084,14 +3093,14 @@ focus_tree = {
 				category = naval_equipment
 			}
 			hidden_effect = {
-				every_country = {
+				every_other_country = {
 					limit = {
 						is_subject_of = NOR
 						NOT = { has_war_with = ENG }
-						num_tech_sharing_groups < 3
+						NOT = { is_in_tech_sharing_group = NOR_allied_research }
 						has_dlc = "Together for Victory"
 					}
-					add_to_tech_sharing_group = commonwealth_research
+					add_to_tech_sharing_group = NOR_allied_research
 				}
 			}
 		}
@@ -3635,11 +3644,11 @@ focus_tree = {
 		y = 2
 		relative_position_id = NOR_three_brothers
 		cost = 10
-
+		
 		ai_will_do = {
-			factor = 25
+			base = 25
 		}
-
+		
 		available = {
 			OR = {
 				is_in_faction_with = DEN
@@ -3658,7 +3667,6 @@ focus_tree = {
 		available_if_capitulated = yes
 		
 		completion_reward = {
-			custom_effect_tooltip = NOR_expand_nordic_technology_sharing_tt
 			if = {
 				limit = {
 					has_dlc = "Together for Victory"
@@ -3669,7 +3677,9 @@ focus_tree = {
 						bonus = 0.05
 					}
 				}
+				unlock_decision_category_tooltip = NOR_nordic_research
 			}
+			custom_effect_tooltip = NOR_expand_nordic_technology_sharing_tt
 			add_tech_bonus = {
 				name = NOR_support_technology_bonus
 				bonus = 1.0
@@ -3752,10 +3762,10 @@ focus_tree = {
 				}
 			}
 			hidden_effect = {
-				every_country = {
+				every_other_country = {
 					limit = {
 						is_subject_of = NOR
-						num_tech_sharing_groups < 3
+						NOT = { is_in_tech_sharing_group = NOR_nordic_research }
 						has_dlc = "Together for Victory"
 					}
 					add_to_tech_sharing_group = NOR_nordic_research
@@ -5235,7 +5245,7 @@ focus_tree = {
 	
 	focus = {
 		id = NOR_traditions_and_monarchy
-		icon = GFX_goal_NOR_coat_of_arms
+		icon = GFX_goal_NOR_coat_of_arms_detailed
 		prerequisite = { focus = NOR_til_dovre_faller }
 		mutually_exclusive = { focus = NOR_affirm_constitutional_monarchy }
 		mutually_exclusive = { focus = NOR_reject_constitutional_monarchy }
@@ -5445,7 +5455,7 @@ focus_tree = {
 	
 	focus = {
 		id = NOR_a_prosperous_kingdom
-		icon = GFX_goal_NOR_coat_of_arms_detailed
+		icon = GFX_goal_NOR_coat_of_arms
 		prerequisite = { focus = NOR_traditions_worth_fighting_for }
 		x = 0
 		y = 4
@@ -5495,9 +5505,8 @@ focus_tree = {
 				controls_state = 837
 				controls_state = 337
 			}
-			num_of_civilian_factories > 9
-			num_of_military_factories > 4
-			num_of_naval_factories > 4
+			num_of_civilian_factories > 11
+			num_of_naval_factories > 5
 			has_army_manpower = { size > 149999 }
 		}
 		available_if_capitulated = no
@@ -5527,11 +5536,11 @@ focus_tree = {
 		y = 3
 		relative_position_id = NOR_traditions_and_monarchy
 		cost = 5
-
+		
 		ai_will_do = {
 			base = 10
 		}
-
+		
 		available = {
 			has_civil_war = no
 			has_government = neutrality
@@ -5552,11 +5561,11 @@ focus_tree = {
 		y = 5
 		relative_position_id = NOR_traditions_and_monarchy
 		cost = 5
-
+		
 		ai_will_do = {
 			base = 10
 		}
-
+		
 		available = {
 			has_civil_war = no
 			has_government = neutrality
@@ -5718,9 +5727,7 @@ focus_tree = {
 		}
 		
 		completion_reward = {
-			ROOT = {
-				country_event = { hours = 6 id = naw_norway.150 }
-			}
+			country_event = { hours = 6 id = naw_norway.150 }
 		}
 		search_filters = { FOCUS_FILTER_POLITICAL }
 	}
@@ -6009,8 +6016,6 @@ focus_tree = {
 		ai_will_do = {
 			base = 10
 		}
-		
-		
 		
 		available = {
 			337 = {
@@ -6515,7 +6520,8 @@ focus_tree = {
 		}
 		
 		completion_reward = {
-			add_state_core = 838
+			add_state_claim = 838
+			add_state_claim = 839
 			
 			ENG = {
 				country_event = { hours = 12 id = naw_norway.173 }
@@ -6527,7 +6533,7 @@ focus_tree = {
 		}
 		search_filters = { FOCUS_FILTER_ANNEXATION FOCUS_FILTER_POLITICAL }
 	}
-		
+	
 	focus = {
 		id = NOR_the_north_sea_deal
 		icon = GFX_focus_ger_accept_british_naval_dominance
@@ -7487,7 +7493,7 @@ focus_tree = {
 		cost = 10
 
 		ai_will_do = {
-			factor = 25
+			base = 25
 		}
 
 		available = {
@@ -7581,7 +7587,7 @@ focus_tree = {
 		cost = 5
 		
 		ai_will_do = {
-			factor = 10
+			base = 10
 			modifier = {
 				factor = 2
 				surrender_progress > 0.5
@@ -7658,17 +7664,17 @@ focus_tree = {
 		y = 2
 		relative_position_id = NOR_support_radical_nationalism
 		cost = 5
-
+		
 		ai_will_do = {
 			base = 25
 		}
-
+		
 		available = {
 			NOT = { has_war_with = GER }
 			is_in_faction_with = GER
 		}
 		available_if_capitulated = yes
-
+		
 		completion_reward = {
 			custom_effect_tooltip = NOR_german_technology_sharing_tt
 			if = {
@@ -7699,7 +7705,7 @@ focus_tree = {
 				limit = {
 					has_dlc = "Together for Victory"
 				}
-				is_in_tech_sharing_group = axis_research
+				is_in_tech_sharing_group = NOR_german_research
 			}
 		}
 		available_if_capitulated = yes
@@ -7711,7 +7717,7 @@ focus_tree = {
 				}
 				ROOT = {
 					modify_tech_sharing_bonus = {
-						id = axis_research
+						id = NOR_german_research
 						bonus = 0.05
 					}
 				}
@@ -7737,14 +7743,14 @@ focus_tree = {
 				category = synth_resources
 			}
 			hidden_effect = {
-				every_country = {
+				every_other_country = {
 					limit = {
 						is_subject_of = NOR
 						NOT = { has_war_with = GER }
-						num_tech_sharing_groups < 3
+						NOT = { is_in_tech_sharing_group = NOR_german_research }
 						has_dlc = "Together for Victory"
 					}
-					add_to_tech_sharing_group = axis_research
+					add_to_tech_sharing_group = NOR_german_research
 				}
 			}
 		}
@@ -7841,7 +7847,7 @@ focus_tree = {
 		cost = 10
 		
 		ai_will_do = {
-			factor = 10
+			base = 10
 		}
 		
 		available = {
@@ -7866,7 +7872,7 @@ focus_tree = {
 		cost = 10
 		
 		ai_will_do = {
-			factor = 10
+			base = 10
 		}
 		
 		available = {
@@ -7899,7 +7905,7 @@ focus_tree = {
 		cost = 10
 		
 		ai_will_do = {
-			factor = 10
+			base = 10
 		}
 		
 		available = {
@@ -7932,7 +7938,7 @@ focus_tree = {
 		cost = 10
 		
 		ai_will_do = {
-			factor = 10
+			base = 10
 		}
 		
 		available = {
@@ -7973,7 +7979,7 @@ focus_tree = {
 		relative_position_id = NOR_til_dovre_faller
 		cost = 10
 		ai_will_do = {
-			factor = 10
+			base = 10
 		}
 		available = {
 			is_subject = no
@@ -8014,7 +8020,7 @@ focus_tree = {
 		relative_position_id = NOR_support_radical_socialism
 		cost = 10
 		ai_will_do = {
-			factor = 10
+			base = 10
 		}
 		available = {
 			has_government = communism
@@ -8068,11 +8074,11 @@ focus_tree = {
 		y = 2
 		relative_position_id = NOR_support_radical_socialism
 		cost = 5
-
+		
 		ai_will_do = {
-			factor = 25
+			base = 25
 		}
-
+		
 		available = {
 			NOT = { has_war_with = SOV }
 			is_in_faction_with = SOV
@@ -8097,11 +8103,11 @@ focus_tree = {
 		y = 3
 		relative_position_id = NOR_support_radical_socialism
 		cost = 10
-
+		
 		ai_will_do = {
-			factor = 25
+			base = 25
 		}
-
+		
 		available = {
 			NOT = { has_war_with = SOV }
 			is_in_faction_with = SOV
@@ -8109,7 +8115,7 @@ focus_tree = {
 				limit = {
 					has_dlc = "Together for Victory"
 				}
-				is_in_tech_sharing_group = comintern_research
+				is_in_tech_sharing_group = NOR_soviet_research
 			}
 		}
 		available_if_capitulated = yes
@@ -8121,7 +8127,7 @@ focus_tree = {
 				}
 				ROOT = {
 					modify_tech_sharing_bonus = {
-						id = comintern_research
+						id = NOR_soviet_research
 						bonus = 0.05
 					}
 				}
@@ -8151,7 +8157,7 @@ focus_tree = {
 					set_technology = { lar_decryption_bonus_tech = 1 }
 				}
 				custom_effect_tooltip = lar_decryption_bonus_tt
-			}			
+			}
 			add_tech_bonus = {
 				name = industrial_bonus
 				bonus = 1.0
@@ -8163,10 +8169,10 @@ focus_tree = {
 					limit = {
 						is_subject_of = NOR
 						NOT = { has_war_with = SOV }
-						num_tech_sharing_groups < 3
+						NOT = { is_in_tech_sharing_group = NOR_soviet_research }
 						has_dlc = "Together for Victory"
 					}
-					add_to_tech_sharing_group = comintern_research
+					add_to_tech_sharing_group = NOR_soviet_research
 				}
 			}
 		}
@@ -8183,7 +8189,7 @@ focus_tree = {
 		cost = 10
 
 		ai_will_do = {
-			factor = 25
+			base = 25
 		}
 
 		available = {
@@ -8231,7 +8237,7 @@ focus_tree = {
 		cost = 10
 
 		ai_will_do = {
-			factor = 25
+			base = 25
 		}
 
 		available = {
@@ -8254,7 +8260,7 @@ focus_tree = {
 		cost = 10
 		
 		ai_will_do = {
-			factor = 25
+			base = 25
 		}
 		will_lead_to_war_with = DEN
 		
@@ -8310,7 +8316,7 @@ focus_tree = {
 		cost = 10
 
 		ai_will_do = {
-			factor = 25
+			base = 25
 		}
 		will_lead_to_war_with = FIN
 		
@@ -8349,7 +8355,7 @@ focus_tree = {
 		cost = 10
 
 		ai_will_do = {
-			factor = 25
+			base = 25
 		}
 
 		available = {
@@ -8374,7 +8380,7 @@ focus_tree = {
 		cost = 10
 
 		ai_will_do = {
-			factor = 25
+			base = 25
 		}
 
 		available = {

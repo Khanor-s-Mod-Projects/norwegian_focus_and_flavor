@@ -3,7 +3,7 @@ ideas = {
 		
 		designer = yes
 		
-		NOR_thunes_mekaniske_verksted = {
+		NOR_thunes_mekaniske_verksted = { ### Khanor's notes: Producer of locomotives, turbines, etc. In game can be repurposed for tank production.
 			
 			allowed = {
 				original_tag = NOR
@@ -13,16 +13,23 @@ ideas = {
 				armor = 0.15
 			}
 			
-			traits = { tank_manufacturer } ### Khanor's notes: Producer of locomotives, turbines, etc. In game can be repurposed for tank production.
+			traits = { tank_manufacturer } ### Designer alternatives: tank_manufacturer (preferred here), fast_tank_manufacturer, medium_tank_manufacturer, etc.
 			
 			modifier = {
 				
 			}
+			
+			equipment_bonus = {
+				train_equipment = {
+					build_cost_ic = -0.05
+					instant = yes
+				}
+			}
 		}
 	}
-
+	
 	aircraft_manufacturer = {
-			
+		
 		designer = yes
 		
 		NOR_det_norske_luftfartselskap = {
@@ -494,13 +501,17 @@ ideas = {
 			
 			equipment_bonus = {
 				convoy = {
-					build_cost_ic = -0.25 instant = yes
+					build_cost_ic = -0.10
+					naval_speed = 0.10
+					instant = yes
 				}
 				capital_ship = {
-					build_cost_ic = -0.05 instant = yes
+					build_cost_ic = -0.05
+					instant = yes
 				}
 				screen_ship = {
-					build_cost_ic = -0.05 instant = yes
+					build_cost_ic = -0.05
+					instant = yes
 				}
 			}
 		}
@@ -511,7 +522,7 @@ ideas = {
 				always = yes
 			}
 			
-			removal_cost = -1		
+			removal_cost = -1
 			
 			picture = generic_coastal_defense_ships2
 			name = NOR_specialized_naval_industry
@@ -522,7 +533,8 @@ ideas = {
 			
 			equipment_bonus = {
 				convoy = {
-					build_cost_ic = -0.25
+					build_cost_ic = -0.10
+					naval_speed = 0.10
 					instant = yes
 				}
 				capital_ship = {
@@ -546,7 +558,7 @@ ideas = {
 				always = yes
 			}
 			
-			removal_cost = -1		
+			removal_cost = -1
 			
 			picture = generic_coastal_defense_ships2
 			name = NOR_specialized_naval_industry
@@ -558,7 +570,8 @@ ideas = {
 			
 			equipment_bonus = {
 				convoy = {
-					build_cost_ic = -0.25
+					build_cost_ic = -0.10
+					naval_speed = 0.10
 					instant = yes
 				}
 				capital_ship = {
@@ -606,7 +619,7 @@ ideas = {
 			removal_cost = -1
 			
 			picture = FRA_factory_strikes
-					
+			
 			modifier = {
 				consumer_goods_factor = -0.01
 				production_speed_arms_factory_factor = -0.25
@@ -651,6 +664,27 @@ ideas = {
 			}
 		}
 		
+		ICE_norwegian_advisors = {
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			removal_cost = -1
+			
+			picture = chi_wargaming_division
+			
+			modifier = {
+				mobilization_speed = 0.10
+				conscription = 0.02
+				army_core_attack_factor = 0.10
+				army_core_defence_factor = 0.10
+				ai_focus_defense_factor = 0.10
+				winter_attrition_factor = -0.50
+				acclimatization_cold_climate_gain_factor = 0.20
+			}
+		}
+		
 		NOR_recreational_shooting = {
 			
 			allowed_civil_war = {
@@ -669,7 +703,7 @@ ideas = {
 			}
 		}
 		
-		NOR_heimevernet_idea = {
+		NOR_heimevernet = {
 			
 			allowed_civil_war = {
 				always = yes
@@ -680,12 +714,34 @@ ideas = {
 			picture = generic_manpower_bonus
 			
 			modifier = {
+				mobilization_speed = 0.10
 				conscription = 0.03
 				surrender_limit = 0.10
 				army_core_attack_factor = 0.10
 				army_core_defence_factor = 0.10
 				planning_speed = 0.10
+				winter_attrition_factor = -0.50
+				acclimatization_cold_climate_gain_factor = 0.30
+			}
+		}
+		
+		NOR_heimevernet_idea = { ### Old version for old save game compatibility. Delete some time after NaW-update 1.4.1.
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			removal_cost = -1
+			
+			picture = generic_manpower_bonus
+			
+			modifier = {
 				mobilization_speed = 0.10
+				conscription = 0.03
+				surrender_limit = 0.10
+				army_core_attack_factor = 0.10
+				army_core_defence_factor = 0.10
+				planning_speed = 0.10
 				winter_attrition_factor = -0.50
 				acclimatization_cold_climate_gain_factor = 0.30
 			}
@@ -731,7 +787,10 @@ ideas = {
 			}
 			
 			allowed_civil_war = {
-				NOT = { has_government = communism }
+				OR = {
+					NOT = { has_government = communism }
+					has_cosmetic_tag = NOR_kingdom
+				}
 			}
 			
 			removal_cost = -1
@@ -751,7 +810,10 @@ ideas = {
 			}
 			
 			allowed_civil_war = {
-				NOT = { has_government = communism }
+				OR = {
+					NOT = { has_government = communism }
+					has_cosmetic_tag = NOR_kingdom
+				}
 			}
 			
 			removal_cost = -1
@@ -791,7 +853,10 @@ ideas = {
 			}
 			
 			allowed_civil_war = {
-				NOT = { has_government = communism }
+				OR = {
+					NOT = { has_government = communism }
+					has_cosmetic_tag = NOR_kingdom
+				}
 			}
 			
 			removal_cost = -1
@@ -815,7 +880,10 @@ ideas = {
 			}
 			
 			allowed_civil_war = {
-				NOT = { has_government = communism }
+				OR = {
+					NOT = { has_government = communism }
+					has_cosmetic_tag = NOR_kingdom
+				}
 			}
 			
 			removal_cost = -1
@@ -829,7 +897,9 @@ ideas = {
 				recon_factor_while_entrenched = 0.10
 				ai_focus_defense_factor = 0.10
 				industry_repair_factor = 0.10
-				send_volunteers_tension = -0.50
+				send_volunteers_tension = -0.40
+				send_volunteer_divisions_required = -0.40
+				resistance_damage_to_garrison = -0.20
 			}
 			
 			rule = { can_send_volunteers = yes }
