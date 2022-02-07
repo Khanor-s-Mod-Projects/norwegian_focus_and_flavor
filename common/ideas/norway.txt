@@ -154,6 +154,7 @@ ideas = {
 			traits = { naval_manufacturer }
 			
 			modifier = {
+				repair_speed_factor = 0.05
 			}
 			
 			ai_will_do = {
@@ -180,6 +181,9 @@ ideas = {
 			traits = { NOR_north_sea_fleet_designer }
 			
 			modifier = {
+				refit_speed = 0.10
+				refit_ic_cost = -0.10
+				repair_speed_factor = 0.10
 			}
 			
 			ai_will_do = {
@@ -208,6 +212,8 @@ ideas = {
 			traits = { convoy_escort_naval_manufacturer }
 			
 			modifier = {
+				naval_equipment_upgrade_xp_cost = -0.15
+				repair_speed_factor = 0.05
 			}
 			
 			ai_will_do = {
@@ -215,7 +221,7 @@ ideas = {
 			}
 		}
 	}
-
+	
 	materiel_manufacturer = {
 		
 		designer = yes
@@ -483,7 +489,7 @@ ideas = {
 				industrial_capacity_dockyard = 0.20
 			}
 		}
-				
+		
 		NOR_grand_naval_expansion = {
 			
 			allowed_civil_war = {
@@ -589,7 +595,7 @@ ideas = {
 			}
 		}
 		
-		NOR_policy_of_disarmament = {		
+		NOR_policy_of_disarmament = {
 			
 			allowed_civil_war = {
 				always = yes
@@ -664,27 +670,6 @@ ideas = {
 			}
 		}
 		
-		ICE_norwegian_advisors = {
-			
-			allowed_civil_war = {
-				always = yes
-			}
-			
-			removal_cost = -1
-			
-			picture = chi_wargaming_division
-			
-			modifier = {
-				mobilization_speed = 0.10
-				conscription = 0.02
-				army_core_attack_factor = 0.10
-				army_core_defence_factor = 0.10
-				ai_focus_defense_factor = 0.10
-				winter_attrition_factor = -0.50
-				acclimatization_cold_climate_gain_factor = 0.20
-			}
-		}
-		
 		NOR_recreational_shooting = {
 			
 			allowed_civil_war = {
@@ -744,6 +729,27 @@ ideas = {
 				planning_speed = 0.10
 				winter_attrition_factor = -0.50
 				acclimatization_cold_climate_gain_factor = 0.30
+			}
+		}
+		
+		ICE_norwegian_advisors = {
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			removal_cost = -1
+			
+			picture = generic_manpower_bonus
+			
+			modifier = {
+				mobilization_speed = 0.10
+				conscription = 0.03
+				army_core_attack_factor = 0.10
+				army_core_defence_factor = 0.10
+				ai_focus_defense_factor = 0.10
+				winter_attrition_factor = -0.50
+				acclimatization_cold_climate_gain_factor = 0.20
 			}
 		}
 		
@@ -1066,7 +1072,28 @@ ideas = {
 			}
 		}
 		
-		NOR_hirden's_air_corps = {
+		NOR_hirdens_air_corps = {
+			
+			allowed_civil_war = {
+				has_government = fascism
+			}
+			
+			allowed = {
+				always = no
+			}
+			
+			removal_cost = -1
+			
+			picture = generic_fascist_army
+			
+			modifier = {
+				naval_strike_attack_factor = 0.05
+				air_interception_attack_factor = 0.05
+				air_air_superiority_attack_factor = 0.05
+			}
+		}
+		
+		NOR_hirden's_air_corps = { ### Old version for old save game compatibility. Delete some time after NaW-update 1.4.1a.
 			
 			allowed_civil_war = {
 				has_government = fascism

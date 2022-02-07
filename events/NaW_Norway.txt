@@ -5946,9 +5946,9 @@ country_event = {
 	}
 }
 
-##################################################################################################################################################
-# The Norwegian Kingdom expands King Haakon's responsibilities (giving the option to make him an advisor, a field marshal or a naval commander.) #
-##################################################################################################################################################
+##########################################################################################################################################################
+# The Norwegian Kingdom expands King Haakon's responsibilities (giving the option to make him an advisor, an active field marshal or a naval commander.) #
+##########################################################################################################################################################
 country_event = {
 	id = naw_norway.199
 	title = naw_norway.199.t
@@ -6098,20 +6098,77 @@ country_event = {
 ### Events 200-209, events for Norway if they choose to go for (historical) Armed Neutrality ###
 ################################################################################################
 ################################################################################################
+####################################################################################################
+# Intitial event for Norway Deciding to follow a policy of Armed Neutrality, like in the Great War #
+####################################################################################################
+country_event = {
+	id = naw_norway.200
+	title = naw_norway.200.t
+	desc = naw_norway.200.d
+	picture = GFX_report_event_norwegian_neutrality_guard_1940
+	
+	major = no
+	is_triggered_only = yes
+	
+	option = {
+		name = naw_norway.200.a ### Prioritize the Army.
+		ai_chance = {
+			base = 10
+			modifier = {
+				factor = 0.1
+				NOT = {
+					controls_state = 110
+					controls_state = 142
+					controls_state = 143
+				}
+			}
+		}
+		add_political_power = -10
+		army_experience = 10
+	}
+	
+	option = {
+		name = naw_norway.200.b ### Keep a balanced priority between the Army and the Navy.
+		ai_chance = {
+			base = 80
+		}
+		add_political_power = -10
+		army_experience = 5
+		navy_experience = 5
+	}
+	
+	option = {
+		name = naw_norway.200.c ### Prioritize the Navy.
+		ai_chance = {
+			base = 10
+			modifier = {
+				factor = 10
+				NOT = {
+					controls_state = 110
+					controls_state = 142
+					controls_state = 143
+				}
+			}
+		}
+		add_political_power = -10
+		navy_experience = 10
+	}
+}
+
 ######################################################################
 # NEWS EVENT - Norway Decides to follow a policy of Armed Neutrality #
 ######################################################################
 news_event = {
-	id = naw_norway.200
-	title = naw_norway.200.t
-	desc = naw_norway.200.d
-	picture = GFX_news_event_troenderbataljonen_at_skafferhullet_1940
+	id = naw_norway.201
+	title = naw_norway.201.t
+	desc = naw_norway.201.d
+	picture = GFX_news_event_norwegian_neutrality_guard_1940
 	
 	major = yes
 	is_triggered_only = yes
 	
 	option = {
-		name = naw_norway.200.a ### Neither Norway, nor Germany, nor Britain are at war.
+		name = naw_norway.201.a ### Neither Norway, nor Germany, nor Britain are at war.
 		trigger = {
 			NOT = { original_tag = NOR }
 			NOR = { has_war = no }
@@ -6121,7 +6178,7 @@ news_event = {
 	}
 	
 	option = {
-		name = naw_norway.200.b ### Germany and/or the United Kingdom is at war.
+		name = naw_norway.201.b ### Germany and/or the United Kingdom is at war.
 		trigger = {
 			NOT = { original_tag = NOR }
 			NOR = { has_war = no }
@@ -6133,14 +6190,14 @@ news_event = {
 	}
 	
 	option = {
-		name = naw_norway.200.c ### Norway is at war, and thus this announcement doesn't make too much sense.
+		name = naw_norway.201.c ### Norway is at war, and thus this announcement doesn't make too much sense.
 		trigger = {
 			NOR = { has_war = yes }
 		}
 	}
 	
 	option = {
-		name = naw_norway.200.p ### Norwegian standard response.
+		name = naw_norway.201.p ### Norwegian standard response.
 		trigger = {
 			original_tag = NOR
 			has_war = no
@@ -6152,9 +6209,9 @@ news_event = {
 # NEWS EVENT - Norwegian Neutrality violated by Germany, initial event #
 ########################################################################
 news_event = {
-	id = naw_norway.201
-	title = naw_norway.201.t
-	desc = naw_norway.201.d
+	id = naw_norway.202
+	title = naw_norway.202.t
+	desc = naw_norway.202.d
 	picture = GFX_news_event_german_soldiers
 	
 	fire_only_once = yes
@@ -6173,7 +6230,7 @@ news_event = {
 	}
 	
 	option = {
-		name = naw_norway.201.a ### Norway is informed of Germany attacking after having gone for the Armed neutrality focus. Norway is prepared (sizeable Army) and some base war support is gained.
+		name = naw_norway.202.a ### Norway is informed of Germany attacking after having gone for the Armed neutrality focus. Norway is prepared (sizeable Army) and some base war support is gained.
 		trigger = {
 			original_tag = NOR
 			has_army_manpower = { size > 99999 }
@@ -6186,7 +6243,7 @@ news_event = {
 	}
 	
 	option = {
-		name = naw_norway.201.b ### Norway is informed of Germany attacking after having gone for the Armed neutrality focus. Norway is somewhat prepared (medium sized Army), and base war support is not affected.
+		name = naw_norway.202.b ### Norway is informed of Germany attacking after having gone for the Armed neutrality focus. Norway is somewhat prepared (medium sized Army), and base war support is not affected.
 		trigger = {
 			original_tag = NOR
 			has_army_manpower = { size > 69999 }
@@ -6198,89 +6255,7 @@ news_event = {
 	}
 	
 	option = {
-		name = naw_norway.201.c ### Norway is informed of Germany attacking after having gone for the Armed neutrality focus. Norway is unprepared (small Army) and some base war support is lost.
-		trigger = {
-			original_tag = NOR
-			has_army_manpower = { size < 70000 }
-		}
-		
-		add_war_support = -0.03
-		hidden_effect = {
-			set_country_flag = NOR_neutrality_broken
-		}
-	}
-	
-	option = {
-		name = naw_norway.201.p ### Aggressor country's response.
-		trigger = {
-			has_war_with = NOR
-		}
-	}
-	
-	option = {
-		name = naw_norway.201.e ### Other countries' response.
-		trigger = {
-			NOT = {
-				OR = {
-					original_tag = NOR
-					has_war_with = NOR
-				}
-			}
-		}
-	}
-}
-
-########################################################################
-# NEWS EVENT - Norwegian Neutrality violated by Britain, initial event #
-########################################################################
-news_event = {
-	id = naw_norway.202
-	title = naw_norway.202.t
-	desc = naw_norway.202.d
-	picture = GFX_news_event_canadian_soldiers
-	
-	fire_only_once = yes
-	major = yes
-	
-	trigger = {
-		original_tag = NOR
-		is_subject = no
-		has_completed_focus = NOR_armed_neutrality_once_more
-		has_defensive_war_with = ENG
-		NOT = { has_country_flag = NOR_neutrality_broken }
-	}
-	
-	mean_time_to_happen = {
-		days = 1
-	}
-	
-	option = {
-		name = naw_norway.202.a ### Norway is informed of Britain attacking after having gone for the Armed neutrality focus. Norway is prepared (sizeable Army) and some base war support is gained.
-		trigger = {
-			original_tag = NOR
-			has_army_manpower = { size > 99999 }
-		}
-		
-		add_war_support = 0.03
-		hidden_effect = {
-			set_country_flag = NOR_neutrality_broken
-		}
-	}
-	
-	option = {
-		name = naw_norway.202.b ### Norway is informed of Britain attacking after having gone for the Armed neutrality focus. Norway is somewhat prepared (medium sized Army), and base war support is not affected.
-		trigger = {
-			original_tag = NOR
-			has_army_manpower = { size > 69999 }
-			has_army_manpower = { size < 100000 }
-		}
-		hidden_effect = {
-			set_country_flag = NOR_neutrality_broken
-		}
-	}
-	
-	option = {
-		name = naw_norway.202.c ### Norway is informed of Britain attacking after having gone for the Armed neutrality focus. Norway is unprepared (small Army) and some base war support is lost.
+		name = naw_norway.202.c ### Norway is informed of Germany attacking after having gone for the Armed neutrality focus. Norway is unprepared (small Army) and some base war support is lost.
 		trigger = {
 			original_tag = NOR
 			has_army_manpower = { size < 70000 }
@@ -6312,14 +6287,14 @@ news_event = {
 	}
 }
 
-###########################################################################################################
-# NEWS EVENT - Norwegian Neutrality violated, but not by the likely culprits (e.g. not Germany or the UK) #
-###########################################################################################################
+########################################################################
+# NEWS EVENT - Norwegian Neutrality violated by Britain, initial event #
+########################################################################
 news_event = {
 	id = naw_norway.203
 	title = naw_norway.203.t
 	desc = naw_norway.203.d
-	picture = GFX_news_event_soviet_tanks
+	picture = GFX_news_event_canadian_soldiers
 	
 	fire_only_once = yes
 	major = yes
@@ -6328,13 +6303,7 @@ news_event = {
 		original_tag = NOR
 		is_subject = no
 		has_completed_focus = NOR_armed_neutrality_once_more
-		has_defensive_war = yes
-		NOT = {
-			OR = {
-				has_defensive_war_with = GER
-				has_defensive_war_with = ENG
-			}
-		}
+		has_defensive_war_with = ENG
 		NOT = { has_country_flag = NOR_neutrality_broken }
 	}
 	
@@ -6343,7 +6312,7 @@ news_event = {
 	}
 	
 	option = {
-		name = naw_norway.203.a ### Norwegian neutrality has been broken by some other nation attacking them after they went for the Armed neutrality focus. Norway is prepared (sizeable Army) and some base war support is gained.
+		name = naw_norway.203.a ### Norway is informed of Britain attacking after having gone for the Armed neutrality focus. Norway is prepared (sizeable Army) and some base war support is gained.
 		trigger = {
 			original_tag = NOR
 			has_army_manpower = { size > 99999 }
@@ -6356,7 +6325,7 @@ news_event = {
 	}
 	
 	option = {
-		name = naw_norway.203.b ### Norwegian neutrality has been broken by some other nation attacking them after they went for the Armed neutrality focus. Norway is somewhat prepared (medium sized Army), and base war support is not affected.
+		name = naw_norway.203.b ### Norway is informed of Britain attacking after having gone for the Armed neutrality focus. Norway is somewhat prepared (medium sized Army), and base war support is not affected.
 		trigger = {
 			original_tag = NOR
 			has_army_manpower = { size > 69999 }
@@ -6368,7 +6337,7 @@ news_event = {
 	}
 	
 	option = {
-		name = naw_norway.203.c ### Norwegian neutrality has been broken by some other nation attacking them after they went for the Armed neutrality focus. Norway is unprepared (small Army) and some base war support is lost.
+		name = naw_norway.203.c ### Norway is informed of Britain attacking after having gone for the Armed neutrality focus. Norway is unprepared (small Army) and some base war support is lost.
 		trigger = {
 			original_tag = NOR
 			has_army_manpower = { size < 70000 }
@@ -6400,19 +6369,107 @@ news_event = {
 	}
 }
 
+###########################################################################################################
+# NEWS EVENT - Norwegian Neutrality violated, but not by the likely culprits (e.g. not Germany or the UK) #
+###########################################################################################################
+news_event = {
+	id = naw_norway.204
+	title = naw_norway.204.t
+	desc = naw_norway.204.d
+	picture = GFX_news_event_soviet_tanks
+	
+	fire_only_once = yes
+	major = yes
+	
+	trigger = {
+		original_tag = NOR
+		is_subject = no
+		has_completed_focus = NOR_armed_neutrality_once_more
+		has_defensive_war = yes
+		NOT = {
+			OR = {
+				has_defensive_war_with = GER
+				has_defensive_war_with = ENG
+			}
+		}
+		NOT = { has_country_flag = NOR_neutrality_broken }
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = naw_norway.204.a ### Norwegian neutrality has been broken by some other nation attacking them after they went for the Armed neutrality focus. Norway is prepared (sizeable Army) and some base war support is gained.
+		trigger = {
+			original_tag = NOR
+			has_army_manpower = { size > 99999 }
+		}
+		
+		add_war_support = 0.03
+		hidden_effect = {
+			set_country_flag = NOR_neutrality_broken
+		}
+	}
+	
+	option = {
+		name = naw_norway.204.b ### Norwegian neutrality has been broken by some other nation attacking them after they went for the Armed neutrality focus. Norway is somewhat prepared (medium sized Army), and base war support is not affected.
+		trigger = {
+			original_tag = NOR
+			has_army_manpower = { size > 69999 }
+			has_army_manpower = { size < 100000 }
+		}
+		hidden_effect = {
+			set_country_flag = NOR_neutrality_broken
+		}
+	}
+	
+	option = {
+		name = naw_norway.204.c ### Norwegian neutrality has been broken by some other nation attacking them after they went for the Armed neutrality focus. Norway is unprepared (small Army) and some base war support is lost.
+		trigger = {
+			original_tag = NOR
+			has_army_manpower = { size < 70000 }
+		}
+		
+		add_war_support = -0.03
+		hidden_effect = {
+			set_country_flag = NOR_neutrality_broken
+		}
+	}
+	
+	option = {
+		name = naw_norway.204.p ### Aggressor country's response.
+		trigger = {
+			has_war_with = NOR
+		}
+	}
+	
+	option = {
+		name = naw_norway.204.e ### Other countries' response.
+		trigger = {
+			NOT = {
+				OR = {
+					original_tag = NOR
+					has_war_with = NOR
+				}
+			}
+		}
+	}
+}
+
 #########################################################################################################
 # Norway petitions major powers for an Alliance in the face of aggressors breaking Norwegian neutrality #
 #########################################################################################################
 country_event = {
-	id = naw_norway.204
-	title = naw_norway.204.t
-	desc = naw_norway.204.d
+	id = naw_norway.205
+	title = naw_norway.205.t
+	desc = naw_norway.205.d
 	picture = GFX_report_event_worried_french
 	
 	is_triggered_only = yes
 	
 	option = {
-		name = naw_norway.204.a ### The petitioned power accepts letting Norway into their alliance.
+		name = naw_norway.205.a ### The petitioned power accepts letting Norway into their alliance.
 		ai_chance = {
 			base = 90
 			modifier = {
@@ -6459,11 +6516,11 @@ country_event = {
 				value = 250
 			}
 		}
-		FROM = { country_event = { hours = 6 id = naw_norway.205 } }
+		FROM = { country_event = { hours = 6 id = naw_norway.206 } }
 	}
 
 	option = {
-		name = naw_norway.204.b ### The petitioned power denies letting Norway into their alliance.
+		name = naw_norway.205.b ### The petitioned power denies letting Norway into their alliance.
 		ai_chance = {
 			base = 10
 			modifier = {
@@ -6518,20 +6575,20 @@ country_event = {
 				}
 			}
 		}
-		FROM = { country_event = { hours = 6 id = naw_norway.206 } }
+		FROM = { country_event = { hours = 6 id = naw_norway.207 } }
 	}
 }
 
 country_event = {
-	id = naw_norway.205
-	title = naw_norway.205.t
-	desc = naw_norway.205.d
+	id = naw_norway.206
+	title = naw_norway.206.t
+	desc = naw_norway.206.d
 	picture = GFX_report_event_soldiers_in_france
 	
 	is_triggered_only = yes
 	
 	option = {
-		name = naw_norway.205.a
+		name = naw_norway.206.a
 		effect_tooltip = {
 			FROM = {
 				add_to_faction = ROOT
@@ -6640,15 +6697,15 @@ country_event = {
 }
 
 country_event = {
-	id = naw_norway.206
-	title = naw_norway.206.t
-	desc = naw_norway.206.d
+	id = naw_norway.207
+	title = naw_norway.207.t
+	desc = naw_norway.207.d
 	picture = GFX_report_event_finnish_letter
 	
 	is_triggered_only = yes
 	
 	option = {
-		name = naw_norway.206.a
+		name = naw_norway.207.a
 	}
 }
 
@@ -6665,7 +6722,7 @@ country_event = {
 	title = naw_norway.210.t
 	desc = naw_norway.210.d
 	picture = GFX_report_event_generic_conference
-
+	
 	is_triggered_only = yes
 	
 	### Great idea!
@@ -6706,7 +6763,7 @@ country_event = {
 	title = naw_norway.211.t
 	desc = naw_norway.211.d
 	picture = GFX_report_event_generic_sign_treaty3
-
+	
 	is_triggered_only = yes
 	
 	### Hurrah!
@@ -6834,7 +6891,7 @@ country_event = {
 			}
 			ICE = { country_event = { id = naw_norway.214 } } ### Follow up event to inform, and at times enable a choice for, Iceland.
 		}
-
+		
 		hidden_effect = { news_event = { id = naw_news.200 days = 7 } }
 	}
 }
@@ -6847,7 +6904,7 @@ country_event = {
 	title = naw_norway.212.t
 	desc = naw_norway.212.d
 	picture = GFX_report_event_generic_read_write
-
+	
 	is_triggered_only = yes
 	
 	### Damnit.
@@ -6865,7 +6922,7 @@ country_event = {
 	title = naw_norway.213.t
 	desc = naw_norway.213.d
 	picture = GFX_report_event_generic_sign_treaty3
-
+	
 	is_triggered_only = yes
 	
 	### What?! They should at least liberate Denmark proper then, to pay for this transgression!
@@ -6883,7 +6940,7 @@ country_event = {
 	title = naw_norway.214.t
 	desc = naw_norway.214.d
 	picture = GFX_report_event_generic_sign_treaty3
-
+	
 	is_triggered_only = yes
 	
 	### Escaping the Danes, and it's back to the 1200s again. At least the Norwegians have more in common with us than the Danes.
@@ -7013,7 +7070,7 @@ country_event = {
 	title = naw_norway.215.t
 	desc = naw_norway.215.d
 	picture = GFX_report_event_generic_sign_treaty3
-
+	
 	is_triggered_only = yes
 	
 	### Great, welcome back!
@@ -7037,12 +7094,238 @@ country_event = {
 	title = naw_norway.216.t
 	desc = naw_norway.216.d
 	picture = GFX_report_event_generic_sign_treaty3
-
+	
 	is_triggered_only = yes
 	
 	### It's a great shame, we had hoped to be seen as a significant upgrade from the Danes.
 	option = {
 		name = naw_norway.216.a
 		ai_chance = { base = 100 }
+	}
+}
+
+
+
+#############################################################################
+#############################################################################
+### Events 230-249, Merchant Marine, Nortraship and Wartime Sailor events ###
+#############################################################################
+#############################################################################
+################################################################################
+# Event for the establishment of Nortraship, shown when the focus is completed #
+################################################################################
+country_event = {
+	id = naw_norway.230
+	title = naw_norway.230.t
+	desc = naw_norway.230.d
+	picture = GFX_report_event_ms_bayard_1936
+	
+	is_triggered_only = yes
+	
+	### The plan for the administration of the Merchant Fleet has been outlined.
+	option = {
+		name = naw_norway.230.a
+		ai_chance = { base = 100 }
+	}
+}
+
+########################################################################################
+# NEWS EVENT - Merchant fleet delegation to Britain, shown when the focus is completed #
+########################################################################################
+news_event = {
+	id = naw_norway.231
+	title = naw_norway.231.t
+	desc = naw_norway.231.d
+	picture = GFX_news_event_ds_aragon_1937
+	
+	major = yes
+	is_triggered_only = yes
+	
+	### Event choice for Norway.
+	option = {
+		name = naw_norway.231.a
+		ai_chance = { base = 100 }
+		
+		trigger = {
+			original_tag = NOR
+		}
+	}
+	
+	### Event choice for the United Kingdom.
+	option = {
+		name = naw_norway.231.b
+		ai_chance = { base = 100 }
+		
+		trigger = {
+			original_tag = ENG
+			is_in_faction_with = NOR
+		}
+	}
+	
+	### Event choice for enemies of Norway and the UK.
+	option = {
+		name = naw_norway.231.c
+		ai_chance = { base = 100 }
+		
+		trigger = {
+			has_war_with = NOR
+			has_war_with = ENG
+		}
+	}
+	
+	### Event choice for others.
+	option = {
+		name = naw_norway.231.p
+		ai_chance = { base = 100 }
+		
+		trigger = {
+			NOT = {
+				OR = {
+					original_tag = NOR
+					AND = {
+						original_tag = ENG
+						is_in_faction_with = NOR
+					}
+					AND = {
+						has_war_with = NOR
+						has_war_with = ENG
+					}
+				}
+			}
+		}
+	}
+}
+
+#####################################################################################################################################################################
+# NEWS EVENT - Merchant fleet delegation to Germany, with Norway in alliance with Germany by necessity/for self defense (e.g. democratic Norway attacked by the UK) #
+#####################################################################################################################################################################
+news_event = {
+	id = naw_norway.232
+	title = naw_norway.232.t
+	desc = naw_norway.232.d
+	picture = GFX_news_event_ds_aragon_1937
+	
+	major = yes
+	is_triggered_only = yes
+	
+	### Event choice for Norway.
+	option = {
+		name = naw_norway.232.a
+		ai_chance = { base = 100 }
+		
+		trigger = {
+			original_tag = NOR
+		}
+	}
+	
+	### Event choice for Germany.
+	option = {
+		name = naw_norway.232.b
+		ai_chance = { base = 100 }
+		
+		trigger = {
+			original_tag = GER
+			is_in_faction_with = NOR
+		}
+	}
+	
+	### Event choice for enemies of Norway and Germany.
+	option = {
+		name = naw_norway.232.c
+		ai_chance = { base = 100 }
+		
+		trigger = {
+			has_war_with = NOR
+			has_war_with = GER
+		}
+	}
+	
+	### Event choice for others.
+	option = {
+		name = naw_norway.232.p
+		ai_chance = { base = 100 }
+		
+		trigger = {
+			NOT = {
+				OR = {
+					original_tag = NOR
+					AND = {
+						original_tag = GER
+						is_in_faction_with = NOR
+					}
+					AND = {
+						has_war_with = NOR
+						has_war_with = GER
+					}
+				}
+			}
+		}
+	}
+}
+
+######################################################################################################################################################################
+# NEWS EVENT - Merchant fleet delegation to Germany, with Norway in alliance with Germany by choice (e.g. Norway with fascist ideology AND relevant focus completed) #
+######################################################################################################################################################################
+news_event = {
+	id = naw_norway.233
+	title = naw_norway.233.t
+	desc = naw_norway.233.d
+	picture = GFX_news_event_ds_aragon_1937
+	
+	major = yes
+	is_triggered_only = yes
+	
+	### Event choice for Norway.
+	option = {
+		name = naw_norway.233.a
+		ai_chance = { base = 100 }
+		
+		trigger = {
+			original_tag = NOR
+		}
+	}
+	
+	### Event choice for Germany.
+	option = {
+		name = naw_norway.233.b
+		ai_chance = { base = 100 }
+		
+		trigger = {
+			original_tag = GER
+			is_in_faction_with = NOR
+		}
+	}
+	
+	### Event choice for enemies of Norway and Germany.
+	option = {
+		name = naw_norway.233.c
+		ai_chance = { base = 100 }
+		
+		trigger = {
+			has_war_with = NOR
+			has_war_with = GER
+		}
+	}
+	
+	### Event choice for others.
+	option = {
+		name = naw_norway.233.p
+		ai_chance = { base = 100 }
+		
+		trigger = {
+			NOT = {
+				OR = {
+					original_tag = NOR
+					AND = {
+						original_tag = GER
+						is_in_faction_with = NOR
+					}
+					AND = {
+						has_war_with = NOR
+						has_war_with = GER
+					}
+				}
+			}
+		}
 	}
 }

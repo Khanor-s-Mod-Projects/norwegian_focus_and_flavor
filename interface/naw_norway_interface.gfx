@@ -23,8 +23,8 @@ spriteTypes = {
 	}
 	
 	SpriteType = {
-		name = "GFX_goal_NOR_coat_of_arms"
-		texturefile = "gfx/interface/goals/nor/goal_NOR_coat_of_arms.dds"
+		name = "GFX_goal_NOR_coat_of_arms_golden"
+		texturefile = "gfx/interface/goals/nor/goal_NOR_coat_of_arms_golden.dds"
 	}
 	
 	SpriteType = {
@@ -120,6 +120,11 @@ spriteTypes = {
 	
 	#####--Norwegian ideas--#####
 	SpriteType = {
+		name = "GFX_idea_NOR_carl_johan_erichsen"
+		texturefile = "gfx/interface/ideas/nor/advisors/r56_idea_NOR_carl_johan_erichsen.dds"
+	}
+	
+	SpriteType = {
 		name = "GFX_idea_NOR_carsten_tank-nielsen"
 		texturefile = "gfx/interface/ideas/nor/advisors/r56_idea_NOR_carsten_tank-nielsen.dds"
 	}
@@ -134,9 +139,19 @@ spriteTypes = {
 		texturefile = "gfx/interface/ideas/nor/advisors/r56_idea_NOR_henry_diesen.dds"
 	}
 	
-	SpriteType = {
+	SpriteType = { ### Delete this one later, shift use to GFX_idea_NOR_haakon_vii_political_advisor in time.
 		name = "GFX_idea_NOR_haakon_advisor"
-		texturefile = "gfx/interface/ideas/nor/advisors/r56_idea_NOR_haakon_advisor.dds"
+		texturefile = "gfx/interface/ideas/nor/advisors/r56_idea_NOR_haakon_vii_political_advisor.dds"
+	}
+	
+	SpriteType = {
+		name = "GFX_idea_NOR_haakon_vii_military_advisor"
+		texturefile = "gfx/interface/ideas/nor/advisors/r56_idea_NOR_haakon_vii_military_advisor.dds"
+	}
+	
+	SpriteType = {
+		name = "GFX_idea_NOR_haakon_vii_political_advisor"
+		texturefile = "gfx/interface/ideas/nor/advisors/r56_idea_NOR_haakon_vii_political_advisor.dds"
 	}
 	
 	SpriteType = {
@@ -221,8 +236,23 @@ spriteTypes = {
 	
 	#####--Norwegian events--#####
 	spriteType = {
+		name = "GFX_news_event_ds_aragon_1937"
+		texturefile = "gfx/event_pictures/news_event_ds_aragon_1937.dds"
+	}
+	
+	spriteType = {
 		name = "GFX_news_event_haakon_in_minerva_car"
 		texturefile = "gfx/event_pictures/news_event_haakon_in_minerva_car.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_news_event_norwegian_jubilee_1914"
+		texturefile = "gfx/event_pictures/news_event_norwegian_jubilee_1914.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_news_event_norwegian_neutrality_guard_1940"
+		texturefile = "gfx/event_pictures/news_event_norwegian_neutrality_guard_1940.dds"
 	}
 	
 	spriteType = {
@@ -236,6 +266,11 @@ spriteTypes = {
 	}
 	
 	spriteType = {
+		name = "GFX_report_event_a_careless_word_propaganda_1942"
+		texturefile = "gfx/event_pictures/report_event_a_careless_word_propaganda_1942.dds"
+	}
+	
+	spriteType = {
 		name = "GFX_report_event_haakon_in_minerva_car"
 		texturefile = "gfx/event_pictures/report_event_haakon_in_minerva_car.dds"
 	}
@@ -243,6 +278,21 @@ spriteTypes = {
 	spriteType = {
 		name = "GFX_report_event_medieval_norwegian_flag"
 		texturefile = "gfx/event_pictures/report_event_medieval_norwegian_flag.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_report_event_ms_bayard_1936"
+		texturefile = "gfx/event_pictures/report_event_ms_bayard_1936.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_report_event_norwegian_convoy_to_murmansk_1943"
+		texturefile = "gfx/event_pictures/report_event_norwegian_convoy_to_murmansk_1943.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_report_event_norwegian_neutrality_guard_1940"
+		texturefile = "gfx/event_pictures/report_event_norwegian_neutrality_guard_1940.dds"
 	}
 	
 	spriteType = {

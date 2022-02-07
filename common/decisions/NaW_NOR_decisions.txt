@@ -108,8 +108,10 @@ NOR_monarchism_on_the_rise = {
 		}
 		
 		highlight_states = {
-			state = 142
-			state = 143
+			highlight_state_targets = {
+				state = 142
+				state = 143
+			}
 		}
 		
 		visible = {
@@ -409,7 +411,12 @@ NOR_land_reintegration = {
 		available = {
 			original_tag = NOR
 			controls_state = 337
-			337 = { compliance > 20 }
+			337 = {
+				OR = {
+					has_resistance = no
+					compliance > 20
+				}
+			}
 		}
 		
 		visible = {
@@ -424,7 +431,9 @@ NOR_land_reintegration = {
 		}
 		
 		highlight_states = {
-			state = 337
+			highlight_state_targets = {
+				state = 337
+			}
 		}
 		
 		fire_only_once = no
@@ -478,7 +487,9 @@ NOR_land_reintegration = {
 		}
 		
 		highlight_states = {
-			state = 337
+			highlight_state_targets = {
+				state = 337
+			}
 		}
 		
 		fire_only_once = no
@@ -513,7 +524,12 @@ NOR_land_reintegration = {
 			OR = {
 				ROOT = {
 					controls_state = 100
-					100 = { compliance > 20 }
+					100 = {
+						OR = {
+							has_resistance = no
+							compliance > 20
+						}
+					}
 				}
 				ICE = {
 					is_subject_of = ROOT
@@ -538,7 +554,9 @@ NOR_land_reintegration = {
 		}
 		
 		highlight_states = {
-			state = 100
+			highlight_state_targets = {
+				state = 100
+			}
 		}
 		
 		fire_only_once = no
@@ -555,6 +573,14 @@ NOR_land_reintegration = {
 			add_stability = 0.02
 			add_war_support = 0.02
 			add_state_core = 100
+			hidden_effect = {
+				if = {
+					limit = {
+						NOT = { 100 = { is_core_of = ICE } }
+					}
+					ICE = { add_state_core = 100 }
+				}
+			}
 		}
 		
 		ai_will_do = {
@@ -604,7 +630,9 @@ NOR_land_reintegration = {
 		}
 		
 		highlight_states = {
-			state = 100
+			highlight_state_targets = {
+				state = 100
+			}
 		}
 		
 		fire_only_once = no
@@ -637,7 +665,12 @@ NOR_land_reintegration = {
 		available = {
 			original_tag = NOR
 			controls_state = 101
-			101 = { compliance > 40 }
+			101 = {
+				OR = {
+					has_resistance = no
+					compliance > 40
+				}
+			}
 		}
 		
 		visible = {
@@ -652,7 +685,9 @@ NOR_land_reintegration = {
 		}
 		
 		highlight_states = {
-			state = 101
+			highlight_state_targets = {
+				state = 101
+			}
 		}
 		
 		fire_only_once = no
@@ -706,7 +741,9 @@ NOR_land_reintegration = {
 		}
 		
 		highlight_states = {
-			state = 101
+			highlight_state_targets = {
+				state = 101
+			}
 		}
 		
 		fire_only_once = no
@@ -739,7 +776,12 @@ NOR_land_reintegration = {
 		available = {
 			original_tag = NOR
 			controls_state = 836
-			836 = { compliance > 20 }
+			836 = {
+				OR = {
+					has_resistance = no
+					compliance > 20
+				}
+			}
 		}
 		
 		visible = {
@@ -754,7 +796,9 @@ NOR_land_reintegration = {
 		}
 		
 		highlight_states = {
-			state = 836
+			highlight_state_targets = {
+				state = 836
+			}
 		}
 		
 		fire_only_once = no
@@ -814,7 +858,9 @@ NOR_land_reintegration = {
 		}
 		
 		highlight_states = {
-			state = 836
+			highlight_state_targets = {
+				state = 836
+			}
 		}
 		
 		fire_only_once = no
@@ -847,7 +893,12 @@ NOR_land_reintegration = {
 		available = {
 			original_tag = NOR
 			controls_state = 837
-			837 = { compliance > 20 }
+			837 = {
+				OR = {
+					has_resistance = no
+					compliance > 20
+				}
+			}
 		}
 		
 		visible = {
@@ -862,7 +913,9 @@ NOR_land_reintegration = {
 		}
 		
 		highlight_states = {
-			state = 837
+			highlight_state_targets = {
+				state = 837
+			}
 		}
 		
 		fire_only_once = no
@@ -922,7 +975,9 @@ NOR_land_reintegration = {
 		}
 		
 		highlight_states = {
-			state = 837
+			highlight_state_targets = {
+				state = 837
+			}
 		}
 		
 		fire_only_once = no
@@ -955,7 +1010,12 @@ NOR_land_reintegration = {
 		available = {
 			original_tag = NOR
 			controls_state = 838
-			838 = { compliance > 20 }
+			838 = {
+				OR = {
+					has_resistance = no
+					compliance > 20
+				}
+			}
 		}
 		
 		visible = {
@@ -970,7 +1030,9 @@ NOR_land_reintegration = {
 		}
 		
 		highlight_states = {
-			state = 838
+			highlight_state_targets = {
+				state = 838
+			}
 		}
 		
 		fire_only_once = no
@@ -1024,7 +1086,9 @@ NOR_land_reintegration = {
 		}
 		
 		highlight_states = {
-			state = 838
+			highlight_state_targets = {
+				state = 838
+			}
 		}
 		
 		fire_only_once = no
@@ -1057,7 +1121,12 @@ NOR_land_reintegration = {
 		available = {
 			original_tag = NOR
 			controls_state = 839
-			839 = { compliance > 20 }
+			839 = {
+				OR = {
+					has_resistance = no
+					compliance > 20
+				}
+			}
 		}
 		
 		visible = {
@@ -1072,7 +1141,9 @@ NOR_land_reintegration = {
 		}
 		
 		highlight_states = {
-			state = 839
+			highlight_state_targets = {
+				state = 839
+			}
 		}
 		
 		fire_only_once = no
@@ -1126,7 +1197,9 @@ NOR_land_reintegration = {
 		}
 		
 		highlight_states = {
-			state = 839
+			highlight_state_targets = {
+				state = 839
+			}
 		}
 		
 		fire_only_once = no
@@ -1158,6 +1231,7 @@ NOR_land_reintegration = {
 		
 		available = {
 			original_tag = NOR
+			is_subject = no
 			has_government = neutrality
 			OR = {
 				controls_state = 120
@@ -1173,6 +1247,7 @@ NOR_land_reintegration = {
 		}
 		
 		visible = {
+			is_subject = no
 			OR = {
 				controls_state = 120
 				any_other_country = {
@@ -1186,6 +1261,7 @@ NOR_land_reintegration = {
 				any_other_country = {
 					owns_state = 120
 					has_war_with = ROOT
+					surrender_progress > 0.1
 				}
 			}
 			has_completed_focus = NOR_traditions_and_monarchy
@@ -1193,45 +1269,58 @@ NOR_land_reintegration = {
 		}
 		
 		highlight_states = {
-			state = 120
+			highlight_state_targets = {
+				state = 120
+			}
 		}
 		
 		fire_only_once = no
 		
-		cost = 120
-		days_remove = 30
+		cost = 70
+		days_remove = 14
 		days_re_enable = 270
 		
 		modifier = {
-			political_power_cost = 1.00
+			political_power_cost = 0.50
 		}
 		
 		remove_effect = {
-			LOI = {
-				add_state_core = 120
-			}
+			LOI = { add_state_core = 120 }
 			if = {
 				limit = {
-					NOT = { owns_state = 120 }
+					NOT = { controls_state = 120 }
 				}
-				random_other_country = {
-					limit = {
-						owns_state = 120
-					}
-					ROOT = { transfer_state = 120 }
-				}
+				120 = { set_state_controller_to = ROOT }
 			}
+			release_on_controlled = LOI
+			puppet = LOI
+			#hidden_effect = {
+			#	LOI = {
+			#		if = {
+			#			limit = {
+			#				NOT = { LOI_alexander_malcolm_macewen = { is_country_leader = yes } }
+			#			}
+			#			LOI_alexander_malcolm_macewen = {
+			#				promote_character = centrism
+			#			}
+			#		}
+			#	}
+			#}
 			
-			release_puppet = LOI
 			add_war_support = 0.05
 		}
 		
 		ai_will_do = {
 			base = 5
+			
+			modifier = {
+				factor = 2.5
+				controls_state = 120
+			}
 		}
 	}
 	
-	NOR_lords_of_the_isles_propaganda_aberdeenshire = {
+	NOR_lords_of_the_isles_propaganda_lanark = {
 		
 		icon = generic_nationalism
 		
@@ -1251,55 +1340,53 @@ NOR_land_reintegration = {
 				owns_state = 120
 			}
 			OR = {
-				controls_state = 136
+				controls_state = 133
 				any_other_country = {
 					OR = {
 						is_subject_of = ROOT
-						is_in_faction_with = ROOT
+						AND = {
+							is_in_faction_with = ROOT
+							NOT = { owns_state = 133 }
+						}
 					}
-					controls_state = 136
-					OR = {
-						NOT = { owns_state = 136 }
-						original_tag = LOI
-					}
-				}
-				any_other_country = {
-					is_subject_of = ROOT
-					controls_state = 136
-					owns_state = 136
+					controls_state = 133
 				}
 			}
 		}
 		
 		visible = {
 			OR = {
-				controls_state = 136
+				controls_state = 133
 				any_other_country = {
 					OR = {
 						is_subject_of = ROOT
-						is_in_faction_with = ROOT
+						AND = {
+							is_in_faction_with = ROOT
+							NOT = { owns_state = 133 }
+						}
 					}
-					NOT = { owns_state = 136 }
-					controls_state = 136
+					controls_state = 133
 				}
 				any_other_country = {
-					owns_state = 136
+					owns_state = 133
 					has_war_with = ROOT
 				}
 			}
-			NOT = { 136 = { is_core_of = LOI } }
+			NOT = { 133 = { is_core_of = LOI } }
 			has_completed_focus = NOR_traditions_and_monarchy
 			LOI = { exists = yes }
 		}
 		
 		highlight_states = {
-			state = 136
+			highlight_state_targets = {
+				state = 133
+			}
 		}
 		
 		fire_only_once = no
 		
-		cost = 60
-		days_remove = 30
+		cost = 70
+		days_remove = 21
 		days_re_enable = 270
 		
 		modifier = {
@@ -1315,10 +1402,20 @@ NOR_land_reintegration = {
 						is_in_faction_with = ROOT
 					}
 				}
-				add_state_core = 136
+				add_state_core = 133
 				if = {
-					limit = { is_subject_of = ROOT }
-					transfer_state = 136
+					limit = {
+						is_subject_of = ROOT
+						any_country = {
+							OR = {
+								tag = ROOT
+								is_subject_of = ROOT
+								is_in_faction_with = ROOT
+							}
+							controls_state = 133
+						}
+					}
+					transfer_state = 133
 				}
 				add_war_support = 0.05
 			}
@@ -1869,7 +1966,9 @@ NOR_railroad_development = {
 		}
 		
 		highlight_states = {
-			state = 110
+			highlight_state_targets = {
+				state = 110
+			}
 		}
 		
 		modifier = {
@@ -1989,7 +2088,9 @@ NOR_railroad_development = {
 		}
 		
 		highlight_states = {
-			state = 143
+			highlight_state_targets = {
+				state = 143
+			}
 		}
 		
 		modifier = {
@@ -2079,7 +2180,9 @@ NOR_railroad_development = {
 		}
 		
 		highlight_states = {
-			state = 110
+			highlight_state_targets = {
+				state = 110
+			}
 		}
 		
 		modifier = {
@@ -2195,7 +2298,9 @@ NOR_railroad_development = {
 		}
 		
 		highlight_states = {
-			state = 144
+			highlight_state_targets = {
+				state = 144
+			}
 		}
 		
 		modifier = {
@@ -2285,7 +2390,9 @@ NOR_railroad_development = {
 		}
 		
 		highlight_states = {
-			state = 835
+			highlight_state_targets = {
+				state = 835
+			}
 		}
 		
 		modifier = {
@@ -2375,7 +2482,9 @@ NOR_railroad_development = {
 		}
 		
 		highlight_states = {
-			state = 142
+			highlight_state_targets = {
+				state = 142
+			}
 		}
 		
 		modifier = {
@@ -2491,7 +2600,9 @@ NOR_railroad_development = {
 		}
 		
 		highlight_states = {
-			state = 836
+			highlight_state_targets = {
+				state = 836
+			}
 		}
 		
 		modifier = {
@@ -2499,6 +2610,21 @@ NOR_railroad_development = {
 		}
 		
 		remove_effect = {
+			if = {
+				limit = {
+					SWE = {
+						is_subject_of = ROOT
+						owns_state = 836
+					}
+					has_dlc = "Together for Victory"
+				}
+				SWE = {
+					add_autonomy_ratio = {
+						value = -0.10
+						localization = NOR_electrify_border_region_jamtland
+					}
+				}
+			}
 			if = {
 				limit = {
 					SWE = {
@@ -2613,7 +2739,9 @@ NOR_railroad_development = {
 		}
 		
 		highlight_states = {
-			state = 140
+			highlight_state_targets = {
+				state = 140
+			}
 		}
 		
 		modifier = {
@@ -2621,6 +2749,21 @@ NOR_railroad_development = {
 		}
 		
 		remove_effect = {
+			if = {
+				limit = {
+					SWE = {
+						is_subject_of = ROOT
+						owns_state = 140
+					}
+					has_dlc = "Together for Victory"
+				}
+				SWE = {
+					add_autonomy_ratio = {
+						value = -0.25
+						localization = NOR_electrify_border_region_vaestergoetland
+					}
+				}
+			}
 			if = {
 				limit = {
 					SWE = {
@@ -2708,7 +2851,9 @@ NOR_railroad_development = {
 		}
 		
 		highlight_states = {
-			state = 144
+			highlight_state_targets = {
+				state = 144
+			}
 		}
 		
 		modifier = {
@@ -2826,7 +2971,9 @@ NOR_railroad_development = {
 		}
 		
 		highlight_states = {
-			state = 144
+			highlight_state_targets = {
+				state = 144
+			}
 		}
 		
 		modifier = {
@@ -2929,7 +3076,9 @@ NOR_railroad_development = {
 		}
 		
 		highlight_states = {
-			state = 142
+			highlight_state_targets = {
+				state = 142
+			}
 		}
 		
 		modifier = {
@@ -3029,8 +3178,10 @@ NOR_railroad_development = {
 		}
 		
 		highlight_states = {
-			state = 110
-			state = 143
+			highlight_state_targets = {
+				state = 110
+				state = 143
+			}
 		}
 		
 		modifier = {
@@ -3125,7 +3276,7 @@ NOR_railroad_development = {
 		fire_only_once = yes
 		
 		cost = 0
-		days_remove = 120
+		days_remove = 180
 		
 		visible = {
 			original_tag = NOR
@@ -3146,7 +3297,9 @@ NOR_railroad_development = {
 		}
 		
 		highlight_states = {
-			state = 100
+			highlight_state_targets = {
+				state = 100
+			}
 		}
 		
 		modifier = {
@@ -3154,6 +3307,19 @@ NOR_railroad_development = {
 		}
 		
 		remove_effect = {
+			if = {
+				limit = {
+					ICE = {
+						is_subject_of = ROOT
+						owns_state = 100
+					}
+					has_dlc = "Together for Victory"
+				}
+				add_autonomy_ratio = {
+					value = -0.25
+					localization = NOR_invest_in_the_cross-iceland_railroad
+				}
+			}
 			if = {
 				limit = {
 					ICE = {
@@ -3263,8 +3429,10 @@ NOR_railroad_development = {
 		}
 		
 		highlight_states = {
-			state = 110
-			state = 142
+			highlight_state_targets = {
+				state = 110
+				state = 142
+			}
 		}
 		
 		modifier = {
@@ -3368,8 +3536,10 @@ NOR_railroad_development = {
 		}
 		
 		highlight_states = {
-			state = 110
-			state = 143
+			highlight_state_targets = {
+				state = 110
+				state = 143
+			}
 		}
 		
 		modifier = {
@@ -3473,8 +3643,10 @@ NOR_railroad_development = {
 		}
 		
 		highlight_states = {
-			state = 110
-			state = 142
+			highlight_state_targets = {
+				state = 110
+				state = 142
+			}
 		}
 		
 		modifier = {
@@ -3589,9 +3761,11 @@ NOR_railroad_development = {
 		}
 		
 		highlight_states = {
-			state = 110
-			state = 835
-			state = 142
+			highlight_state_targets = {
+				state = 110
+				state = 835
+				state = 142
+			}
 		}
 		
 		modifier = {
@@ -4718,8 +4892,10 @@ political_actions = {
 		}
 		
 		highlight_states = {
-			state = 100
-			state = 101
+			highlight_state_targets = {
+				state = 100
+				state = 101
+			}
 		}
 		
 		fire_only_once = yes
@@ -5317,7 +5493,9 @@ economy_decisions = {
 		}
 		
 		highlight_states = {
-			state = 142
+			highlight_state_targets = {
+				state = 142
+			}
 		}
 		
 		complete_effect = {
@@ -5576,7 +5754,9 @@ economy_decisions = {
 		}
 		
 		highlight_states = {
-			state = 142
+			highlight_state_targets = {
+				state = 142
+			}
 		}
 		
 		complete_effect = {
@@ -5913,7 +6093,9 @@ economy_decisions = {
 		}
 		
 		highlight_states = {
-			state = 110
+			highlight_state_targets = {
+				state = 110
+			}
 		}
 
 		modifier = {
@@ -6022,7 +6204,9 @@ economy_decisions = {
 		}
 		
 		highlight_states = {
-			state = 144
+			highlight_state_targets = {
+				state = 144
+			}
 		}
 		
 		modifier = {
