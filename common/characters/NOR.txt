@@ -15,6 +15,7 @@ characters={
 			}
 			expire = "1965.1.1.1"
 			id = -1
+			desc = NOR_johan_nygaardsvold_desc
 		}
 	}
 	
@@ -35,6 +36,7 @@ characters={
 			}
 			expire = "1965.1.1.1"
 			id = -1
+			desc = NOR_vidkun_quisling_desc
 		}
 	}
 	
@@ -52,6 +54,7 @@ characters={
 			}
 			expire = "1965.1.1.1"
 			id = -1
+			desc = NOR_johan_ludwig_mowinckel_desc
 		}
 	}
 	
@@ -69,6 +72,7 @@ characters={
 			}
 			expire="1965.1.1.1"
 			id = -1
+			desc = NOR_adam_egede-nissen_desc
 		}
 	}
 	
@@ -85,6 +89,7 @@ characters={
 		#	traits = { silent_workhorse naw_agrarian }
 		#	expire = "1965.1.1.1"
 		#	id = -1
+		#	desc = NOR_nils_traedal_desc
 		#}
 	}
 	
@@ -100,6 +105,7 @@ characters={
 		#	traits = { armaments_organizer naw_business_owner }
 		#	expire = "1965.1.1.1"
 		#	id = -1
+		#	desc = NOR_ivar_lykke_desc
 		#}
 	}
 	
@@ -115,6 +121,7 @@ characters={
 		#	traits = { armaments_organizer staunch_constitutionalist dealbroker }
 		#	expire = "1965.1.1.1"
 		#	id = -1
+		#	desc = NOR_carl_joachim_hambro_desc
 		#}
 	}
 	
@@ -168,6 +175,7 @@ characters={
 		#	traits = { naw_naval_officer compassionate_gentleman }
 		#	expire = "1965.1.1.1"
 		#	id = -1
+		#	desc = NOR_haakon_vii_desc
 		#}
 		#field_marshal = {
 		#	traits = { infantry_officer media_personality inspirational_leader }
@@ -207,6 +215,7 @@ characters={
 		#	traits = { naw_driven_monarchists socialite_connections dysfunctional_assembly }
 		#	expire = "1965.1.1.1"
 		#	id = -1
+		#	desc = NOR_monarchist_coalition_desc
 		#}
 	}
 	

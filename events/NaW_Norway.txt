@@ -2130,6 +2130,7 @@ country_event = {
 				traits = { armaments_organizer naw_business_owner }
 				id=-1
 				expire = "1965.1.1"
+				desc = NOR_ivar_lykke_desc
 			}
 		}
 	}
@@ -2148,6 +2149,7 @@ country_event = {
 				traits = { armaments_organizer staunch_constitutionalist dealbroker }
 				id=-1
 				expire = "1965.1.1"
+				desc = NOR_carl_joachim_hambro_desc
 			}
 		}
 	}
@@ -3159,6 +3161,7 @@ country_event = {
 				traits = { silent_workhorse naw_agrarian }
 				id = -1
 				expire = "1965.1.1"
+				desc = NOR_nils_traedal_desc
 			}
 		}
 		
@@ -3178,6 +3181,7 @@ country_event = {
 				traits = { armaments_organizer naw_business_owner }
 				id = -1
 				expire = "1965.1.1"
+				desc = NOR_ivar_lykke_desc
 			}
 		}
 		
@@ -3213,6 +3217,7 @@ country_event = {
 				traits = { naw_naval_officer compassionate_gentleman }
 				id = -1
 				expire = "1965.1.1"
+				desc = NOR_haakon_vii_desc
 			}
 		}
 		
@@ -3231,6 +3236,7 @@ country_event = {
 				traits = { naw_naval_officer compassionate_gentleman }
 				id=-1
 				expire = "1965.1.1"
+				desc = NOR_haakon_vii_desc
 			}
 		}
 		
@@ -3249,6 +3255,7 @@ country_event = {
 				traits = { naw_naval_officer compassionate_gentleman }
 				id=-1
 				expire = "1965.1.1"
+				desc = NOR_haakon_vii_desc
 			}
 		}
 		
@@ -3301,9 +3308,10 @@ country_event = {
 					traits = { naw_driven_monarchists socialite_connections dysfunctional_assembly }
 					id = -1
 					expire = "1965.1.1"
+					desc = NOR_monarchist_coalition_desc
 				}
 			}
-
+			
 			load_oob = "NOR_Norwegian_Civil_War_neutrality"
 			add_popularity = {
 				ideology = communism
@@ -3461,6 +3469,7 @@ country_event = {
 					traits = { naw_driven_monarchists socialite_connections dysfunctional_assembly }
 					id = -1
 					expire = "1965.1.1"
+					desc = NOR_monarchist_coalition_desc
 				}
 			}
 

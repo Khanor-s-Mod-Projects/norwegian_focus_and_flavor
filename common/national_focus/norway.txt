@@ -2874,6 +2874,7 @@ focus_tree = {
 					traits = { silent_workhorse naw_agrarian }
 					id=-1
 					expire = "1965.1.1"
+					desc = NOR_nils_traedal_desc
 				}
 			}
 			
