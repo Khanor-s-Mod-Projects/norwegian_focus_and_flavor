@@ -2628,8 +2628,8 @@ country_event = {
 		
 		effect_tooltip = {
 			NOR = {
-				add_state_core = 837
-				transfer_state = 837
+				add_state_core = 911
+				transfer_state = 911
 			}
 			SWE = {
 				add_state_core = 145
@@ -2666,8 +2666,8 @@ country_event = {
 		
 		effect_tooltip = {
 			NOR = {
-				add_state_core = 837
-				transfer_state = 837
+				add_state_core = 911
+				transfer_state = 911
 			}
 			SWE = {
 				add_state_core = 145
@@ -3817,9 +3817,9 @@ country_event = {
 	option = {
 		name = naw_norway.83.a
 		ai_chance = { base = 25 }
-		836 = { set_state_name = "Jemtland" }
+		910 = { set_state_name = "Jemtland" }
 		set_province_name = { id = 46 name = "Frøysøy-Østersund" }
-		836 = {
+		910 = {
 			if = {
 				limit = {
 					NOT = { is_core_of = NOR }
@@ -3833,9 +3833,9 @@ country_event = {
 	option = {
 		name = naw_norway.83.b
 		ai_chance = { base = 75 }
-		836 = { set_state_name = "Jamtland" }
+		910 = { set_state_name = "Jamtland" }
 		set_province_name = { id = 46 name = "Frøysøy-Austersund" }
-		836 = {
+		910 = {
 			if = {
 				limit = {
 					NOT = { is_core_of = NOR }
@@ -3849,9 +3849,9 @@ country_event = {
 	option = {
 		name = naw_norway.83.c
 		ai_chance = { base = 0 }
-		836 = { set_state_name = "Jamtaland" }
+		910 = { set_state_name = "Jamtaland" }
 		set_province_name = { id = 46 name = "Freysey-Austursund" }
-		836 = {
+		910 = {
 			if = {
 				limit = {
 					NOT = { is_core_of = NOR }
@@ -3877,9 +3877,9 @@ country_event = {
 	option = {
 		name = naw_norway.84.a
 		ai_chance = { base = 25 }
-		837 = { set_state_name = "Båhuslen" }
+		911 = { set_state_name = "Båhuslen" }
 		set_province_name = { id = 6310 name = "Oddevald" }
-		837 = {
+		911 = {
 			if = {
 				limit = {
 					NOT = { is_core_of = NOR }
@@ -3893,9 +3893,9 @@ country_event = {
 	option = {
 		name = naw_norway.84.b
 		ai_chance = { base = 75 }
-		837 = { set_state_name = "Bagahus" }
+		911 = { set_state_name = "Bagahus" }
 		set_province_name = { id = 6310 name = "Oddevald" }
-		837 = {
+		911 = {
 			if = {
 				limit = {
 					NOT = { is_core_of = NOR }
@@ -3909,9 +3909,9 @@ country_event = {
 	option = {
 		name = naw_norway.84.c
 		ai_chance = { base = 0 }
-		837 = { set_state_name = "Bagaholm" }
+		911 = { set_state_name = "Bagaholm" }
 		set_province_name = { id = 6310 name = "Oddevald" }
-		837 = {
+		911 = {
 			if = {
 				limit = {
 					NOT = { is_core_of = NOR }
@@ -3937,8 +3937,8 @@ country_event = {
 	option = {
 		name = naw_norway.85.a
 		ai_chance = { base = 25 }
-		838 = { set_state_name = "Shetland" }
-		838 = {
+		912 = { set_state_name = "Shetland" }
+		912 = {
 			if = {
 				limit = {
 					NOT = { is_core_of = NOR }
@@ -3952,8 +3952,8 @@ country_event = {
 	option = {
 		name = naw_norway.85.b
 		ai_chance = { base = 75 }
-		838 = { set_state_name = "Hjaltland" }
-		838 = {
+		912 = { set_state_name = "Hjaltland" }
+		912 = {
 			if = {
 				limit = {
 					NOT = { is_core_of = NOR }
@@ -3979,9 +3979,9 @@ country_event = {
 	option = {
 		name = naw_norway.86.a
 		ai_chance = { base = 25 }
-		839 = { set_state_name = "Orknøyene" }
+		913 = { set_state_name = "Orknøyene" }
 		set_province_name = { id = 11064 name = "Kirkevika" }
-		839 = {
+		913 = {
 			if = {
 				limit = {
 					NOT = { is_core_of = NOR }
@@ -3995,9 +3995,9 @@ country_event = {
 	option = {
 		name = naw_norway.86.b
 		ai_chance = { base = 75 }
-		839 = { set_state_name = "Orknøyane" }
+		913 = { set_state_name = "Orknøyane" }
 		set_province_name = { id = 11064 name = "Kyrkjevågen" }
-		839 = {
+		913 = {
 			if = {
 				limit = {
 					NOT = { is_core_of = NOR }
@@ -4011,9 +4011,9 @@ country_event = {
 	option = {
 		name = naw_norway.86.c
 		ai_chance = { base = 0 }
-		839 = { set_state_name = "Orkneyjar" }
+		913 = { set_state_name = "Orkneyjar" }
 		set_province_name = { id = 11064 name = "Kirkjuvágr" }
-		839 = {
+		913 = {
 			if = {
 				limit = {
 					NOT = { is_core_of = NOR }
@@ -4247,6 +4247,7 @@ news_event = {
 	option = {
 		name = naw_norway.101.p	### German subjects' and faction members' response
 		trigger = {
+			NOT = { tag = GER }
 			OR = {
 				is_subject_of = GER
 				is_in_faction_with = GER
@@ -4330,6 +4331,7 @@ news_event = {
 	option = {
 		name = naw_norway.102.p	### Soviet subjects' and faction members' response
 		trigger = {
+			NOT = { tag = SOV }
 			OR = {
 				is_subject_of = SOV
 				is_in_faction_with = SOV
@@ -5207,13 +5209,13 @@ country_event = {
 		ai_chance = { base = 90 }
 		trigger = {
 			original_tag = ENG
-			owns_state = 838
+			owns_state = 912
 		}
 		
-		remove_state_core = 838
+		remove_state_core = 912
 		
 		effect_tooltip = {
-			FROM = { transfer_state = 838 }
+			FROM = { transfer_state = 912 }
 		}
 		
 		NOR = {
@@ -5231,7 +5233,7 @@ country_event = {
 					target = NOR
 					value > 30
 				}
-				owns_state = 838
+				owns_state = 912
 			}
 			modifier = {
 				factor = 10
@@ -5258,20 +5260,20 @@ country_event = {
 		name = naw_norway.171.a ### Norway is informed of Britain accepting.
 		
 		effect_tooltip = {
-			FROM = { remove_state_core = 838 }
+			FROM = { remove_state_core = 912 }
 		}
 		
 		if = {
 			limit = {
 				OR = {
-					FROM = { owns_state = 838 }
+					FROM = { owns_state = 912 }
 					any_country = {
 						is_subject_of = FROM
-						owns_state = 838
+						owns_state = 912
 					}
 				}
 			}
-			ROOT = { transfer_state = 838 }
+			ROOT = { transfer_state = 912 }
 		}
 		add_political_power = 25
 	}
@@ -5310,28 +5312,28 @@ country_event = {
 			original_tag = ENG
 			AND = {
 				OR = {
-					owns_state = 838
+					owns_state = 912
 					any_country = {
 						is_subject_of = ROOT
-						owns_state = 838
+						owns_state = 912
 					}
 				}
 				OR = {
-					owns_state = 839
+					owns_state = 913
 					any_country = {
 						is_subject_of = ROOT
-						owns_state = 839
+						owns_state = 913
 					}
 				}
 			}
 		}
 		
-		remove_state_core = 838
-		remove_state_core = 839
+		remove_state_core = 912
+		remove_state_core = 913
 		
 		effect_tooltip = {
-			FROM = { transfer_state = 838 }
-			FROM = { transfer_state = 839 }
+			FROM = { transfer_state = 912 }
+			FROM = { transfer_state = 913 }
 		}
 		
 		NOR = {
@@ -5369,18 +5371,18 @@ country_event = {
 		trigger = {
 			original_tag = ENG
 			OR = {
-				owns_state = 838
+				owns_state = 912
 				any_country = {
 					is_subject_of = ROOT
-					owns_state = 838
+					owns_state = 912
 				}
 			}
 		}
 		
-		remove_state_core = 838
+		remove_state_core = 912
 		
 		effect_tooltip = {
-			FROM = { transfer_state = 838 }
+			FROM = { transfer_state = 912 }
 		}
 		
 		NOR = { country_event = naw_norway.175 }
@@ -5396,7 +5398,7 @@ country_event = {
 					target = NOR
 					value > 30
 				}
-				owns_state = 838
+				owns_state = 912
 			}
 			modifier = {
 				factor = 10
@@ -5424,34 +5426,34 @@ country_event = {
 		
 		effect_tooltip = {
 			FROM = {
-				remove_state_core = 838
-				remove_state_core = 839
+				remove_state_core = 912
+				remove_state_core = 913
 			}
 		}
 		
 		if = {
 			limit = {
 				OR = {
-					FROM = { owns_state = 838 }
+					FROM = { owns_state = 912 }
 					any_country = {
 						is_subject_of = FROM
-						owns_state = 838
+						owns_state = 912
 					}
 				}
 			}
-			ROOT = { transfer_state = 838 }
+			ROOT = { transfer_state = 912 }
 		}
 		if = {
 			limit = {
 				OR = {
-					FROM = { owns_state = 839 }
+					FROM = { owns_state = 913 }
 					any_country = {
 						is_subject_of = FROM
-						owns_state = 839
+						owns_state = 913
 					}
 				}
 			}
-			ROOT = { transfer_state = 839 }
+			ROOT = { transfer_state = 913 }
 		}
 		add_political_power = 50
 	}
@@ -5469,20 +5471,20 @@ country_event = {
 		name = naw_norway.175.a ### Norway is informed of Britain ceding the Shetland islands only.
 		
 		effect_tooltip = {
-			FROM = { remove_state_core = 838 }
+			FROM = { remove_state_core = 912 }
 		}
 		
 		if = {
 			limit = {
 				OR = {
-					FROM = { owns_state = 838 }
+					FROM = { owns_state = 912 }
 					any_country = {
 						is_subject_of = FROM
-						owns_state = 838
+						owns_state = 912
 					}
 				}
 			}
-			ROOT = { transfer_state = 838 }
+			ROOT = { transfer_state = 912 }
 		}
 		add_political_power = 25
 	}

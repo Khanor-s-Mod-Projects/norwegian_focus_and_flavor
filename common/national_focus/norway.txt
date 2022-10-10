@@ -649,9 +649,6 @@ focus_tree = {
 				technology = advanced_heavy_battery
 				technology = basic_heavy_shell
 				technology = improved_heavy_shell
-				technology = basic_secondary_battery
-				technology = improved_secondary_battery
-				technology = dp_secondary_battery
 			}
 			navy_experience = 10
 		}
@@ -850,7 +847,7 @@ focus_tree = {
 				110 = {
 					is_controlled_by = ROOT
 				}
-				835 = {
+				909 = {
 					is_controlled_by = ROOT
 				}
 				142 = {
@@ -893,7 +890,7 @@ focus_tree = {
 					}
 				}
 			}
-			835 = {
+			909 = {
 				if = {
 					limit = {
 						is_controlled_by = ROOT
@@ -1060,8 +1057,8 @@ focus_tree = {
 					controls_state = 110
 				}
 				AND = {
-					owns_state = 835
-					controls_state = 835
+					owns_state = 909
+					controls_state = 909
 				}
 				AND = {
 					owns_state = 142
@@ -1488,7 +1485,7 @@ focus_tree = {
 				110 = {
 					is_controlled_by = ROOT
 				}
-				835 = {
+				909 = {
 					is_controlled_by = ROOT
 				}
 				142 = {
@@ -1523,7 +1520,7 @@ focus_tree = {
 					}
 				}
 			}
-			835 = {
+			909 = {
 				if = {
 					limit = {
 						is_controlled_by = ROOT
@@ -2021,7 +2018,7 @@ focus_tree = {
 				110 = {
 					is_controlled_by = ROOT
 				}
-				835 = {
+				909 = {
 					is_controlled_by = ROOT
 				}
 				142 = {
@@ -3996,19 +3993,19 @@ focus_tree = {
 			is_subject = no
 			is_in_faction_with = SWE
 			is_in_faction_with = FIN
-			SWE = { owns_state = 837 controls_state = 837 }
+			SWE = { owns_state = 911 controls_state = 911 }
 			FIN = { owns_state = 145 controls_state = 145 }
 		}
 		
 		completion_reward = {
-			add_state_core = 837
+			add_state_core = 911
 			if = {
-				limit = { SWE = { owns_state = 837 } }
-				transfer_state = 837
+				limit = { SWE = { owns_state = 911 } }
+				transfer_state = 911
 			}
 
 			SWE = {
-				remove_state_core = 837
+				remove_state_core = 911
 				add_state_core = 145
 				if = {
 					limit = { FIN = { owns_state = 145 } }
@@ -5532,12 +5529,12 @@ focus_tree = {
 			}
 			AND = {
 				owns_state = 110
-				owns_state = 835
+				owns_state = 909
 				owns_state = 142
 				owns_state = 143
 				owns_state = 144
-				owns_state = 836
-				owns_state = 837
+				owns_state = 910
+				owns_state = 911
 				owns_state = 337
 				OR = {
 					owns_state = 100
@@ -5554,12 +5551,12 @@ focus_tree = {
 					}
 				}
 				controls_state = 110
-				controls_state = 835
+				controls_state = 909
 				controls_state = 142
 				controls_state = 143
 				controls_state = 144
-				controls_state = 836
-				controls_state = 837
+				controls_state = 910
+				controls_state = 911
 				controls_state = 337
 			}
 			num_of_civilian_factories > 11
@@ -6109,18 +6106,18 @@ focus_tree = {
 		}
 		
 		available = {
-			838 = {
+			912 = {
 				is_owned_by = ROOT
 				is_controlled_by = ROOT
 			}
-			839 = {
+			913 = {
 				is_owned_by = ROOT
 				is_controlled_by = ROOT
 			}
 		}
 		
 		completion_reward = {
-			838 = {
+			912 = {
 				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
 					type = industrial_complex
@@ -6128,7 +6125,7 @@ focus_tree = {
 					instant_build = yes
 				}
 			}
-			839 = {
+			913 = {
 				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
 					type = dockyard
@@ -6168,42 +6165,42 @@ focus_tree = {
 		
 		completion_reward = {
 			add_named_threat = { threat = 1 name = NOR_reclaim_the_mainland }
-			add_state_claim = 836
-			add_state_claim = 837
+			add_state_claim = 910
+			add_state_claim = 911
 			if = {
 				limit = {
-					836 = { is_owned_by = SWE }
-					837 = { is_owned_by = SWE }
+					910 = { is_owned_by = SWE }
+					911 = { is_owned_by = SWE }
 				}
 				create_wargoal = {
 					type = take_claimed_state
 					target = SWE
 					expire = 0
-					generator = { 836 837 }
+					generator = { 910 911 }
 				}
 			}
 			if = {
 				limit = {
-					836 = { is_owned_by = SWE }
-					NOT = { 837 = { is_owned_by = SWE } }
+					910 = { is_owned_by = SWE }
+					NOT = { 911 = { is_owned_by = SWE } }
 				}
 				create_wargoal = {
 					type = take_claimed_state
 					target = SWE
 					expire = 0
-					generator = { 836 }
+					generator = { 910 }
 				}
 			}
 			if = {
 				limit = {
-					NOT = { 836 = { is_owned_by = SWE } }
-					837 = { is_owned_by = SWE }
+					NOT = { 910 = { is_owned_by = SWE } }
+					911 = { is_owned_by = SWE }
 				}
 				create_wargoal = {
 					type = take_claimed_state
 					target = SWE
 					expire = 0
-					generator = { 837 }
+					generator = { 911 }
 				}
 			}
 			add_war_support = 0.04
@@ -6240,8 +6237,8 @@ focus_tree = {
 			}
 			OR = {
 				AND = {
-					owns_state = 836
-					owns_state = 837
+					owns_state = 910
+					owns_state = 911
 					SWE = { is_subject_of = ROOT }
 				}
 				AND = {
@@ -6390,8 +6387,8 @@ focus_tree = {
 			has_civil_war = no
 			OR = {
 				AND = {
-					owns_state = 836
-					owns_state = 837
+					owns_state = 910
+					owns_state = 911
 				}
 				AND = {
 					owns_state = 337
@@ -6575,13 +6572,13 @@ focus_tree = {
 					has_government = democratic
 				}
 				is_in_faction_with = ROOT
-				owns_state = 838
+				owns_state = 912
 			}
 		}
 		
 		completion_reward = {
-			add_state_claim = 838
-			add_state_claim = 839
+			add_state_claim = 912
+			add_state_claim = 913
 			
 			ENG = {
 				country_event = { hours = 12 id = naw_norway.173 }
@@ -6621,7 +6618,7 @@ focus_tree = {
 					has_government = democratic
 				}
 				is_in_faction_with = ROOT
-				owns_state = 838
+				owns_state = 912
 			}
 			GER = {
 				exists = yes
@@ -6638,7 +6635,7 @@ focus_tree = {
 		}
 		
 		completion_reward = {
-			add_state_claim = 838
+			add_state_claim = 912
 			
 			ENG = {
 				country_event = { hours = 12 id = naw_norway.170 }
@@ -6732,8 +6729,8 @@ focus_tree = {
 		completion_reward = {
 			### Add events?
 			
-			add_state_claim = 838
-			add_state_claim = 839
+			add_state_claim = 912
+			add_state_claim = 913
 			
 			custom_effect_tooltip = NOR_enable_german_naval_procurements_tt
 		}
@@ -7454,12 +7451,12 @@ focus_tree = {
 		}
 		
 		completion_reward = {
-			add_state_claim = 836
-			add_state_claim = 837
+			add_state_claim = 910
+			add_state_claim = 911
 			if = {
 				limit = {
-					836 = { is_owned_by = SWE }
-					837 = { is_owned_by = SWE }
+					910 = { is_owned_by = SWE }
+					911 = { is_owned_by = SWE }
 					NOT = {
 						OR = {
 							is_in_faction_with = SWE
@@ -7471,13 +7468,13 @@ focus_tree = {
 					type = take_claimed_state
 					target = SWE
 					expire = 0
-					generator = { 836 837 }
+					generator = { 910 911 }
 				}
 			}
 			if = {
 				limit = {
-					836 = { is_owned_by = SWE }
-					NOT = { 837 = { is_owned_by = SWE } }
+					910 = { is_owned_by = SWE }
+					NOT = { 911 = { is_owned_by = SWE } }
 					NOT = {
 						OR = {
 							is_in_faction_with = SWE
@@ -7489,13 +7486,13 @@ focus_tree = {
 					type = take_claimed_state
 					target = SWE
 					expire = 0
-					generator = { 836 }
+					generator = { 910 }
 				}
 			}
 			if = {
 				limit = {
-					NOT = { 836 = { is_owned_by = SWE } }
-					837 = { is_owned_by = SWE }
+					NOT = { 910 = { is_owned_by = SWE } }
+					911 = { is_owned_by = SWE }
 					NOT = {
 						OR = {
 							is_in_faction_with = SWE
@@ -7507,7 +7504,7 @@ focus_tree = {
 					type = take_claimed_state
 					target = SWE
 					expire = 0
-					generator = { 837 }
+					generator = { 911 }
 				}
 			}
 			add_war_support = 0.05
@@ -7952,8 +7949,8 @@ focus_tree = {
 		}
 		
 		completion_reward = {
-			add_state_claim = 838
-			add_state_claim = 839
+			add_state_claim = 912
+			add_state_claim = 913
 		}
 		search_filters = { FOCUS_FILTER_ANNEXATION }
 	}
@@ -8380,8 +8377,8 @@ focus_tree = {
 			add_state_core = 101
 			add_state_core = 100
 			add_state_core = 337
-			add_state_core = 836
-			add_state_core = 837
+			add_state_core = 910
+			add_state_core = 911
 			if = {
 				limit = {
 					DEN = {

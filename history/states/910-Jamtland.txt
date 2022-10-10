@@ -1,6 +1,6 @@
 state={
-	id=836
-	name="STATE_836"
+	id=910
+	name="STATE_910"
 	manpower = 135922
 	
 	resources={

@@ -5,7 +5,7 @@ tags={
 	"Gameplay"
 	"Historical"
 }
-picture="NaW_display_picture.jpg"
-version="1.4.1"
-supported_version="1.11.*"
+picture="thumbnail.jpg"
+version="1.4.2"
+supported_version="1.12.*"
 remote_file_id="1148110160"

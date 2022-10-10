@@ -1,7 +1,7 @@
 state={
 	id=686
 	name="STATE_686"
-	manpower = 1520175
+	manpower = 1520175 ### 1543913 base game population before NaW's new state creation (the Virgin Islands.)
 	
 	state_category = rural
 

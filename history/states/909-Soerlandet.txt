@@ -1,6 +1,6 @@
 state={
-	id=835
-	name="STATE_835"
+	id=909
+	name="STATE_909"
 	manpower = 171612 ### See state 142-Vestlandet for maths used.
 	
 	state_category = rural

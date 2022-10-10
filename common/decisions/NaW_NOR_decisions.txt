@@ -776,8 +776,8 @@ NOR_land_reintegration = {
 		
 		available = {
 			original_tag = NOR
-			controls_state = 836
-			836 = {
+			controls_state = 910
+			910 = {
 				OR = {
 					has_resistance = no
 					compliance > 20
@@ -787,18 +787,18 @@ NOR_land_reintegration = {
 		
 		visible = {
 			OR = {
-				controls_state = 836
+				controls_state = 910
 				any_other_country = {
-					owns_state = 836
+					owns_state = 910
 					has_war_with = ROOT
 				}
 			}
-			NOT = { 836 = { is_core_of = ROOT } }
+			NOT = { 910 = { is_core_of = ROOT } }
 		}
 		
 		highlight_states = {
 			highlight_state_targets = {
-				state = 836
+				state = 910
 			}
 		}
 		
@@ -817,11 +817,11 @@ NOR_land_reintegration = {
 			add_war_support = 0.02
 			if = {
 				limit = {
-					836 = { is_claimed_by = ROOT }
+					910 = { is_claimed_by = ROOT }
 				}
-				remove_state_claim = 836
+				remove_state_claim = 910
 			}
-			add_state_core = 836
+			add_state_core = 910
 		}
 		
 		ai_will_do = {
@@ -839,28 +839,28 @@ NOR_land_reintegration = {
 		
 		available = {
 			original_tag = NOR
-			controls_state = 836
-			owns_state = 836
-			836 = { is_core_of = ROOT }
+			controls_state = 910
+			owns_state = 910
+			910 = { is_core_of = ROOT }
 		}
 		
 		visible = {
 			OR = {
-				controls_state = 836
+				controls_state = 910
 				any_other_country = {
-					owns_state = 836
+					owns_state = 910
 					has_war_with = ROOT
 				}
 			}
-			836 = { is_core_of = ROOT }
+			910 = { is_core_of = ROOT }
 			NOT = {
-				836 = { has_state_flag = NaW_NOR_has_incorporated }
+				910 = { has_state_flag = NaW_NOR_has_incorporated }
 			}
 		}
 		
 		highlight_states = {
 			highlight_state_targets = {
-				state = 836
+				state = 910
 			}
 		}
 		
@@ -874,7 +874,7 @@ NOR_land_reintegration = {
 			country_event = { hours = 6 id = naw_norway.83 }
 			
 			hidden_effect = {
-				836 = { set_state_flag = NaW_NOR_has_incorporated }
+				910 = { set_state_flag = NaW_NOR_has_incorporated }
 			}
 		}
 		
@@ -893,8 +893,8 @@ NOR_land_reintegration = {
 		
 		available = {
 			original_tag = NOR
-			controls_state = 837
-			837 = {
+			controls_state = 911
+			911 = {
 				OR = {
 					has_resistance = no
 					compliance > 20
@@ -904,18 +904,18 @@ NOR_land_reintegration = {
 		
 		visible = {
 			OR = {
-				controls_state = 837
+				controls_state = 911
 				any_other_country = {
-					owns_state = 837
+					owns_state = 911
 					has_war_with = ROOT
 				}
 			}
-			NOT = { 837 = { is_core_of = ROOT } }
+			NOT = { 911 = { is_core_of = ROOT } }
 		}
 		
 		highlight_states = {
 			highlight_state_targets = {
-				state = 837
+				state = 911
 			}
 		}
 		
@@ -934,11 +934,11 @@ NOR_land_reintegration = {
 			add_war_support = 0.02
 			if = {
 				limit = {
-					837 = { is_claimed_by = ROOT }
+					911 = { is_claimed_by = ROOT }
 				}
-				remove_state_claim = 837
+				remove_state_claim = 911
 			}
-			add_state_core = 837
+			add_state_core = 911
 		}
 		
 		ai_will_do = {
@@ -956,28 +956,28 @@ NOR_land_reintegration = {
 		
 		available = {
 			original_tag = NOR
-			controls_state = 837
-			owns_state = 837
-			837 = { is_core_of = ROOT }
+			controls_state = 911
+			owns_state = 911
+			911 = { is_core_of = ROOT }
 		}
 		
 		visible = {
 			OR = {
-				controls_state = 837
+				controls_state = 911
 				any_other_country = {
-					owns_state = 837
+					owns_state = 911
 					has_war_with = ROOT
 				}
 			}
-			837 = { is_core_of = ROOT }
+			911 = { is_core_of = ROOT }
 			NOT = {
-				837 = { has_state_flag = NaW_NOR_has_incorporated }
+				911 = { has_state_flag = NaW_NOR_has_incorporated }
 			}
 		}
 		
 		highlight_states = {
 			highlight_state_targets = {
-				state = 837
+				state = 911
 			}
 		}
 		
@@ -991,7 +991,7 @@ NOR_land_reintegration = {
 			country_event = { hours = 6 id = naw_norway.84 }
 			
 			hidden_effect = {
-				837 = { set_state_flag = NaW_NOR_has_incorporated }
+				911 = { set_state_flag = NaW_NOR_has_incorporated }
 			}
 		}
 		
@@ -1010,8 +1010,8 @@ NOR_land_reintegration = {
 		
 		available = {
 			original_tag = NOR
-			controls_state = 838
-			838 = {
+			controls_state = 912
+			912 = {
 				OR = {
 					has_resistance = no
 					compliance > 20
@@ -1021,18 +1021,18 @@ NOR_land_reintegration = {
 		
 		visible = {
 			OR = {
-				controls_state = 838
+				controls_state = 912
 				any_other_country = {
-					owns_state = 838
+					owns_state = 912
 					has_war_with = ROOT
 				}
 			}
-			NOT = { 838 = { is_core_of = ROOT } }
+			NOT = { 912 = { is_core_of = ROOT } }
 		}
 		
 		highlight_states = {
 			highlight_state_targets = {
-				state = 838
+				state = 912
 			}
 		}
 		
@@ -1049,7 +1049,7 @@ NOR_land_reintegration = {
 		remove_effect = {
 			add_stability = 0.01
 			add_war_support = 0.01
-			add_state_core = 838
+			add_state_core = 912
 		}
 		
 		ai_will_do = {
@@ -1067,28 +1067,28 @@ NOR_land_reintegration = {
 		
 		available = {
 			original_tag = NOR
-			controls_state = 838
-			owns_state = 838
-			838 = { is_core_of = ROOT }
+			controls_state = 912
+			owns_state = 912
+			912 = { is_core_of = ROOT }
 		}
 		
 		visible = {
 			OR = {
-				controls_state = 838
+				controls_state = 912
 				any_other_country = {
-					owns_state = 838
+					owns_state = 912
 					has_war_with = ROOT
 				}
 			}
-			838 = { is_core_of = ROOT }
+			912 = { is_core_of = ROOT }
 			NOT = {
-				838 = { has_state_flag = NaW_NOR_has_incorporated }
+				912 = { has_state_flag = NaW_NOR_has_incorporated }
 			}
 		}
 		
 		highlight_states = {
 			highlight_state_targets = {
-				state = 838
+				state = 912
 			}
 		}
 		
@@ -1102,7 +1102,7 @@ NOR_land_reintegration = {
 			country_event = { hours = 6 id = naw_norway.85 }
 			
 			hidden_effect = {
-				838 = { set_state_flag = NaW_NOR_has_incorporated }
+				912 = { set_state_flag = NaW_NOR_has_incorporated }
 			}
 		}
 		
@@ -1121,8 +1121,8 @@ NOR_land_reintegration = {
 		
 		available = {
 			original_tag = NOR
-			controls_state = 839
-			839 = {
+			controls_state = 913
+			913 = {
 				OR = {
 					has_resistance = no
 					compliance > 20
@@ -1132,18 +1132,18 @@ NOR_land_reintegration = {
 		
 		visible = {
 			OR = {
-				controls_state = 839
+				controls_state = 913
 				any_other_country = {
-					owns_state = 839
+					owns_state = 913
 					has_war_with = ROOT
 				}
 			}
-			NOT = { 839 = { is_core_of = ROOT } }
+			NOT = { 913 = { is_core_of = ROOT } }
 		}
 		
 		highlight_states = {
 			highlight_state_targets = {
-				state = 839
+				state = 913
 			}
 		}
 		
@@ -1160,7 +1160,7 @@ NOR_land_reintegration = {
 		remove_effect = {
 			add_stability = 0.02
 			add_war_support = 0.02
-			add_state_core = 839
+			add_state_core = 913
 		}
 		
 		ai_will_do = {
@@ -1178,28 +1178,28 @@ NOR_land_reintegration = {
 		
 		available = {
 			original_tag = NOR
-			controls_state = 839
-			owns_state = 839
-			839 = { is_core_of = ROOT }
+			controls_state = 913
+			owns_state = 913
+			913 = { is_core_of = ROOT }
 		}
 		
 		visible = {
 			OR = {
-				controls_state = 839
+				controls_state = 913
 				any_other_country = {
-					owns_state = 839
+					owns_state = 913
 					has_war_with = ROOT
 				}
 			}
-			839 = { is_core_of = ROOT }
+			913 = { is_core_of = ROOT }
 			NOT = {
-				839 = { has_state_flag = NaW_NOR_has_incorporated }
+				913 = { has_state_flag = NaW_NOR_has_incorporated }
 			}
 		}
 		
 		highlight_states = {
 			highlight_state_targets = {
-				state = 839
+				state = 913
 			}
 		}
 		
@@ -1213,7 +1213,7 @@ NOR_land_reintegration = {
 			country_event = { hours = 6 id = naw_norway.86 }
 			
 			hidden_effect = {
-				839 = { set_state_flag = NaW_NOR_has_incorporated }
+				913 = { set_state_flag = NaW_NOR_has_incorporated }
 			}
 		}
 		
@@ -1653,7 +1653,7 @@ NOR_request_allied_favors = {
 			has_war = yes
 			OR = {
 				NOT = { controls_state = 110 }
-				NOT = { controls_state = 835 }
+				NOT = { controls_state = 909 }
 				NOT = { controls_state = 142 }
 				NOT = { controls_state = 143 }
 				NOT = { controls_state = 144 }
@@ -1778,10 +1778,25 @@ NOR_request_allied_favors = {
 		}
 
 		remove_effect = {
-			add_equipment_to_stockpile = {
-			    type = fighter_equipment
-			    amount = 50
-			    producer = ENG
+			if = {
+				limit = {
+					NOT = {
+						has_dlc = "By Blood Alone"
+					}
+				}
+				add_equipment_to_stockpile = {
+				    type = fighter_equipment_1
+				    amount = 50
+				    producer = ENG
+				}
+			}
+			else = {
+				add_equipment_to_stockpile = {
+				    type = small_plane_airframe_0
+				    amount = 50
+				    producer = ENG
+				    variant_name = "Gloster Gladiator"
+				}	
 			}
 		}
 
@@ -2367,7 +2382,7 @@ NOR_railroad_development = {
 		available = {
 			original_tag = NOR
 			has_capitulated = no
-			controls_state = 835
+			controls_state = 909
 			num_of_civilian_factories_available_for_projects > 2
 			has_completed_focus = NOR_hydroelectric_power_generation
 			has_country_flag = NOR_first_step_towards_electrification_taken
@@ -2392,7 +2407,7 @@ NOR_railroad_development = {
 		
 		highlight_states = {
 			highlight_state_targets = {
-				state = 835
+				state = 909
 			}
 		}
 		
@@ -2401,7 +2416,7 @@ NOR_railroad_development = {
 		}
 		
 		remove_effect = {
-			835 = { add_dynamic_modifier = { modifier = NOR_regional_railroad_electrification } }
+			909 = { add_dynamic_modifier = { modifier = NOR_regional_railroad_electrification } }
 			add_to_variable = { var = NOR.railroad_development value = 1 }
 			custom_effect_tooltip = NOR_railroad_development_add_1_tt
 			hidden_effect = {
@@ -2555,16 +2570,16 @@ NOR_railroad_development = {
 			controls_state = 143
 			OR = {
 				ROOT = {
-					owns_state = 836
-					controls_state = 836
+					owns_state = 910
+					controls_state = 910
 				}
 				any_other_country = {
 					OR = {
 						is_subject_of = ROOT
 						is_in_faction_with = ROOT
 					}
-					owns_state = 836
-					controls_state = 836
+					owns_state = 910
+					controls_state = 910
 				}
 			}
 			num_of_civilian_factories_available_for_projects > 2
@@ -2583,13 +2598,13 @@ NOR_railroad_development = {
 			original_tag = NOR
 			owns_state = 143
 			OR = {
-				owns_state = 836
+				owns_state = 910
 				any_other_country = {
 					OR = {
 						is_subject_of = ROOT
 						is_in_faction_with = ROOT
 					}
-					owns_state = 836
+					owns_state = 910
 				}
 			}
 			has_completed_focus = NOR_de_norske_statsbaner
@@ -2602,7 +2617,7 @@ NOR_railroad_development = {
 		
 		highlight_states = {
 			highlight_state_targets = {
-				state = 836
+				state = 910
 			}
 		}
 		
@@ -2615,7 +2630,7 @@ NOR_railroad_development = {
 				limit = {
 					SWE = {
 						is_subject_of = ROOT
-						owns_state = 836
+						owns_state = 910
 					}
 					has_dlc = "Together for Victory"
 				}
@@ -2629,7 +2644,7 @@ NOR_railroad_development = {
 			if = {
 				limit = {
 					SWE = {
-						owns_state = 836
+						owns_state = 910
 						NOT = { has_opinion_modifier = HUN_reintegrate_the_railroads }
 					}
 				}
@@ -2637,7 +2652,7 @@ NOR_railroad_development = {
 					add_opinion_modifier = { target = ROOT modifier = HUN_reintegrate_the_railroads }
 				}
 			}
-			836 = { add_dynamic_modifier = { modifier = NOR_regional_railroad_electrification } }
+			910 = { add_dynamic_modifier = { modifier = NOR_regional_railroad_electrification } }
 			add_to_variable = { var = NOR.railroad_development value = 1 }
 			custom_effect_tooltip = NOR_railroad_development_add_1_tt
 			hidden_effect = {
@@ -3745,7 +3760,7 @@ NOR_railroad_development = {
 			original_tag = NOR
 			has_capitulated = no
 			controls_state = 110
-			controls_state = 835
+			controls_state = 909
 			controls_state = 142
 			num_of_civilian_factories_available_for_projects > 2
 			command_power > 5
@@ -3764,7 +3779,7 @@ NOR_railroad_development = {
 		highlight_states = {
 			highlight_state_targets = {
 				state = 110
-				state = 835
+				state = 909
 				state = 142
 			}
 		}
